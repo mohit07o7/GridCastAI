@@ -1,0 +1,21 @@
+{
+  "quality_policy": "v1",
+  "source_sha256": {
+    "src/common/features.py": "80cad6b966b98f583900ba4831cc15757241a95201c4de4aa9152cf0fe623e54",
+    "src/common/splits.py": "7f8c5fcd2247b753b5dea269c3de9d440fad62354ba5815e784968880c01c00d",
+    "data/processed/demand_model_data.csv": "782534342b490a0bebdf80b679d5512636652eeefb308df7868f5f0b6eeb05f4"
+  },
+  "rows": {
+    "train": 22548,
+    "validation": 4962,
+    "test": 4603
+  },
+  "flagged_hours": {
+    "zero": 12,
+    "april": 1,
+    "frozen": 25
+  },
+  "all_saved_origins_eligible": true,
+  "main_and_trend_saved_metrics_recomputed": true,
+  "data_tracked": false
+}

@@ -1,0 +1,4 @@
+-r requirements.txt
+# Optional notebooks; not needed by training scripts.
+jupyterlab==4.6.4
+ipykernel==7.4.0

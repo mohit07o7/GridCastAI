@@ -1,5 +1,10 @@
 
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from common.features import build_features, DEMAND_FEATURES, RENEWABLE_FEATURES
+from common.splits import chronological_split
+
 
 import numpy as np
 import pandas as pd
@@ -56,60 +61,9 @@ def calculate_metrics(actual, predicted):
 # ---------------------------------------------------------
 # 1. Load data and construct leakage-safe features
 # ---------------------------------------------------------
-df = pd.read_csv(DATA_PATH, parse_dates=["Timestamp"])
-df = df.sort_values("Timestamp").reset_index(drop=True)
-
-required = ["Timestamp", "demand_mw", "wind_mw", "solar_mw"]
-missing = [column for column in required if column not in df.columns]
-
-if missing:
-    raise ValueError(f"Missing required columns: {missing}")
-
-if df["Timestamp"].diff().dropna().ne(
-    pd.Timedelta(hours=1)
-).any():
-    raise ValueError("Expected continuous hourly observations.")
-
-if df[required[1:]].isna().any().any():
-    raise ValueError("Missing values found in demand, wind, or solar.")
-
-df["Target"] = df["demand_mw"].shift(-24)
-df["Target Timestamp"] = df["Timestamp"] + pd.Timedelta(hours=24)
-
-for lag in [1, 24, 48, 168]:
-    df[f"demand_lag_{lag}"] = df["demand_mw"].shift(lag)
-
-past_demand = df["demand_mw"].shift(1)
-df["demand_mean_24h"] = past_demand.rolling(24).mean()
-df["demand_mean_168h"] = past_demand.rolling(168).mean()
-
-for lag in [1, 24]:
-    df[f"wind_lag_{lag}"] = df["wind_mw"].shift(lag)
-    df[f"solar_lag_{lag}"] = df["solar_mw"].shift(lag)
-
-df["hour"] = df["Timestamp"].dt.hour
-df["day_of_week"] = df["Timestamp"].dt.dayofweek
-df["month"] = df["Timestamp"].dt.month
-
-demand_features = [
-    "demand_lag_1",
-    "demand_lag_24",
-    "demand_lag_48",
-    "demand_lag_168",
-    "demand_mean_24h",
-    "demand_mean_168h",
-    "hour",
-    "day_of_week",
-    "month",
-]
-
-renewable_features = [
-    "wind_lag_1",
-    "wind_lag_24",
-    "solar_lag_1",
-    "solar_lag_24",
-]
-
+df = build_features(pd.read_csv(DATA_PATH, parse_dates=['Timestamp']))
+demand_features = DEMAND_FEATURES
+renewable_features = RENEWABLE_FEATURES
 all_features = demand_features + renewable_features
 
 model_df = df.dropna(
@@ -150,9 +104,7 @@ for fold in range(N_FOLDS):
     test_end = min(test_start + test_size, n)
     validation_start = test_start - validation_size
 
-    train = model_df.iloc[:validation_start]
-    validation = model_df.iloc[validation_start:test_start]
-    test = model_df.iloc[test_start:test_end]
+    train, validation, test = chronological_split(model_df, validation_start, test_start, test_end)
 
     if train.empty or validation.empty or test.empty:
         raise ValueError(f"Fold {fold + 1} has an empty split.")

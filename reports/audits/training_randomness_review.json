@@ -1,0 +1,245 @@
+{
+  "python": "3.14.3",
+  "estimators": [
+    {
+      "file": "src/investigations/audit_renewable_forecast_splits.py",
+      "line": 117,
+      "configuration": {
+        "n_estimators": "600",
+        "max_depth": "5",
+        "learning_rate": "0.03",
+        "subsample": "0.8",
+        "colsample_bytree": "0.8",
+        "objective": "'reg:squarederror'",
+        "eval_metric": "'mae'",
+        "early_stopping_rounds": "40",
+        "random_state": "42",
+        "n_jobs": "-1"
+      }
+    },
+    {
+      "file": "src/analysis/analyze_anomaly_feature_impact.py",
+      "line": 109,
+      "configuration": {
+        "objective": "'reg:squarederror'",
+        "n_estimators": "1000",
+        "learning_rate": "0.03",
+        "max_depth": "6",
+        "min_child_weight": "5",
+        "subsample": "0.8",
+        "colsample_bytree": "0.8",
+        "reg_lambda": "1.0",
+        "early_stopping_rounds": "50",
+        "eval_metric": "'mae'",
+        "random_state": "42",
+        "n_jobs": "4"
+      }
+    },
+    {
+      "file": "src/analysis/analyze_anomaly_sensitivity.py",
+      "line": 85,
+      "configuration": {
+        "objective": "'reg:squarederror'",
+        "n_estimators": "1000",
+        "learning_rate": "0.03",
+        "max_depth": "6",
+        "min_child_weight": "5",
+        "subsample": "0.8",
+        "colsample_bytree": "0.8",
+        "reg_lambda": "1.0",
+        "early_stopping_rounds": "50",
+        "eval_metric": "'mae'",
+        "random_state": "42",
+        "n_jobs": "4"
+      }
+    },
+    {
+      "file": "src/forecasting/xgboost_demand_forecast.py",
+      "line": 61,
+      "configuration": {
+        "objective": "'reg:squarederror'",
+        "n_estimators": "1000",
+        "learning_rate": "0.03",
+        "max_depth": "6",
+        "min_child_weight": "5",
+        "subsample": "0.8",
+        "colsample_bytree": "0.8",
+        "reg_lambda": "1.0",
+        "early_stopping_rounds": "50",
+        "eval_metric": "'mae'",
+        "random_state": "42",
+        "n_jobs": "4"
+      }
+    },
+    {
+      "file": "src/forecasting/xgboost_renewable_forecast.py",
+      "line": 106,
+      "configuration": {
+        "n_estimators": "600",
+        "max_depth": "5",
+        "learning_rate": "0.03",
+        "subsample": "0.8",
+        "colsample_bytree": "0.8",
+        "objective": "'reg:squarederror'",
+        "eval_metric": "'mae'",
+        "early_stopping_rounds": "40",
+        "random_state": "42",
+        "n_jobs": "-1"
+      }
+    },
+    {
+      "file": "src/forecasting/wind_forecast.py",
+      "line": 160,
+      "configuration": {
+        "n_estimators": "1000",
+        "max_depth": "4",
+        "learning_rate": "0.02",
+        "subsample": "0.8",
+        "colsample_bytree": "0.7",
+        "min_child_weight": "5",
+        "reg_alpha": "0.1",
+        "reg_lambda": "1.0",
+        "objective": "'reg:absoluteerror'",
+        "eval_metric": "'mae'",
+        "early_stopping_rounds": "50",
+        "random_state": "42",
+        "n_jobs": "-1"
+      }
+    },
+    {
+      "file": "src/forecasting/xgboost_renewable_corrected.py",
+      "line": 105,
+      "configuration": {
+        "n_estimators": "600",
+        "max_depth": "5",
+        "learning_rate": "0.03",
+        "subsample": "0.8",
+        "colsample_bytree": "0.8",
+        "objective": "'reg:squarederror'",
+        "eval_metric": "'mae'",
+        "early_stopping_rounds": "40",
+        "random_state": "42",
+        "n_jobs": "-1"
+      }
+    },
+    {
+      "file": "src/forecasting/demand_rolling_evaluation.py",
+      "line": 30,
+      "configuration": {
+        "objective": "'reg:squarederror'",
+        "n_estimators": "1000",
+        "learning_rate": "0.03",
+        "max_depth": "6",
+        "min_child_weight": "5",
+        "subsample": "0.8",
+        "colsample_bytree": "0.8",
+        "reg_lambda": "1.0",
+        "early_stopping_rounds": "50",
+        "eval_metric": "'mae'",
+        "random_state": "42",
+        "n_jobs": "4"
+      }
+    },
+    {
+      "file": "src/forecasting/demand_feature_ablation.py",
+      "line": 54,
+      "configuration": {
+        "objective": "'reg:squarederror'",
+        "n_estimators": "1000",
+        "learning_rate": "0.03",
+        "max_depth": "6",
+        "min_child_weight": "5",
+        "subsample": "0.8",
+        "colsample_bytree": "0.8",
+        "reg_lambda": "1.0",
+        "early_stopping_rounds": "50",
+        "eval_metric": "'mae'",
+        "random_state": "42",
+        "n_jobs": "4"
+      }
+    },
+    {
+      "file": "src/forecasting/xgboost_demand_trend_experiment.py",
+      "line": 58,
+      "configuration": {
+        "objective": "'reg:squarederror'",
+        "n_estimators": "1000",
+        "learning_rate": "0.03",
+        "max_depth": "6",
+        "min_child_weight": "5",
+        "subsample": "0.8",
+        "colsample_bytree": "0.8",
+        "reg_lambda": "1.0",
+        "early_stopping_rounds": "50",
+        "eval_metric": "'mae'",
+        "random_state": "42",
+        "n_jobs": "4"
+      }
+    },
+    {
+      "file": "src/forecasting/solar_daytime_experiment.py",
+      "line": 163,
+      "configuration": {
+        "n_estimators": "1000",
+        "max_depth": "4",
+        "learning_rate": "0.02",
+        "subsample": "0.8",
+        "colsample_bytree": "0.7",
+        "min_child_weight": "3",
+        "reg_alpha": "0.1",
+        "reg_lambda": "1.0",
+        "objective": "'reg:absoluteerror'",
+        "eval_metric": "'mae'",
+        "early_stopping_rounds": "50",
+        "random_state": "42",
+        "n_jobs": "-1"
+      }
+    },
+    {
+      "file": "src/forecasting/solar_forecast.py",
+      "line": 194,
+      "configuration": {
+        "n_estimators": "1000",
+        "max_depth": "4",
+        "learning_rate": "0.02",
+        "subsample": "0.8",
+        "colsample_bytree": "0.7",
+        "min_child_weight": "3",
+        "reg_alpha": "0.1",
+        "reg_lambda": "1.0",
+        "objective": "'reg:absoluteerror'",
+        "eval_metric": "'mae'",
+        "early_stopping_rounds": "50",
+        "random_state": "42",
+        "n_jobs": "-1"
+      }
+    },
+    {
+      "file": "src/forecasting/renewable_v3_full_history.py",
+      "line": 153,
+      "configuration": {
+        "n_estimators": "1000",
+        "early_stopping_rounds": "50",
+        "null": "MODEL_PARAMS"
+      }
+    },
+    {
+      "file": "src/forecasting/renewable_v3_full_history.py",
+      "line": 166,
+      "configuration": {
+        "n_estimators": "best_iteration + 1",
+        "null": "MODEL_PARAMS"
+      }
+    },
+    {
+      "file": "src/forecasting/renewable_v3_full_history.py",
+      "line": 185,
+      "configuration": {
+        "n_estimators": "100",
+        "null": "MODEL_PARAMS"
+      }
+    }
+  ],
+  "renewable_bootstrap_seed": 42,
+  "note": "All 15 XGBRegressor call sites use seed 42 directly or via MODEL_PARAMS. No neural training or other stochastic estimator found. Fixed seeds do not guarantee cross-platform bitwise equivalence."
+}

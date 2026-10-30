@@ -1,9 +1,12 @@
 # GridCastAI — AI-Based Renewable Energy Demand Forecasting & Grid Optimization
 
+> **Current demand results (31 October 2026):** Main XGBoost MAE **5,106.45 MW**, MAPE **2.59%**, on **4,603 quality-eligible test hours**; persistence MAE **5,416.56 MW**. All four demand experiments use shared features, purged splits, and quality policy v1. Earlier demand numbers below describe historical experiments. See [refresh report](reports/audits/demand_refresh_2026_10_31.md), [quality policy](docs/research_decisions.md), and [tested environment](docs/environment.md). Desktop/GridCastAI is the main copy; the ChatGPT workspace has been archived.
+
+
 [![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
 [![Status](https://img.shields.io/badge/status-active%20research-emerald.svg)]()
 [![Model](https://img.shields.io/badge/primary%20model-XGBoost%20Regressor-orange.svg)]()
-[![Saved four-year demand MAPE](https://img.shields.io/badge/saved%204--year%20demand%20MAPE-2.71%25-green.svg)]()
+[![Saved four-year demand MAPE](https://img.shields.io/badge/quality%20eligible%20demand%20MAPE-2.59%25-green.svg)]()
 
 GridCastAI is an end-to-end data science and grid optimization research project designed to forecast hourly electricity demand and renewable generation across India. The project emphasizes **telemetry data auditing**, **forecast-origin feature checks**, **systematic anomaly sensitivity analysis**, and **decision-support metrics**.
 

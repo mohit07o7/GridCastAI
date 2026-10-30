@@ -1,5 +1,10 @@
 
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from common.features import build_features, DEMAND_FEATURES, RENEWABLE_FEATURES
+from common.splits import chronological_split
+
 
 import numpy as np
 import pandas as pd
@@ -17,54 +22,8 @@ METRICS_PATH = PROJECT_ROOT / "reports" / "experiments" / "xgboost_demand_metric
 # 1. Load and validate the hourly demand data.
 # Source: demand_model_data.csv built from full_hourly_stacked.csv
 #         (Sep 2021 – Jun 2025, 33 k rows, demand + wind + solar)
-df = pd.read_csv(DATA_PATH, parse_dates=["Timestamp"])
-df = df.sort_values("Timestamp").reset_index(drop=True)
-
-if df["Timestamp"].diff().dropna().ne(
-    pd.Timedelta(hours=1)
-).any():
-    raise ValueError("Expected continuous hourly observations.")
-
-# 2. Define the target: demand 24 hours in the future.
-df["Target"] = df["demand_mw"].shift(-24)
-
-# 3. Build features available at the forecast origin.
-for lag in [1, 24, 48, 168]:
-    df[f"demand_lag_{lag}"] = df["demand_mw"].shift(lag)
-
-# Shift before rolling so the current hour is not included.
-df["demand_mean_24h"] = (
-    df["demand_mw"].shift(1).rolling(24).mean()
-)
-df["demand_mean_168h"] = (
-    df["demand_mw"].shift(1).rolling(168).mean()
-)
-
-# Exogenous regressors: wind and solar lagged by 1h and 24h.
-# Lag ensures no look-ahead leakage at forecast time.
-for lag in [1, 24]:
-    df[f"wind_lag_{lag}"]  = df["wind_mw"].shift(lag)
-    df[f"solar_lag_{lag}"] = df["solar_mw"].shift(lag)
-
-df["hour"]        = df["Timestamp"].dt.hour
-df["day_of_week"] = df["Timestamp"].dt.dayofweek
-df["month"]       = df["Timestamp"].dt.month
-
-feature_cols = [
-    "demand_lag_1",
-    "demand_lag_24",
-    "demand_lag_48",
-    "demand_lag_168",
-    "demand_mean_24h",
-    "demand_mean_168h",
-    "wind_lag_1",
-    "wind_lag_24",
-    "solar_lag_1",
-    "solar_lag_24",
-    "hour",
-    "day_of_week",
-    "month",
-]
+df = build_features(pd.read_csv(DATA_PATH, parse_dates=['Timestamp']))
+feature_cols = ['demand_lag_1', 'demand_lag_24', 'demand_lag_48', 'demand_lag_168', 'demand_mean_24h', 'demand_mean_168h', 'wind_lag_1', 'wind_lag_24', 'solar_lag_1', 'solar_lag_24', 'hour', 'day_of_week', 'month']
 
 # 4. Remove rows only where feature construction is impossible.
 # The original source files remain unchanged.
@@ -79,9 +38,7 @@ val_end = int(n * 0.85)
 # Purge 24 rows at each boundary for the 24-hour-ahead target.
 purge = 24
 
-train = model_df.iloc[:train_end - purge].copy()
-validation = model_df.iloc[train_end:val_end - purge].copy()
-test = model_df.iloc[val_end:].copy()
+train, validation, test = chronological_split(model_df)
 
 X_train = train[feature_cols]
 y_train = train["Target"]

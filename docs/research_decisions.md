@@ -87,3 +87,18 @@ Solar photovoltaic farms consume small amounts of power during darkness to opera
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **A001** | 2024-06-06 18:00 to 2024-06-10 08:00 | Total Generation; Wind | High | Confirmed Source Telemetry Freezing | Preserved in raw/processed; Total Generation quarantined from primary model target |
 | **A002** | 2025-04-04 16:00:00 | Demand; Total Generation | High | Flagged Plunge (>50%) | Preserved in data; explicit boolean flag added; sensitivity audited |
+
+
+## 6. Demand quality policy v1 — 31 October 2026
+
+Applies identically to main demand, ablation, seven rolling folds, and trend experiments, via `src/common/features.py` and `splits.py`.
+
+Flag all 12 source all-zero hours (demand, wind and corrected solar are zero), the April 4, 2025 16:00 demand anomaly, and every hour in a maximal constant-demand run of at least six consecutive hours. Keep all source values and timestamps unchanged. Freeze detection uses the complete dataset for retrospective quality auditing; it is not a predictive feature or an online detector.
+
+- Targets: exclude any row whose t+24 demand target is flagged, from fitting, validation and reported test scoring.
+- Input windows: exclude a row if any flagged demand hour occurs in the inclusive interval [t-168, t]. This conservative contiguous interval covers all demand lag/rolling/trend inputs and the origin observation used by persistence, even where a particular model does not consume every hour.
+- Scored rows: report model and persistence on exactly the same eligible test rows. No imputation; no all-hours headline score. Earlier unfiltered results remain historical, not directly comparable because scored hours differ.
+- Split positions: compute chronological 70/15/15 boundaries (or the original rolling fold boundaries) on feature-complete rows BEFORE quality filtering. Purge rows whose targets are not strictly earlier than the next split's first origin, then apply quality eligibility independently within each split. Filtering never shifts the nominal test start.
+- Renewable-specific anomalies are outside this demand policy; this policy does not establish that renewable inputs are fully quality-cleared.
+
+The Jan 10, 2025 15:00 target has a frozen demand block in its input history and is excluded under v1. Its saved original spot-check is retained and replayed as historical evidence. Policy choice followed prior examination of these historical test data: refreshed test results are retrospective, not a newly untouched holdout.

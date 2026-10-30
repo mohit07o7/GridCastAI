@@ -1,0 +1,140 @@
+{
+  "versions": {
+    "python": "3.14.3",
+    "pandas": "3.0.6",
+    "numpy": "2.5.3",
+    "xgboost": "3.4.1",
+    "sklearn": "1.9.1"
+  },
+  "runs": [
+    {
+      "root": "/Users/mohityadav/Desktop/GridCastAI",
+      "sha256": {
+        "reports/historical/pre_shared_2026_10_31/src/forecasting/xgboost_demand_forecast.py": "3b1daf6590ae08b2f4bfbb34b66cf1ac377f0957548d4107a88d48b2cbbb1ed8",
+        "data/processed/demand_model_data.csv": "782534342b490a0bebdf80b679d5512636652eeefb308df7868f5f0b6eeb05f4",
+        "reports/historical/pre_shared_2026_10_31/reports/experiments/xgboost_demand_predictions.csv": "09783ad7c6439425480d8a1cad1ebf97a255d78b30e60f9e6b2534be286073b2"
+      },
+      "origin": "2025-01-09 15:00:00",
+      "target": "2025-01-10 15:00:00",
+      "historical": true,
+      "included_in_scoring": true,
+      "quality_input_bad": false,
+      "quality_target_bad": false,
+      "data_rows": 33432,
+      "usable_rows": 33240,
+      "saved_row": {
+        "Forecast Origin": "2025-01-09 15:00:00",
+        "Target Timestamp": "2025-01-10 15:00:00",
+        "Actual Demand (MW)": 207588.72,
+        "XGBoost Forecast (MW)": 201367.78,
+        "Seasonal Naive Forecast (MW)": 203618.1,
+        "XGBoost Absolute Error (MW)": 6220.938750000001
+      },
+      "features": {
+        "demand_lag_1": 203543.3,
+        "demand_lag_24": 203214.2,
+        "demand_lag_48": 205481.75,
+        "demand_lag_168": 193562.8,
+        "demand_mean_24h": 207037.14083333334,
+        "demand_mean_168h": 184958.07428571428,
+        "wind_lag_1": 3153.21,
+        "wind_lag_24": 2499.62,
+        "solar_lag_1": 49594.33,
+        "solar_lag_24": 41850.32,
+        "hour": 15.0,
+        "day_of_week": 3.0,
+        "month": 1.0
+      },
+      "feature_source_timestamps": {
+        "demand_lag_1": "2025-01-09 14:00:00",
+        "demand_lag_24": "2025-01-08 15:00:00",
+        "demand_lag_48": "2025-01-07 15:00:00",
+        "demand_lag_168": "2025-01-02 15:00:00",
+        "demand_mean_24h": [
+          "2025-01-08 15:00:00",
+          "2025-01-09 14:00:00"
+        ],
+        "demand_mean_168h": [
+          "2025-01-02 15:00:00",
+          "2025-01-09 14:00:00"
+        ],
+        "wind_lag_1": "2025-01-09 14:00:00",
+        "wind_lag_24": "2025-01-08 15:00:00",
+        "solar_lag_1": "2025-01-09 14:00:00",
+        "solar_lag_24": "2025-01-08 15:00:00",
+        "hour": "2025-01-09 15:00:00",
+        "day_of_week": "2025-01-09 15:00:00",
+        "month": "2025-01-09 15:00:00"
+      },
+      "splits": {
+        "train": {
+          "rows": 23244,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-05-03 11:00:00",
+          "last_target": "2024-05-04 11:00:00"
+        },
+        "validation": {
+          "rows": 4962,
+          "first_origin": "2024-05-04 12:00:00",
+          "last_origin": "2024-11-27 05:00:00",
+          "last_target": "2024-11-28 05:00:00"
+        },
+        "test": {
+          "rows": 4986,
+          "first_origin": "2024-11-28 06:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "last_target": "2025-06-24 23:00:00"
+        }
+      },
+      "replay": {
+        "prediction": 201367.78125,
+        "prediction_is_diagnostic_only": false,
+        "best_iteration": 216,
+        "parameters": {
+          "objective": "reg:squarederror",
+          "base_score": null,
+          "booster": null,
+          "callbacks": null,
+          "colsample_bylevel": null,
+          "colsample_bynode": null,
+          "colsample_bytree": 0.8,
+          "device": null,
+          "early_stopping_rounds": 50,
+          "enable_categorical": true,
+          "eval_metric": "mae",
+          "feature_types": null,
+          "feature_weights": null,
+          "gamma": null,
+          "grow_policy": null,
+          "importance_type": null,
+          "interaction_constraints": null,
+          "learning_rate": 0.03,
+          "max_bin": null,
+          "max_cat_threshold": null,
+          "max_cat_to_onehot": null,
+          "max_delta_step": null,
+          "max_depth": 6,
+          "max_leaves": null,
+          "min_child_weight": 5,
+          "missing": null,
+          "monotone_constraints": null,
+          "multi_strategy": null,
+          "n_estimators": 1000,
+          "n_jobs": 4,
+          "num_parallel_tree": null,
+          "random_state": 42,
+          "reg_alpha": null,
+          "reg_lambda": 1.0,
+          "sampling_method": null,
+          "scale_pos_weight": null,
+          "subsample": 0.8,
+          "tree_method": null,
+          "validate_parameters": null,
+          "verbosity": null
+        },
+        "max_saved_csv_difference_mw": 0.006250000005820766,
+        "all_rows_match_within_0_02_mw": true
+      }
+    }
+  ]
+}
