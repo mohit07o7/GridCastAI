@@ -1,0 +1,5 @@
+Target,Model,MAE (MW),RMSE (MW),MAPE (%),vs Naive (%)
+Wind (MW),Seasonal-naive,3255.8,4104.7,32.94,0.0
+Wind (MW),XGBoost-Wind-v2,2650.0,3393.8,23.1,18.61
+Solar (MW) corrected,Seasonal-naive (clipped),1391.4,2929.4,95385.54,0.0
+Solar (MW) corrected,XGBoost-Solar-v2 (clipped),2731.6,4524.6,10614.5,-96.32

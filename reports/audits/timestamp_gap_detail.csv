@@ -1,0 +1,30 @@
+file,gap_seconds,gap_label,occurrences,pct_of_gaps,is_dominant
+April 2022.xlsx,300.0,5 min,8639,100.0,True
+April 2023.xlsx,10.0,10 s,259199,100.0,True
+August 2022.xlsx,300.0,5 min,8927,100.0,True
+August 2023.xlsx,10.0,10 s,267839,100.0,True
+December 2021.xlsx,300.0,5 min,8927,100.0,True
+December 2022.xlsx,10.0,10 s,267839,100.0,True
+December 2023.xlsx,10.0,10 s,267839,100.0,True
+February 2022.xlsx,300.0,5 min,8063,100.0,True
+February 2023.xlsx,10.0,10 s,241919,100.0,True
+January 2022.xlsx,300.0,5 min,8927,100.0,True
+January 2023.xlsx,10.0,10 s,267839,100.0,True
+January 2024- June 2025.xlsx,3600.0,1 h,12983,100.0,True
+July 2022.xlsx,300.0,5 min,8927,100.0,True
+July 2023.xlsx,10.0,10 s,267839,100.0,True
+June 2022.xlsx,300.0,5 min,8639,100.0,True
+June 2023.xlsx,10.0,10 s,259199,100.0,True
+March 2022.xlsx,300.0,5 min,8927,100.0,True
+March 2023.xlsx,10.0,10 s,267839,100.0,True
+May 2022.xlsx,300.0,5 min,8927,100.0,True
+May 2023.xlsx,10.0,10 s,267839,100.0,True
+November 2021.xlsx,300.0,5 min,8639,100.0,True
+November 2022.xlsx,10.0,10 s,259199,100.0,True
+Novemeber 2023.xlsx,10.0,10 s,259199,100.0,True
+October 2021.xlsx,300.0,5 min,8927,100.0,True
+October 2022.xlsx,10.0,10 s,267839,100.0,True
+October 2023.xlsx,10.0,10 s,267839,100.0,True
+September 2021.xlsx,300.0,5 min,8639,100.0,True
+September 2022.xlsx,300.0,5 min,8639,100.0,True
+September 2023.xlsx,10.0,10 s,259199,100.0,True

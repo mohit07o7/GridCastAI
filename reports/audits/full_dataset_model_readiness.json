@@ -1,0 +1,51 @@
+{
+  "source_path": "data/processed/full_hourly_stacked.csv",
+  "rows": 33432,
+  "first_timestamp": "2021-09-01 00:00:00",
+  "last_timestamp": "2025-06-24 23:00:00",
+  "duplicate_timestamps": 0,
+  "non_hourly_intervals": 0,
+  "expected_rows_from_range": 33432,
+  "missing_by_column": {
+    "demand_mw": 0,
+    "wind_mw": 0,
+    "solar_raw_mw": 0,
+    "solar_mw": 0,
+    "solar_wind_mw": 0,
+    "total_gen_mw": 0
+  },
+  "nonpositive_by_column": {
+    "demand_mw": 12,
+    "wind_mw": 12,
+    "total_gen_mw": 12
+  },
+  "negative_solar_raw_hours": 2784,
+  "negative_solar_corrected_hours": 0,
+  "all_zero_measure_hours": 12,
+  "positive_solar_flatline_hours": 48,
+  "incomplete_hours": 0,
+  "overfull_hours": 0,
+  "solar_wind_residual_gt_1mw": 2,
+  "solar_wind_max_abs_residual_mw": 30316.616929796008,
+  "demand_jumps_over_40pct": 23,
+  "repeated_runs": {
+    "demand_mw": {
+      "runs_at_least_6h": 3,
+      "hours_in_runs_at_least_6h": 25,
+      "longest_run_hours": 11,
+      "longest_run_start": "2025-01-08 20:00:00"
+    },
+    "wind_mw": {
+      "runs_at_least_6h": 11,
+      "hours_in_runs_at_least_6h": 257,
+      "longest_run_hours": 87,
+      "longest_run_start": "2024-06-06 18:00:00"
+    },
+    "total_gen_mw": {
+      "runs_at_least_6h": 11,
+      "hours_in_runs_at_least_6h": 257,
+      "longest_run_hours": 87,
+      "longest_run_start": "2024-06-06 18:00:00"
+    }
+  }
+}

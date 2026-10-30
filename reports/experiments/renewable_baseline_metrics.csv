@@ -1,0 +1,3 @@
+Target,Forecast Horizon (hours),Baseline,Test Observations,MAE (MW),RMSE (MW),MAPE (%)
+Wind (MW),24,Same-hour-previous-day,1924,2322.573373180873,2974.882105247095,22.58310027748699
+Solar (MW),24,Same-hour-previous-day,1924,1131.4391580041581,2405.098987568001,17606.947071651488

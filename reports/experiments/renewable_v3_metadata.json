@@ -1,0 +1,134 @@
+{
+  "source": "data/processed/full_hourly_stacked.csv",
+  "source_rows": 33432,
+  "forecast_horizon_hours": 24,
+  "origin_observation_available": true,
+  "train_origin_cut": "2024-05-03 02:00:00",
+  "test_origin_cut": "2024-11-28 01:00:00",
+  "purge_hours_before_each_next_split": 24,
+  "invalid_source_hours": 14,
+  "source_zero_hours": 12,
+  "component_dropout_hours": 2,
+  "positive_solar_flatline_hours": 48,
+  "solar_geometry_proxy": {
+    "latitude_deg": 23.0,
+    "longitude_deg": 80.0,
+    "utc_offset_hours": 5.5,
+    "interpretation": "India centroid shape feature; not a physical national MW bound"
+  },
+  "targets": {
+    "wind": {
+      "feature_columns": [
+        "prior_day",
+        "origin_lag_1",
+        "origin_lag_24",
+        "origin_lag_48",
+        "origin_lag_168",
+        "target_365d_ago",
+        "recent_mean_24",
+        "recent_std_24",
+        "recent_mean_168",
+        "recent_std_168",
+        "hour_sin",
+        "hour_cos",
+        "day_sin",
+        "day_cos",
+        "target_year",
+        "target_month"
+      ],
+      "train_rows": 14421,
+      "validation_rows": 4801,
+      "final_refit_rows": 19222,
+      "test_rows": 4991,
+      "last_train_target": "2024-05-03 01:00:00",
+      "first_validation_origin": "2024-05-03 02:00:00",
+      "last_validation_target": "2024-11-28 00:00:00",
+      "first_test_origin": "2024-11-28 01:00:00",
+      "best_iteration": 81,
+      "selection": {
+        "all_hours": "residual_xgb",
+        "validation_mae": {
+          "prior_day": 1962.8448567421358,
+          "residual_xgb": 1853.0994769248591
+        },
+        "daily_bootstrap": {
+          "mean_improvement_mw": 109.74537981727657,
+          "ci95_low_mw": 56.232515167421575,
+          "ci95_high_mw": 168.13236166038658,
+          "calendar_day_blocks": 209
+        },
+        "positive_rolling_folds": 3
+      },
+      "rolling_fold_improvements_mw": [
+        131.53492267310185,
+        156.72267196130997,
+        90.58440372461496
+      ],
+      "test_target_start": "2024-11-29 01:00:00",
+      "test_target_end": "2025-06-24 23:00:00"
+    },
+    "solar": {
+      "feature_columns": [
+        "prior_day",
+        "origin_lag_1",
+        "origin_lag_24",
+        "origin_lag_48",
+        "origin_lag_168",
+        "target_365d_ago",
+        "recent_mean_24",
+        "recent_std_24",
+        "recent_mean_168",
+        "recent_std_168",
+        "hour_sin",
+        "hour_cos",
+        "day_sin",
+        "day_cos",
+        "target_year",
+        "target_month",
+        "solar_elevation_proxy_deg",
+        "clear_sky_shape_proxy"
+      ],
+      "train_rows": 9034,
+      "validation_rows": 3120,
+      "final_refit_rows": 12154,
+      "test_rows": 4751,
+      "last_train_target": "2024-05-03 01:00:00",
+      "first_validation_origin": "2024-05-03 02:00:00",
+      "last_validation_target": "2024-11-28 00:00:00",
+      "first_test_origin": "2024-11-28 01:00:00",
+      "best_iteration": 48,
+      "selection": {
+        "06-20": "prior_day",
+        "21-05": "prior_day",
+        "validation_day_mae": {
+          "prior_day": 1597.3528301282051,
+          "residual_xgb": 1568.9982492525555
+        },
+        "validation_night_mae": {
+          "prior_day": 112.48825761624799,
+          "baseline_day_zero_night": 117.08991982896846
+        },
+        "validation_day_bootstrap": {
+          "mean_improvement_mw": 28.35458087564968,
+          "ci95_low_mw": 9.208457433695669,
+          "ci95_high_mw": 46.98409019679038,
+          "calendar_day_blocks": 208
+        },
+        "validation_night_bootstrap": {
+          "mean_improvement_mw": -4.601662212720469,
+          "ci95_low_mw": -23.18470993320647,
+          "ci95_high_mw": 16.637118588539916,
+          "calendar_day_blocks": 209
+        },
+        "positive_daylight_rolling_folds": 1
+      },
+      "rolling_fold_improvements_mw": [
+        13.923589991560675,
+        -2.1647818933984126,
+        -2.985566528175923
+      ],
+      "test_target_start": "2024-11-29 01:00:00",
+      "test_target_end": "2025-06-24 23:00:00"
+    }
+  }
+}

@@ -1,0 +1,3 @@
+anomaly_id,start_timestamp,end_timestamp,affected_columns,observed_pattern,severity,status,action
+A001,2024-06-06 18:00:00,2024-06-10 08:00:00,Total Generation (MW); Wind (MW),Total Generation remains 212887.48 MW and Wind remains 11065.84 MW for 87 hourly observations,High,Flagged - cause unconfirmed,Preserve original values; exclude Total Generation from trusted model targets pending investigation
+A002,2025-04-04 16:00:00,2025-04-04 16:00:00,Demand (MW); Total Generation (MW),Demand falls to 97065.28 MW between 203399.28 MW at 15:00 and 200036.27 MW at 17:00,High,Flagged - cause unconfirmed,Preserve observation; investigate sensitivity of forecasts to this point

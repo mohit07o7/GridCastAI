@@ -1,0 +1,3 @@
+Target,Forecast Horizon (hours),Model,Train Observations,Validation Observations,Test Observations,Best Iteration,MAE (MW),RMSE (MW),MAPE (%)
+Wind (MW),24,XGBoost,8920,1948,1924,125,2683.0677418870196,3481.77655528046,23.412809506049605
+Solar (MW),24,XGBoost,8920,1948,1924,170,2813.9478889268153,4696.91164481467,16461.33718213153

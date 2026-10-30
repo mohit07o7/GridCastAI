@@ -1,0 +1,123 @@
+{
+  "raw_dir": "/Users/mohityadav/Desktop/GridCastAI/data/raw",
+  "all_zero_hour_verification": [
+    {
+      "source_file": "July 2022.xlsx",
+      "hour": "2022-07-03 10:00:00",
+      "expected_source_rows": 12,
+      "observed_source_rows": 12,
+      "nonzero_measurement_cells_F_to_K": 0,
+      "verified_source_zero": true
+    },
+    {
+      "source_file": "July 2022.xlsx",
+      "hour": "2022-07-03 11:00:00",
+      "expected_source_rows": 12,
+      "observed_source_rows": 12,
+      "nonzero_measurement_cells_F_to_K": 0,
+      "verified_source_zero": true
+    },
+    {
+      "source_file": "May 2022.xlsx",
+      "hour": "2022-05-23 09:00:00",
+      "expected_source_rows": 12,
+      "observed_source_rows": 12,
+      "nonzero_measurement_cells_F_to_K": 0,
+      "verified_source_zero": true
+    },
+    {
+      "source_file": "May 2022.xlsx",
+      "hour": "2022-05-23 10:00:00",
+      "expected_source_rows": 12,
+      "observed_source_rows": 12,
+      "nonzero_measurement_cells_F_to_K": 0,
+      "verified_source_zero": true
+    },
+    {
+      "source_file": "November 2021.xlsx",
+      "hour": "2021-11-21 13:00:00",
+      "expected_source_rows": 12,
+      "observed_source_rows": 12,
+      "nonzero_measurement_cells_F_to_K": 0,
+      "verified_source_zero": true
+    },
+    {
+      "source_file": "October 2021.xlsx",
+      "hour": "2021-10-08 20:00:00",
+      "expected_source_rows": 12,
+      "observed_source_rows": 12,
+      "nonzero_measurement_cells_F_to_K": 0,
+      "verified_source_zero": true
+    },
+    {
+      "source_file": "October 2021.xlsx",
+      "hour": "2021-10-08 21:00:00",
+      "expected_source_rows": 12,
+      "observed_source_rows": 12,
+      "nonzero_measurement_cells_F_to_K": 0,
+      "verified_source_zero": true
+    },
+    {
+      "source_file": "October 2021.xlsx",
+      "hour": "2021-10-08 22:00:00",
+      "expected_source_rows": 12,
+      "observed_source_rows": 12,
+      "nonzero_measurement_cells_F_to_K": 0,
+      "verified_source_zero": true
+    },
+    {
+      "source_file": "October 2021.xlsx",
+      "hour": "2021-10-08 23:00:00",
+      "expected_source_rows": 12,
+      "observed_source_rows": 12,
+      "nonzero_measurement_cells_F_to_K": 0,
+      "verified_source_zero": true
+    },
+    {
+      "source_file": "October 2021.xlsx",
+      "hour": "2021-10-09 00:00:00",
+      "expected_source_rows": 12,
+      "observed_source_rows": 12,
+      "nonzero_measurement_cells_F_to_K": 0,
+      "verified_source_zero": true
+    },
+    {
+      "source_file": "October 2021.xlsx",
+      "hour": "2021-10-09 01:00:00",
+      "expected_source_rows": 12,
+      "observed_source_rows": 12,
+      "nonzero_measurement_cells_F_to_K": 0,
+      "verified_source_zero": true
+    },
+    {
+      "source_file": "October 2021.xlsx",
+      "hour": "2021-10-09 02:00:00",
+      "expected_source_rows": 12,
+      "observed_source_rows": 12,
+      "nonzero_measurement_cells_F_to_K": 0,
+      "verified_source_zero": true
+    }
+  ],
+  "all_12_hours_verified": true,
+  "october_2022_component_dropout": {
+    "2022-10-01 12:00:00": {
+      "source_rows": 360,
+      "component_zero_combined_positive_rows": 180
+    },
+    "2022-10-01 13:00:00": {
+      "source_rows": 360,
+      "component_zero_combined_positive_rows": 260
+    }
+  },
+  "component_dropout_first": "2022-10-01 12:30:00",
+  "component_dropout_last": "2022-10-01 13:43:10",
+  "modern_solar_flatline": {
+    "start": "2025-03-06 12:00:00",
+    "end": "2025-03-08 11:00:00",
+    "source_rows": 48,
+    "unique_solar_values_mw": [
+      64300.61
+    ],
+    "verified": true
+  }
+}
