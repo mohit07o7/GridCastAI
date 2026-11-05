@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "checks": {
+    "real_map_zoom_pan_reset_selection": true,
+    "synchronized_target_time_tooltips": true,
+    "highlighted_target_control": true,
+    "all_eight_routes_render_real_data": true,
+    "browser_back_forward": true,
+    "metric_filter_matches_saved_api_and_mape_label": true,
+    "native_selected_tree_importance": true,
+    "forecast_downloads_match_api": true,
+    "changed_control_retains_issued_forecast": true,
+    "genuine_pending_state": true,
+    "labelled_fallback_and_separate_actual_overlay": true,
+    "blocked_components_are_null": true,
+    "api_outage_retains_last_result": true,
+    "history_full_resolution_download": true,
+    "optimization_deferred": true,
+    "model_outage_preserves_accuracy": true,
+    "responsive_keyboard_navigation": true,
+    "webgl_fallback": true,
+    "reduced_motion": true,
+    "no_browser_exceptions": true
+  },
+  "errors": [],
+  "browser_version": "156.0.8078.80"
+}

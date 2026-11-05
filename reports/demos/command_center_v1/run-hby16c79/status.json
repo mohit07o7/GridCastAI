@@ -1,0 +1,74 @@
+{
+  "api": "connected",
+  "coverage": {
+    "id": "IN-national",
+    "label": "India \u00b7 national aggregate"
+  },
+  "resources": {
+    "reports": {
+      "available": true,
+      "detail": "Validated local artifacts"
+    },
+    "history": {
+      "available": true,
+      "detail": "Validated local artifacts"
+    },
+    "models": {
+      "available": true,
+      "detail": "Validated local artifacts"
+    }
+  },
+  "dataset": {
+    "first": "2021-09-01T00:00:00",
+    "last": "2025-06-24T23:00:00",
+    "rows": 33432
+  },
+  "model_id": "grid_curve_v1",
+  "horizons": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+  ],
+  "months": [
+    "2024-11",
+    "2024-12",
+    "2025-01",
+    "2025-02",
+    "2025-03",
+    "2025-04",
+    "2025-05",
+    "2025-06"
+  ],
+  "uptime_seconds": 8.956767084018793,
+  "last_successful_forecast": {
+    "origin": "2025-06-24 23:00:00",
+    "completed_at_utc": "2026-11-05T09:55:56.696540+00:00",
+    "status": "blocked",
+    "synthetic": true
+  },
+  "optimization": "deferred",
+  "training": "disabled",
+  "timestamp_convention": "timezone-naive source clock; no conversion",
+  "evaluation_context": "retrospective; historical data have informed development"
+}

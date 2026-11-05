@@ -1,0 +1,10 @@
+# Read-only local API. The React frontend has its own npm lockfile.
+# Streamlit is not a dependency of this application.
+-r requirements.txt
+starlette==1.10.0
+uvicorn==0.54.0
+anyio==4.15.1
+click==8.5.0
+h11==0.16.0
+idna==3.20
+typing-extensions==4.16.0

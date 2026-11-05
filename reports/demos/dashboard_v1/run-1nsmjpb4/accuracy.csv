@@ -1,0 +1,2 @@
+horizon,month,cohort,quantity,nominal_rows,trusted_targets,rows,coverage_trusted_pct,forecast_mae_mw,forecast_rmse_mw,forecast_wape_pct,forecast_mean_signed_error_mw,baseline_mae_mw,baseline_rmse_mw,baseline_wape_pct,baseline_mean_signed_error_mw,mae_improvement_mw,mae_improvement_pct
+24,all,delivered,net,4991,4924,4924,100.0,4789.747279096964,6920.098565121855,2.858645587164392,301.1419761478191,6101.698300162469,8376.29700821698,3.641652033728272,31.964441510966708,1311.9510210655053,21.50140758402578

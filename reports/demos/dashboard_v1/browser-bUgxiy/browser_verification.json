@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "checks": {
+    "aligned_component_charts": true,
+    "downloads_match_service": true,
+    "historical_metric_filter": true,
+    "quality_audit_separate": true,
+    "optimization_deferred": true,
+    "fallback_and_actual_overlay": true,
+    "blocked_component_and_download": true,
+    "narrow_layout_no_page_overflow": true,
+    "no_browser_exceptions": true
+  },
+  "errors": [],
+  "driver_version": "1.64.1"
+}

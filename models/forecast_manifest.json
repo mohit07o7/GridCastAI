@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "horizon_hours": 24,
+  "inference_quality_policy": "inference_quality_v1",
+  "origin_observation_available": true,
+  "feature_definitions": {
+    "demand": "origin-relative lags 1/24/48/168; demand mean shift(1) over 24/168 hours; wind/solar lags 1/24; origin calendar",
+    "wind": "origin value + residual; lags 1/24/48/168; annual origin-8736h; means/std ddof=1 over 24/168 hours including origin; target calendar",
+    "solar": "selected persistence = origin solar; no forced night zero"
+  },
+  "components": {
+    "demand": {
+      "id": "demand_v1",
+      "method": "xgboost",
+      "artifact": {
+        "path": "models/demand_v1/model.json",
+        "sha256": "e602b19e94e7fb0ada350090ffa882b70c92ca198e572fef54d9dfbaaac2cc5b"
+      },
+      "metadata": {
+        "path": "models/demand_v1/metadata.json",
+        "sha256": "b4cb4f63d627a7309ab1975028b379f412d86d8738867037977a58124902c905"
+      },
+      "features": [
+        "demand_lag_1",
+        "demand_lag_24",
+        "demand_lag_48",
+        "demand_lag_168",
+        "demand_mean_24h",
+        "demand_mean_168h",
+        "wind_lag_1",
+        "wind_lag_24",
+        "solar_lag_1",
+        "solar_lag_24",
+        "hour",
+        "day_of_week",
+        "month"
+      ],
+      "latest_training_or_tuning_target": "2024-11-28 05:00:00"
+    },
+    "wind": {
+      "id": "renewable_v3_wind",
+      "method": "residual_xgb",
+      "artifact": {
+        "path": "models/renewable_v3_wind.json",
+        "sha256": "dab3449844651229a4215cff38d7e2f20ec204a2f95d2d122e7ec3d89f0d2aa4"
+      },
+      "metadata": {
+        "path": "reports/experiments/renewable_v3_metadata.json",
+        "sha256": "b52b0dae5f3547c20b1bebe70f3e8b8e929fb9187167561fcaffb2c5317070b6"
+      },
+      "features": [
+        "prior_day",
+        "origin_lag_1",
+        "origin_lag_24",
+        "origin_lag_48",
+        "origin_lag_168",
+        "target_365d_ago",
+        "recent_mean_24",
+        "recent_std_24",
+        "recent_mean_168",
+        "recent_std_168",
+        "hour_sin",
+        "hour_cos",
+        "day_sin",
+        "day_cos",
+        "target_year",
+        "target_month"
+      ],
+      "objective": "reg:absoluteerror",
+      "boosted_rounds": 82,
+      "latest_training_or_tuning_target": "2024-11-28 00:00:00"
+    },
+    "solar": {
+      "id": "solar_prior_day_v3",
+      "method": "prior_day_persistence",
+      "selection_source": {
+        "path": "reports/experiments/renewable_v3_metadata.json",
+        "sha256": "b52b0dae5f3547c20b1bebe70f3e8b8e929fb9187167561fcaffb2c5317070b6"
+      },
+      "latest_training_or_tuning_target": "2024-11-28 00:00:00"
+    }
+  }
+}

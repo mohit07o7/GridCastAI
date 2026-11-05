@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "verified_at_utc": "2026-11-05T04:28:54.708156+00:00",
+  "model_sha256": "e602b19e94e7fb0ada350090ffa882b70c92ca198e572fef54d9dfbaaac2cc5b",
+  "training_disabled": true,
+  "rows": 4603,
+  "one_to_one_timestamp_alignment": true,
+  "max_in_memory_reference_difference_mw": 0.0,
+  "max_existing_csv_difference_mw": 0.006250000005820766,
+  "test_metrics": {
+    "MAE (MW)": 5106.446088081143,
+    "RMSE (MW)": 6982.279182735479,
+    "MAPE (%)": 2.589195702451579
+  },
+  "preexisting_experiment_check": {
+    "existing_csv_present": true,
+    "sha256": "d047a1669f85ee129a6052122dd4c45fbf6c4d22e0b34976a6ca17ef31bbab32",
+    "max_prediction_difference_mw": 0.006250000005820766,
+    "rows": 4603
+  },
+  "january_10": {
+    "target": "2025-01-10 15:00:00",
+    "included_in_scoring": false,
+    "label": "diagnostic only; frozen demand in input history",
+    "prediction_mw": 202477.65625
+  }
+}

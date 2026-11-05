@@ -1,0 +1,149 @@
+{
+  "id": "demand_h24",
+  "entry": {
+    "component": "demand",
+    "horizon": 24,
+    "model_file": "demand_h24.json",
+    "best_iteration": 220,
+    "boosted_rounds": 271,
+    "splits": {
+      "train": {
+        "rows": 21728,
+        "first_origin": "2021-09-15 13:00:00",
+        "last_origin": "2024-05-02 01:00:00",
+        "first_target": "2021-09-16 13:00:00",
+        "last_target": "2024-05-03 01:00:00"
+      },
+      "validation": {
+        "rows": 4991,
+        "first_origin": "2024-05-03 02:00:00",
+        "last_origin": "2024-11-27 00:00:00",
+        "first_target": "2024-05-04 02:00:00",
+        "last_target": "2024-11-28 00:00:00"
+      },
+      "test": {
+        "rows": 4610,
+        "first_origin": "2024-11-28 01:00:00",
+        "last_origin": "2025-06-23 23:00:00",
+        "first_target": "2024-11-29 01:00:00",
+        "last_target": "2025-06-24 23:00:00"
+      }
+    },
+    "validation_mae_mw": {
+      "residual_xgboost": 4064.3859062504634,
+      "previous_day": 5318.910587056703,
+      "last_observation": 5318.910587056703,
+      "previous_week": 8530.537976357442
+    },
+    "baseline_ranking": [
+      "previous_day",
+      "last_observation",
+      "previous_week"
+    ],
+    "selected_method": "residual_xgboost",
+    "available_after_target": "2024-11-28 00:00:00",
+    "model_sha256": "de548fd07564cd6c3b794613e3260e1e1b957b2dce3d615fcd53199e98be9435"
+  },
+  "feature_importance": [
+    {
+      "feature": "target_dow_sin",
+      "gain": 2442173440.0
+    },
+    {
+      "feature": "target_hour_cos",
+      "gain": 1202141184.0
+    },
+    {
+      "feature": "target_dow_cos",
+      "gain": 1156487168.0
+    },
+    {
+      "feature": "target_hour_sin",
+      "gain": 1023093824.0
+    },
+    {
+      "feature": "lag_24",
+      "gain": 439610784.0
+    },
+    {
+      "feature": "lag_6",
+      "gain": 386383392.0
+    },
+    {
+      "feature": "target_previous_week",
+      "gain": 286271904.0
+    },
+    {
+      "feature": "recent_std_24",
+      "gain": 273427520.0
+    },
+    {
+      "feature": "lag_1",
+      "gain": 268970368.0
+    },
+    {
+      "feature": "target_year",
+      "gain": 262964816.0
+    },
+    {
+      "feature": "lag_48",
+      "gain": 247758624.0
+    },
+    {
+      "feature": "lag_0",
+      "gain": 212659328.0
+    },
+    {
+      "feature": "recent_mean_24",
+      "gain": 211635360.0
+    },
+    {
+      "feature": "target_month_cos",
+      "gain": 211563632.0
+    },
+    {
+      "feature": "recent_std_168",
+      "gain": 205856464.0
+    },
+    {
+      "feature": "recent_mean_168",
+      "gain": 186454080.0
+    },
+    {
+      "feature": "target_month_sin",
+      "gain": 178469616.0
+    },
+    {
+      "feature": "target_previous_day",
+      "gain": 174190864.0
+    },
+    {
+      "feature": "lag_168",
+      "gain": 162249888.0
+    },
+    {
+      "feature": "lag_3",
+      "gain": 152502896.0
+    }
+  ],
+  "importance_label": "XGBoost split-gain importance",
+  "interpretation": "Split statistic over selected prediction trees, not a causal explanation",
+  "prediction_iteration_range": [
+    0,
+    221
+  ],
+  "fit_scope": "training only; validation early stopping and method selection; no refit",
+  "inference_policy": "curve_inference_quality_v1",
+  "source": {
+    "path": "data/processed/full_hourly_stacked.csv",
+    "sha256": "717ad938f1ec651acac450e5c009aef18bc8cd5fcaebfc7c17d12f7e49f65afc"
+  },
+  "versions": {
+    "python": "3.14.3",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "xgboost": "3.4.1",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1"
+  }
+}

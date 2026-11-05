@@ -1,0 +1,1461 @@
+{
+  "saved": {
+    "horizon": 24,
+    "month": "all",
+    "cohort": "delivered",
+    "quantity": "solar",
+    "nominal_rows": 4991,
+    "trusted_targets": 4924,
+    "rows": 4924,
+    "coverage_trusted_pct": 100.0,
+    "forecast_mae_mw": 1191.1912587400766,
+    "forecast_rmse_mw": 2345.534511611609,
+    "forecast_wape_pct": 6.631665760481839,
+    "forecast_mean_signed_error_mw": -252.28263655263913,
+    "baseline_mae_mw": 1156.633925670187,
+    "baseline_rmse_mw": 2389.6793279602016,
+    "baseline_wape_pct": 6.439276267349098,
+    "baseline_mean_signed_error_mw": -19.546590170592992,
+    "mae_improvement_mw": -34.55733306988964,
+    "mae_improvement_pct": -2.9877502555414086
+  },
+  "counts": {
+    "forecast_records": 4991,
+    "unique_target_hours": 4991,
+    "trusted_records": 4924,
+    "scored_records": 4924,
+    "scored_unique_target_hours": 4924,
+    "excluded_target_records": 67,
+    "trusted_unscored_records": 0,
+    "fallback_records": 578
+  },
+  "monthly": [
+    {
+      "horizon": 24,
+      "month": "2024-11",
+      "cohort": "delivered",
+      "quantity": "solar",
+      "nominal_rows": 47,
+      "trusted_targets": 47,
+      "rows": 47,
+      "coverage_trusted_pct": 100.0,
+      "forecast_mae_mw": 1542.3988395674694,
+      "forecast_rmse_mw": 2569.363653120623,
+      "forecast_wape_pct": 12.107199868499489,
+      "forecast_mean_signed_error_mw": 1535.7236381157416,
+      "baseline_mae_mw": 1610.4776595744686,
+      "baseline_rmse_mw": 2598.868845925334,
+      "baseline_wape_pct": 12.641590753328916,
+      "baseline_mean_signed_error_mw": 1601.9704255319157,
+      "mae_improvement_mw": 68.0788200069992,
+      "mae_improvement_pct": 4.227243985799061
+    },
+    {
+      "horizon": 24,
+      "month": "2024-12",
+      "cohort": "delivered",
+      "quantity": "solar",
+      "nominal_rows": 744,
+      "trusted_targets": 744,
+      "rows": 744,
+      "coverage_trusted_pct": 100.0,
+      "forecast_mae_mw": 1461.609016709472,
+      "forecast_rmse_mw": 2796.8777731957616,
+      "forecast_wape_pct": 10.68916678593122,
+      "forecast_mean_signed_error_mw": -200.99478603781228,
+      "baseline_mae_mw": 1412.7057392473118,
+      "baseline_rmse_mw": 2874.73575973269,
+      "baseline_wape_pct": 10.331523063707516,
+      "baseline_mean_signed_error_mw": -85.59595430107528,
+      "mae_improvement_mw": -48.903277462160304,
+      "mae_improvement_pct": -3.461674721319949
+    },
+    {
+      "horizon": 24,
+      "month": "2025-01",
+      "cohort": "delivered",
+      "quantity": "solar",
+      "nominal_rows": 744,
+      "trusted_targets": 726,
+      "rows": 726,
+      "coverage_trusted_pct": 100.0,
+      "forecast_mae_mw": 1216.8236678690798,
+      "forecast_rmse_mw": 2396.5796372639225,
+      "forecast_wape_pct": 7.569921662576162,
+      "forecast_mean_signed_error_mw": -350.2300435522416,
+      "baseline_mae_mw": 1205.0690495867773,
+      "baseline_rmse_mw": 2445.8570858636776,
+      "baseline_wape_pct": 7.4967955869416,
+      "baseline_mean_signed_error_mw": -60.34130853994488,
+      "mae_improvement_mw": -11.754618282302772,
+      "mae_improvement_pct": -0.975431099681257
+    },
+    {
+      "horizon": 24,
+      "month": "2025-02",
+      "cohort": "delivered",
+      "quantity": "solar",
+      "nominal_rows": 672,
+      "trusted_targets": 672,
+      "rows": 672,
+      "coverage_trusted_pct": 100.0,
+      "forecast_mae_mw": 1198.6511604693496,
+      "forecast_rmse_mw": 2365.781540246991,
+      "forecast_wape_pct": 6.523609240040909,
+      "forecast_mean_signed_error_mw": -401.5000428955612,
+      "baseline_mae_mw": 1114.8170833333334,
+      "baseline_rmse_mw": 2324.499920260372,
+      "baseline_wape_pct": 6.067345751320245,
+      "baseline_mean_signed_error_mw": -16.683125000000008,
+      "mae_improvement_mw": -83.83407713601628,
+      "mae_improvement_pct": -7.519984972364266
+    },
+    {
+      "horizon": 24,
+      "month": "2025-03",
+      "cohort": "delivered",
+      "quantity": "solar",
+      "nominal_rows": 744,
+      "trusted_targets": 696,
+      "rows": 696,
+      "coverage_trusted_pct": 100.0,
+      "forecast_mae_mw": 1019.6232439274896,
+      "forecast_rmse_mw": 1773.3552276674666,
+      "forecast_wape_pct": 5.015798374434301,
+      "forecast_mean_signed_error_mw": -454.6315246148767,
+      "baseline_mae_mw": 930.5111494252874,
+      "baseline_rmse_mw": 1681.9360618578442,
+      "baseline_wape_pct": 4.577432241248768,
+      "baseline_mean_signed_error_mw": -215.31885057471263,
+      "mae_improvement_mw": -89.11209450220224,
+      "mae_improvement_pct": -9.576682080299696
+    },
+    {
+      "horizon": 24,
+      "month": "2025-04",
+      "cohort": "delivered",
+      "quantity": "solar",
+      "nominal_rows": 720,
+      "trusted_targets": 719,
+      "rows": 719,
+      "coverage_trusted_pct": 100.0,
+      "forecast_mae_mw": 757.6435888172922,
+      "forecast_rmse_mw": 1352.0479564296695,
+      "forecast_wape_pct": 3.63105376139533,
+      "forecast_mean_signed_error_mw": -303.73346912285547,
+      "baseline_mae_mw": 729.6000000000004,
+      "baseline_rmse_mw": 1363.3808924723978,
+      "baseline_wape_pct": 3.496653127428364,
+      "baseline_mean_signed_error_mw": -18.422280945757997,
+      "mae_improvement_mw": -28.04358881729183,
+      "mae_improvement_pct": -3.843693642720918
+    },
+    {
+      "horizon": 24,
+      "month": "2025-05",
+      "cohort": "delivered",
+      "quantity": "solar",
+      "nominal_rows": 744,
+      "trusted_targets": 744,
+      "rows": 744,
+      "coverage_trusted_pct": 100.0,
+      "forecast_mae_mw": 1102.0895391636031,
+      "forecast_rmse_mw": 2006.053016150348,
+      "forecast_wape_pct": 5.752984910152688,
+      "forecast_mean_signed_error_mw": -106.83226672659316,
+      "baseline_mae_mw": 1097.961008064516,
+      "baseline_rmse_mw": 2094.4736654520575,
+      "baseline_wape_pct": 5.731433687434279,
+      "baseline_mean_signed_error_mw": 102.16520161290327,
+      "mae_improvement_mw": -4.128531099087013,
+      "mae_improvement_pct": -0.376018006902156
+    },
+    {
+      "horizon": 24,
+      "month": "2025-06",
+      "cohort": "delivered",
+      "quantity": "solar",
+      "nominal_rows": 576,
+      "trusted_targets": 576,
+      "rows": 576,
+      "coverage_trusted_pct": 100.0,
+      "forecast_mae_mw": 1635.816330148226,
+      "forecast_rmse_mw": 3367.315753440342,
+      "forecast_wape_pct": 9.190019700337855,
+      "forecast_mean_signed_error_mw": -46.02854209007905,
+      "baseline_mae_mw": 1658.648559027778,
+      "baseline_rmse_mw": 3513.2662577050214,
+      "baseline_wape_pct": 9.318291211838591,
+      "baseline_mean_signed_error_mw": 59.4771701388889,
+      "mae_improvement_mw": 22.83222887955185,
+      "mae_improvement_pct": 1.376556158040799
+    }
+  ],
+  "mape": {
+    "forecast_pct": 5569.524585539967,
+    "baseline_pct": 6545.426149527873,
+    "paired_nonzero_actual_rows": 4645,
+    "excluded_zero_actual_rows": 279,
+    "definition": "Derived MAPE; identical paired nonzero-actual rows; not the saved WAPE metric"
+  },
+  "error_histogram": {
+    "counts": [
+      1,
+      0,
+      1,
+      0,
+      0,
+      2,
+      4,
+      5,
+      11,
+      16,
+      86,
+      383,
+      3418,
+      712,
+      188,
+      56,
+      23,
+      7,
+      8,
+      1,
+      0,
+      0,
+      1,
+      1
+    ],
+    "edges": [
+      -32094.22,
+      -29611.771038411458,
+      -27129.32207682292,
+      -24646.873115234375,
+      -22164.424153645836,
+      -19681.975192057293,
+      -17199.52623046875,
+      -14717.07726888021,
+      -12234.628307291667,
+      -9752.179345703124,
+      -7269.730384114584,
+      -4787.281422526041,
+      -2304.8324609374977,
+      177.61650065104186,
+      2660.0654622395814,
+      5142.514423828128,
+      7624.963385416668,
+      10107.412347005207,
+      12589.861308593754,
+      15072.310270182294,
+      17554.759231770833,
+      20037.20819335938,
+      22519.65715494792,
+      25002.10611653646,
+      27484.555078125002
+    ],
+    "signed_error": "forecast minus actual"
+  },
+  "comparison_sample": [
+    {
+      "target_timestamp": "2024-11-29T01:00:00.000",
+      "actual_solar_mw": 87.05,
+      "solar_mw": 62.66721015930176
+    },
+    {
+      "target_timestamp": "2024-11-29T21:00:00.000",
+      "actual_solar_mw": 31.51,
+      "solar_mw": 71.83776470184326
+    },
+    {
+      "target_timestamp": "2024-11-30T18:00:00.000",
+      "actual_solar_mw": 77.07,
+      "solar_mw": 119.73865997314454
+    },
+    {
+      "target_timestamp": "2024-12-01T14:00:00.000",
+      "actual_solar_mw": 31234.19,
+      "solar_mw": 35347.636171875
+    },
+    {
+      "target_timestamp": "2024-12-02T11:00:00.000",
+      "actual_solar_mw": 41613.68,
+      "solar_mw": 41390.97390625
+    },
+    {
+      "target_timestamp": "2024-12-03T07:00:00.000",
+      "actual_solar_mw": 3319.35,
+      "solar_mw": 3149.959228897095
+    },
+    {
+      "target_timestamp": "2024-12-04T04:00:00.000",
+      "actual_solar_mw": 144.48,
+      "solar_mw": 90.58662075042724
+    },
+    {
+      "target_timestamp": "2024-12-05T01:00:00.000",
+      "actual_solar_mw": 42.66,
+      "solar_mw": 123.92552177429198
+    },
+    {
+      "target_timestamp": "2024-12-05T21:00:00.000",
+      "actual_solar_mw": 5.15,
+      "solar_mw": 60.88859176635742
+    },
+    {
+      "target_timestamp": "2024-12-06T18:00:00.000",
+      "actual_solar_mw": 356.56,
+      "solar_mw": 123.13016777038574
+    },
+    {
+      "target_timestamp": "2024-12-07T14:00:00.000",
+      "actual_solar_mw": 43740.65,
+      "solar_mw": 41616.02847167969
+    },
+    {
+      "target_timestamp": "2024-12-08T11:00:00.000",
+      "actual_solar_mw": 50475.11,
+      "solar_mw": 48491.72368652344
+    },
+    {
+      "target_timestamp": "2024-12-09T08:00:00.000",
+      "actual_solar_mw": 16410.4,
+      "solar_mw": 19401.04735961914
+    },
+    {
+      "target_timestamp": "2024-12-10T04:00:00.000",
+      "actual_solar_mw": 22.62,
+      "solar_mw": 27.521805191040038
+    },
+    {
+      "target_timestamp": "2024-12-11T01:00:00.000",
+      "actual_solar_mw": 33.89,
+      "solar_mw": 43.59793914794922
+    },
+    {
+      "target_timestamp": "2024-12-11T21:00:00.000",
+      "actual_solar_mw": 2215.29,
+      "solar_mw": 91.03217597961425
+    },
+    {
+      "target_timestamp": "2024-12-12T18:00:00.000",
+      "actual_solar_mw": 4812.22,
+      "solar_mw": 2237.500654296875
+    },
+    {
+      "target_timestamp": "2024-12-13T15:00:00.000",
+      "actual_solar_mw": 30278.15,
+      "solar_mw": 30196.827391357423
+    },
+    {
+      "target_timestamp": "2024-12-14T11:00:00.000",
+      "actual_solar_mw": 50120.97,
+      "solar_mw": 44628.72608154297
+    },
+    {
+      "target_timestamp": "2024-12-15T08:00:00.000",
+      "actual_solar_mw": 19922.89,
+      "solar_mw": 17029.202845840453
+    },
+    {
+      "target_timestamp": "2024-12-16T04:00:00.000",
+      "actual_solar_mw": 4660.99,
+      "solar_mw": 2969.0757177734376
+    },
+    {
+      "target_timestamp": "2024-12-17T01:00:00.000",
+      "actual_solar_mw": 4473.39,
+      "solar_mw": 2868.6233203125003
+    },
+    {
+      "target_timestamp": "2024-12-17T22:00:00.000",
+      "actual_solar_mw": 57.04,
+      "solar_mw": 2659.3363427734375
+    },
+    {
+      "target_timestamp": "2024-12-18T18:00:00.000",
+      "actual_solar_mw": 441.33,
+      "solar_mw": 442.5194218444824
+    },
+    {
+      "target_timestamp": "2024-12-19T15:00:00.000",
+      "actual_solar_mw": 31640.77,
+      "solar_mw": 31927.052551879882
+    },
+    {
+      "target_timestamp": "2024-12-20T11:00:00.000",
+      "actual_solar_mw": 45240.23,
+      "solar_mw": 49124.7662512207
+    },
+    {
+      "target_timestamp": "2024-12-21T08:00:00.000",
+      "actual_solar_mw": 12311.73,
+      "solar_mw": 13502.79294845581
+    },
+    {
+      "target_timestamp": "2024-12-22T05:00:00.000",
+      "actual_solar_mw": 0.0,
+      "solar_mw": 62.22982833862305
+    },
+    {
+      "target_timestamp": "2024-12-23T01:00:00.000",
+      "actual_solar_mw": 14.01,
+      "solar_mw": 63.614376068115234
+    },
+    {
+      "target_timestamp": "2024-12-23T22:00:00.000",
+      "actual_solar_mw": 147.56,
+      "solar_mw": 63.614376068115234
+    },
+    {
+      "target_timestamp": "2024-12-24T18:00:00.000",
+      "actual_solar_mw": 165.84,
+      "solar_mw": 560.4933852386474
+    },
+    {
+      "target_timestamp": "2024-12-25T15:00:00.000",
+      "actual_solar_mw": 26104.5,
+      "solar_mw": 31510.62364868164
+    },
+    {
+      "target_timestamp": "2024-12-26T12:00:00.000",
+      "actual_solar_mw": 37004.33,
+      "solar_mw": 44972.06279052734
+    },
+    {
+      "target_timestamp": "2024-12-27T08:00:00.000",
+      "actual_solar_mw": 8041.33,
+      "solar_mw": 8608.073897705079
+    },
+    {
+      "target_timestamp": "2024-12-28T05:00:00.000",
+      "actual_solar_mw": 50.28,
+      "solar_mw": 62.628259887695314
+    },
+    {
+      "target_timestamp": "2024-12-29T01:00:00.000",
+      "actual_solar_mw": 97.82,
+      "solar_mw": 57.56231880187988
+    },
+    {
+      "target_timestamp": "2024-12-29T22:00:00.000",
+      "actual_solar_mw": 56.74,
+      "solar_mw": 94.87710998535155
+    },
+    {
+      "target_timestamp": "2024-12-30T19:00:00.000",
+      "actual_solar_mw": 508.4,
+      "solar_mw": 155.36061624526977
+    },
+    {
+      "target_timestamp": "2024-12-31T15:00:00.000",
+      "actual_solar_mw": 33573.62,
+      "solar_mw": 35093.69301757812
+    },
+    {
+      "target_timestamp": "2025-01-01T12:00:00.000",
+      "actual_solar_mw": 54670.07,
+      "solar_mw": 49547.714775390625
+    },
+    {
+      "target_timestamp": "2025-01-02T08:00:00.000",
+      "actual_solar_mw": 15893.75,
+      "solar_mw": 14240.390040893555
+    },
+    {
+      "target_timestamp": "2025-01-03T05:00:00.000",
+      "actual_solar_mw": 71.43,
+      "solar_mw": 98.19652324676514
+    },
+    {
+      "target_timestamp": "2025-01-04T02:00:00.000",
+      "actual_solar_mw": 126.64,
+      "solar_mw": 77.76499099731446
+    },
+    {
+      "target_timestamp": "2025-01-04T22:00:00.000",
+      "actual_solar_mw": 92.79,
+      "solar_mw": 136.03565338134766
+    },
+    {
+      "target_timestamp": "2025-01-05T19:00:00.000",
+      "actual_solar_mw": 581.8,
+      "solar_mw": 594.6600048828125
+    },
+    {
+      "target_timestamp": "2025-01-06T15:00:00.000",
+      "actual_solar_mw": 40623.37,
+      "solar_mw": 36676.328200683594
+    },
+    {
+      "target_timestamp": "2025-01-07T12:00:00.000",
+      "actual_solar_mw": 56091.56,
+      "solar_mw": 54130.66245117188
+    },
+    {
+      "target_timestamp": "2025-01-08T09:00:00.000",
+      "actual_solar_mw": 19393.04,
+      "solar_mw": 31572.98286254883
+    },
+    {
+      "target_timestamp": "2025-01-09T16:00:00.000",
+      "actual_solar_mw": 23928.31,
+      "solar_mw": 24298.06624511719
+    },
+    {
+      "target_timestamp": "2025-01-10T20:00:00.000",
+      "actual_solar_mw": 188.16,
+      "solar_mw": 172.44887775421142
+    },
+    {
+      "target_timestamp": "2025-01-11T16:00:00.000",
+      "actual_solar_mw": 16845.83,
+      "solar_mw": 18603.87514099121
+    },
+    {
+      "target_timestamp": "2025-01-12T13:00:00.000",
+      "actual_solar_mw": 47525.52,
+      "solar_mw": 46355.53545166016
+    },
+    {
+      "target_timestamp": "2025-01-13T10:00:00.000",
+      "actual_solar_mw": 28264.34,
+      "solar_mw": 34847.00942382812
+    },
+    {
+      "target_timestamp": "2025-01-14T06:00:00.000",
+      "actual_solar_mw": 192.3,
+      "solar_mw": 246.35589153289794
+    },
+    {
+      "target_timestamp": "2025-01-15T03:00:00.000",
+      "actual_solar_mw": 55.59,
+      "solar_mw": 74.85715530395507
+    },
+    {
+      "target_timestamp": "2025-01-15T23:00:00.000",
+      "actual_solar_mw": 225.28,
+      "solar_mw": 82.34368492126464
+    },
+    {
+      "target_timestamp": "2025-01-16T20:00:00.000",
+      "actual_solar_mw": 794.75,
+      "solar_mw": 333.68481079101565
+    },
+    {
+      "target_timestamp": "2025-01-17T17:00:00.000",
+      "actual_solar_mw": 7195.47,
+      "solar_mw": 6801.321339111328
+    },
+    {
+      "target_timestamp": "2025-01-18T13:00:00.000",
+      "actual_solar_mw": 50544.93,
+      "solar_mw": 51835.93661132813
+    },
+    {
+      "target_timestamp": "2025-01-19T10:00:00.000",
+      "actual_solar_mw": 38919.64,
+      "solar_mw": 39054.71232421875
+    },
+    {
+      "target_timestamp": "2025-01-20T06:00:00.000",
+      "actual_solar_mw": 899.66,
+      "solar_mw": 699.0287899780274
+    },
+    {
+      "target_timestamp": "2025-01-21T03:00:00.000",
+      "actual_solar_mw": 48.29,
+      "solar_mw": 643.6400903320313
+    },
+    {
+      "target_timestamp": "2025-01-22T00:00:00.000",
+      "actual_solar_mw": 60.79,
+      "solar_mw": 82.59237072944642
+    },
+    {
+      "target_timestamp": "2025-01-22T20:00:00.000",
+      "actual_solar_mw": 364.02,
+      "solar_mw": 11.984222412109375
+    },
+    {
+      "target_timestamp": "2025-01-23T17:00:00.000",
+      "actual_solar_mw": 9051.29,
+      "solar_mw": 8398.770987548829
+    },
+    {
+      "target_timestamp": "2025-01-24T13:00:00.000",
+      "actual_solar_mw": 59096.84,
+      "solar_mw": 56016.77412109375
+    },
+    {
+      "target_timestamp": "2025-01-25T10:00:00.000",
+      "actual_solar_mw": 53025.03,
+      "solar_mw": 49915.38129882813
+    },
+    {
+      "target_timestamp": "2025-01-26T07:00:00.000",
+      "actual_solar_mw": 3900.59,
+      "solar_mw": 2686.3991687011717
+    },
+    {
+      "target_timestamp": "2025-01-27T03:00:00.000",
+      "actual_solar_mw": 178.38,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-01-28T00:00:00.000",
+      "actual_solar_mw": 0.0,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-01-28T20:00:00.000",
+      "actual_solar_mw": 171.96,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-01-29T17:00:00.000",
+      "actual_solar_mw": 10593.91,
+      "solar_mw": 10051.713767089845
+    },
+    {
+      "target_timestamp": "2025-01-30T14:00:00.000",
+      "actual_solar_mw": 51356.02,
+      "solar_mw": 53125.52669433594
+    },
+    {
+      "target_timestamp": "2025-01-31T10:00:00.000",
+      "actual_solar_mw": 42647.96,
+      "solar_mw": 45273.695748291015
+    },
+    {
+      "target_timestamp": "2025-02-01T07:00:00.000",
+      "actual_solar_mw": 2807.75,
+      "solar_mw": 2761.9168719482423
+    },
+    {
+      "target_timestamp": "2025-02-02T03:00:00.000",
+      "actual_solar_mw": 5.45,
+      "solar_mw": 35.60144805908203
+    },
+    {
+      "target_timestamp": "2025-02-03T00:00:00.000",
+      "actual_solar_mw": 26.37,
+      "solar_mw": 78.07837615966797
+    },
+    {
+      "target_timestamp": "2025-02-03T21:00:00.000",
+      "actual_solar_mw": 196.3,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-02-04T17:00:00.000",
+      "actual_solar_mw": 12303.15,
+      "solar_mw": 10076.218944091797
+    },
+    {
+      "target_timestamp": "2025-02-05T14:00:00.000",
+      "actual_solar_mw": 57466.93,
+      "solar_mw": 56442.3998046875
+    },
+    {
+      "target_timestamp": "2025-02-06T10:00:00.000",
+      "actual_solar_mw": 54817.22,
+      "solar_mw": 52470.924313964846
+    },
+    {
+      "target_timestamp": "2025-02-07T07:00:00.000",
+      "actual_solar_mw": 3763.83,
+      "solar_mw": 3528.86901550293
+    },
+    {
+      "target_timestamp": "2025-02-08T04:00:00.000",
+      "actual_solar_mw": 94.68,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-02-09T00:00:00.000",
+      "actual_solar_mw": 43.58,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-02-09T21:00:00.000",
+      "actual_solar_mw": 104.86,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-02-10T17:00:00.000",
+      "actual_solar_mw": 12304.41,
+      "solar_mw": 11685.094848632812
+    },
+    {
+      "target_timestamp": "2025-02-11T14:00:00.000",
+      "actual_solar_mw": 57964.69,
+      "solar_mw": 55201.340112304686
+    },
+    {
+      "target_timestamp": "2025-02-12T11:00:00.000",
+      "actual_solar_mw": 59548.24,
+      "solar_mw": 59303.71509765625
+    },
+    {
+      "target_timestamp": "2025-02-13T07:00:00.000",
+      "actual_solar_mw": 4299.49,
+      "solar_mw": 4168.042379760742
+    },
+    {
+      "target_timestamp": "2025-02-14T04:00:00.000",
+      "actual_solar_mw": 45.08,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-02-15T00:00:00.000",
+      "actual_solar_mw": 38.51,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-02-15T21:00:00.000",
+      "actual_solar_mw": 64.09,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-02-16T18:00:00.000",
+      "actual_solar_mw": 1376.42,
+      "solar_mw": 1142.6129382324218
+    },
+    {
+      "target_timestamp": "2025-02-17T14:00:00.000",
+      "actual_solar_mw": 58484.96,
+      "solar_mw": 56294.58106445312
+    },
+    {
+      "target_timestamp": "2025-02-18T11:00:00.000",
+      "actual_solar_mw": 58107.1,
+      "solar_mw": 60360.99808959961
+    },
+    {
+      "target_timestamp": "2025-02-19T07:00:00.000",
+      "actual_solar_mw": 5022.71,
+      "solar_mw": 4938.158894042968
+    },
+    {
+      "target_timestamp": "2025-02-20T04:00:00.000",
+      "actual_solar_mw": 241.72,
+      "solar_mw": 176.0761657714844
+    },
+    {
+      "target_timestamp": "2025-02-21T01:00:00.000",
+      "actual_solar_mw": 249.13,
+      "solar_mw": 228.8834041595459
+    },
+    {
+      "target_timestamp": "2025-02-21T21:00:00.000",
+      "actual_solar_mw": 226.65,
+      "solar_mw": 60.27993408203125
+    },
+    {
+      "target_timestamp": "2025-02-22T18:00:00.000",
+      "actual_solar_mw": 2242.05,
+      "solar_mw": 1746.802899169922
+    },
+    {
+      "target_timestamp": "2025-02-23T14:00:00.000",
+      "actual_solar_mw": 58158.82,
+      "solar_mw": 56779.041235351564
+    },
+    {
+      "target_timestamp": "2025-02-24T11:00:00.000",
+      "actual_solar_mw": 61241.3,
+      "solar_mw": 61356.17527587891
+    },
+    {
+      "target_timestamp": "2025-02-25T08:00:00.000",
+      "actual_solar_mw": 21510.92,
+      "solar_mw": 23014.370344238283
+    },
+    {
+      "target_timestamp": "2025-02-26T04:00:00.000",
+      "actual_solar_mw": 100.27,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-02-27T01:00:00.000",
+      "actual_solar_mw": 159.35,
+      "solar_mw": 110.82569347381592
+    },
+    {
+      "target_timestamp": "2025-02-27T21:00:00.000",
+      "actual_solar_mw": 194.7,
+      "solar_mw": 178.7088774871826
+    },
+    {
+      "target_timestamp": "2025-02-28T18:00:00.000",
+      "actual_solar_mw": 1664.95,
+      "solar_mw": 1232.6275009155274
+    },
+    {
+      "target_timestamp": "2025-03-01T15:00:00.000",
+      "actual_solar_mw": 46982.82,
+      "solar_mw": 42696.51600097656
+    },
+    {
+      "target_timestamp": "2025-03-02T11:00:00.000",
+      "actual_solar_mw": 61244.01,
+      "solar_mw": 57362.95912109375
+    },
+    {
+      "target_timestamp": "2025-03-03T08:00:00.000",
+      "actual_solar_mw": 24575.0,
+      "solar_mw": 22913.77393310547
+    },
+    {
+      "target_timestamp": "2025-03-04T04:00:00.000",
+      "actual_solar_mw": 167.74,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-03-05T01:00:00.000",
+      "actual_solar_mw": 136.43,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-03-05T22:00:00.000",
+      "actual_solar_mw": 87.68,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-03-08T18:00:00.000",
+      "actual_solar_mw": 2351.77,
+      "solar_mw": 1734.05
+    },
+    {
+      "target_timestamp": "2025-03-09T15:00:00.000",
+      "actual_solar_mw": 50629.15,
+      "solar_mw": 51809.61
+    },
+    {
+      "target_timestamp": "2025-03-10T11:00:00.000",
+      "actual_solar_mw": 61582.52,
+      "solar_mw": 62595.7
+    },
+    {
+      "target_timestamp": "2025-03-11T08:00:00.000",
+      "actual_solar_mw": 22713.39,
+      "solar_mw": 26768.67
+    },
+    {
+      "target_timestamp": "2025-03-12T05:00:00.000",
+      "actual_solar_mw": 82.83,
+      "solar_mw": 169.03
+    },
+    {
+      "target_timestamp": "2025-03-13T01:00:00.000",
+      "actual_solar_mw": 241.33,
+      "solar_mw": 121.03
+    },
+    {
+      "target_timestamp": "2025-03-13T22:00:00.000",
+      "actual_solar_mw": 130.85,
+      "solar_mw": 191.17
+    },
+    {
+      "target_timestamp": "2025-03-14T18:00:00.000",
+      "actual_solar_mw": 5091.45,
+      "solar_mw": 2808.62
+    },
+    {
+      "target_timestamp": "2025-03-15T15:00:00.000",
+      "actual_solar_mw": 49331.32,
+      "solar_mw": 46925.63
+    },
+    {
+      "target_timestamp": "2025-03-16T11:00:00.000",
+      "actual_solar_mw": 61209.65,
+      "solar_mw": 62016.78
+    },
+    {
+      "target_timestamp": "2025-03-17T08:00:00.000",
+      "actual_solar_mw": 29027.5,
+      "solar_mw": 26939.000236816406
+    },
+    {
+      "target_timestamp": "2025-03-18T05:00:00.000",
+      "actual_solar_mw": 137.23,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-03-19T01:00:00.000",
+      "actual_solar_mw": 193.18,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-03-19T22:00:00.000",
+      "actual_solar_mw": 256.71,
+      "solar_mw": 9.648233642578134
+    },
+    {
+      "target_timestamp": "2025-03-20T18:00:00.000",
+      "actual_solar_mw": 2341.91,
+      "solar_mw": 2269.67876953125
+    },
+    {
+      "target_timestamp": "2025-03-21T15:00:00.000",
+      "actual_solar_mw": 48507.58,
+      "solar_mw": 45925.93857543945
+    },
+    {
+      "target_timestamp": "2025-03-22T12:00:00.000",
+      "actual_solar_mw": 61103.74,
+      "solar_mw": 61337.90469604492
+    },
+    {
+      "target_timestamp": "2025-03-23T08:00:00.000",
+      "actual_solar_mw": 30213.95,
+      "solar_mw": 28897.887236328126
+    },
+    {
+      "target_timestamp": "2025-03-24T05:00:00.000",
+      "actual_solar_mw": 140.41,
+      "solar_mw": 264.13983642578125
+    },
+    {
+      "target_timestamp": "2025-03-25T01:00:00.000",
+      "actual_solar_mw": 195.59,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-03-25T22:00:00.000",
+      "actual_solar_mw": 177.0,
+      "solar_mw": 132.45927047729492
+    },
+    {
+      "target_timestamp": "2025-03-26T19:00:00.000",
+      "actual_solar_mw": 902.96,
+      "solar_mw": 121.56611541748046
+    },
+    {
+      "target_timestamp": "2025-03-27T15:00:00.000",
+      "actual_solar_mw": 50294.26,
+      "solar_mw": 48670.02760986328
+    },
+    {
+      "target_timestamp": "2025-03-28T12:00:00.000",
+      "actual_solar_mw": 61515.8,
+      "solar_mw": 63893.653956298826
+    },
+    {
+      "target_timestamp": "2025-03-29T08:00:00.000",
+      "actual_solar_mw": 29281.95,
+      "solar_mw": 31326.095881347657
+    },
+    {
+      "target_timestamp": "2025-03-30T05:00:00.000",
+      "actual_solar_mw": 114.55,
+      "solar_mw": 61.48471618652344
+    },
+    {
+      "target_timestamp": "2025-03-31T02:00:00.000",
+      "actual_solar_mw": 148.66,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-03-31T22:00:00.000",
+      "actual_solar_mw": 159.75,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-04-01T19:00:00.000",
+      "actual_solar_mw": 775.42,
+      "solar_mw": 67.2815170288086
+    },
+    {
+      "target_timestamp": "2025-04-02T15:00:00.000",
+      "actual_solar_mw": 47254.53,
+      "solar_mw": 47839.8753125
+    },
+    {
+      "target_timestamp": "2025-04-03T12:00:00.000",
+      "actual_solar_mw": 58491.68,
+      "solar_mw": 59894.542890625
+    },
+    {
+      "target_timestamp": "2025-04-04T09:00:00.000",
+      "actual_solar_mw": 46936.34,
+      "solar_mw": 44785.956455383304
+    },
+    {
+      "target_timestamp": "2025-04-05T06:00:00.000",
+      "actual_solar_mw": 1143.16,
+      "solar_mw": 785.0113119506836
+    },
+    {
+      "target_timestamp": "2025-04-06T03:00:00.000",
+      "actual_solar_mw": 435.13,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-04-06T23:00:00.000",
+      "actual_solar_mw": 90.85,
+      "solar_mw": 86.20874877929685
+    },
+    {
+      "target_timestamp": "2025-04-07T20:00:00.000",
+      "actual_solar_mw": 124.7,
+      "solar_mw": 57.82116775512695
+    },
+    {
+      "target_timestamp": "2025-04-08T17:00:00.000",
+      "actual_solar_mw": 16663.32,
+      "solar_mw": 16285.90522216797
+    },
+    {
+      "target_timestamp": "2025-04-09T13:00:00.000",
+      "actual_solar_mw": 61840.11,
+      "solar_mw": 55683.05611450195
+    },
+    {
+      "target_timestamp": "2025-04-10T10:00:00.000",
+      "actual_solar_mw": 58099.29,
+      "solar_mw": 58730.76612304687
+    },
+    {
+      "target_timestamp": "2025-04-11T06:00:00.000",
+      "actual_solar_mw": 1904.02,
+      "solar_mw": 1547.0013241577149
+    },
+    {
+      "target_timestamp": "2025-04-12T03:00:00.000",
+      "actual_solar_mw": 172.07,
+      "solar_mw": 44.31997924804688
+    },
+    {
+      "target_timestamp": "2025-04-13T00:00:00.000",
+      "actual_solar_mw": 380.87,
+      "solar_mw": 34.60501586914063
+    },
+    {
+      "target_timestamp": "2025-04-13T20:00:00.000",
+      "actual_solar_mw": 407.29,
+      "solar_mw": 407.95473327636716
+    },
+    {
+      "target_timestamp": "2025-04-14T17:00:00.000",
+      "actual_solar_mw": 16768.25,
+      "solar_mw": 16301.33215576172
+    },
+    {
+      "target_timestamp": "2025-04-15T13:00:00.000",
+      "actual_solar_mw": 62403.16,
+      "solar_mw": 60894.87654418945
+    },
+    {
+      "target_timestamp": "2025-04-16T10:00:00.000",
+      "actual_solar_mw": 58303.69,
+      "solar_mw": 58808.53905273438
+    },
+    {
+      "target_timestamp": "2025-04-17T07:00:00.000",
+      "actual_solar_mw": 13594.02,
+      "solar_mw": 13719.894161376953
+    },
+    {
+      "target_timestamp": "2025-04-18T03:00:00.000",
+      "actual_solar_mw": 71.22,
+      "solar_mw": 24.71419548034668
+    },
+    {
+      "target_timestamp": "2025-04-19T00:00:00.000",
+      "actual_solar_mw": 46.69,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-04-19T20:00:00.000",
+      "actual_solar_mw": 58.47,
+      "solar_mw": 715.3920764160156
+    },
+    {
+      "target_timestamp": "2025-04-20T17:00:00.000",
+      "actual_solar_mw": 17370.52,
+      "solar_mw": 14239.304333496093
+    },
+    {
+      "target_timestamp": "2025-04-21T14:00:00.000",
+      "actual_solar_mw": 58632.33,
+      "solar_mw": 57789.35059570312
+    },
+    {
+      "target_timestamp": "2025-04-22T10:00:00.000",
+      "actual_solar_mw": 59688.11,
+      "solar_mw": 60909.909375
+    },
+    {
+      "target_timestamp": "2025-04-23T07:00:00.000",
+      "actual_solar_mw": 16838.73,
+      "solar_mw": 16043.975246582031
+    },
+    {
+      "target_timestamp": "2025-04-24T03:00:00.000",
+      "actual_solar_mw": 115.5,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-04-25T00:00:00.000",
+      "actual_solar_mw": 276.55,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-04-25T21:00:00.000",
+      "actual_solar_mw": 60.79,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-04-26T17:00:00.000",
+      "actual_solar_mw": 17309.55,
+      "solar_mw": 15751.0115625
+    },
+    {
+      "target_timestamp": "2025-04-27T14:00:00.000",
+      "actual_solar_mw": 53906.56,
+      "solar_mw": 52392.062431640625
+    },
+    {
+      "target_timestamp": "2025-04-28T10:00:00.000",
+      "actual_solar_mw": 58946.84,
+      "solar_mw": 57002.232981872556
+    },
+    {
+      "target_timestamp": "2025-04-29T07:00:00.000",
+      "actual_solar_mw": 16075.19,
+      "solar_mw": 15786.465297851562
+    },
+    {
+      "target_timestamp": "2025-04-30T04:00:00.000",
+      "actual_solar_mw": 43.23,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-05-01T00:00:00.000",
+      "actual_solar_mw": 30.05,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-05-01T21:00:00.000",
+      "actual_solar_mw": 63.35,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-05-02T17:00:00.000",
+      "actual_solar_mw": 14233.01,
+      "solar_mw": 13739.17830444336
+    },
+    {
+      "target_timestamp": "2025-05-03T14:00:00.000",
+      "actual_solar_mw": 55426.04,
+      "solar_mw": 53163.701208496095
+    },
+    {
+      "target_timestamp": "2025-05-04T11:00:00.000",
+      "actual_solar_mw": 59022.75,
+      "solar_mw": 59467.00161621094
+    },
+    {
+      "target_timestamp": "2025-05-05T07:00:00.000",
+      "actual_solar_mw": 11139.21,
+      "solar_mw": 11547.508730163574
+    },
+    {
+      "target_timestamp": "2025-05-06T04:00:00.000",
+      "actual_solar_mw": 281.18,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-05-07T00:00:00.000",
+      "actual_solar_mw": 54.78,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-05-07T21:00:00.000",
+      "actual_solar_mw": 447.87,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-05-08T18:00:00.000",
+      "actual_solar_mw": 4025.84,
+      "solar_mw": 4590.691173095704
+    },
+    {
+      "target_timestamp": "2025-05-09T14:00:00.000",
+      "actual_solar_mw": 53880.37,
+      "solar_mw": 50700.56367675781
+    },
+    {
+      "target_timestamp": "2025-05-10T11:00:00.000",
+      "actual_solar_mw": 60259.12,
+      "solar_mw": 59628.48639404297
+    },
+    {
+      "target_timestamp": "2025-05-11T07:00:00.000",
+      "actual_solar_mw": 15607.38,
+      "solar_mw": 15624.900451660156
+    },
+    {
+      "target_timestamp": "2025-05-12T04:00:00.000",
+      "actual_solar_mw": 254.2,
+      "solar_mw": 185.02341369628908
+    },
+    {
+      "target_timestamp": "2025-05-13T01:00:00.000",
+      "actual_solar_mw": 318.85,
+      "solar_mw": 95.44684448242185
+    },
+    {
+      "target_timestamp": "2025-05-13T21:00:00.000",
+      "actual_solar_mw": 154.21,
+      "solar_mw": 238.33298645019534
+    },
+    {
+      "target_timestamp": "2025-05-14T18:00:00.000",
+      "actual_solar_mw": 5169.78,
+      "solar_mw": 4801.889830322266
+    },
+    {
+      "target_timestamp": "2025-05-15T14:00:00.000",
+      "actual_solar_mw": 54719.25,
+      "solar_mw": 54234.32940673828
+    },
+    {
+      "target_timestamp": "2025-05-16T11:00:00.000",
+      "actual_solar_mw": 58552.35,
+      "solar_mw": 58471.02501708984
+    },
+    {
+      "target_timestamp": "2025-05-17T08:00:00.000",
+      "actual_solar_mw": 32281.67,
+      "solar_mw": 33790.33699707031
+    },
+    {
+      "target_timestamp": "2025-05-18T04:00:00.000",
+      "actual_solar_mw": 276.77,
+      "solar_mw": 102.44614990234373
+    },
+    {
+      "target_timestamp": "2025-05-19T01:00:00.000",
+      "actual_solar_mw": 287.76,
+      "solar_mw": 5.803719482421854
+    },
+    {
+      "target_timestamp": "2025-05-19T21:00:00.000",
+      "actual_solar_mw": 264.63,
+      "solar_mw": 233.92200744628906
+    },
+    {
+      "target_timestamp": "2025-05-20T18:00:00.000",
+      "actual_solar_mw": 5761.92,
+      "solar_mw": 5073.021597900391
+    },
+    {
+      "target_timestamp": "2025-05-21T15:00:00.000",
+      "actual_solar_mw": 42557.36,
+      "solar_mw": 42438.689754638675
+    },
+    {
+      "target_timestamp": "2025-05-22T11:00:00.000",
+      "actual_solar_mw": 57241.6,
+      "solar_mw": 54776.12619140625
+    },
+    {
+      "target_timestamp": "2025-05-23T08:00:00.000",
+      "actual_solar_mw": 36651.15,
+      "solar_mw": 32020.46556640625
+    },
+    {
+      "target_timestamp": "2025-05-24T04:00:00.000",
+      "actual_solar_mw": 373.34,
+      "solar_mw": 445.19164245605464
+    },
+    {
+      "target_timestamp": "2025-05-25T01:00:00.000",
+      "actual_solar_mw": 203.67,
+      "solar_mw": 73.14841186523438
+    },
+    {
+      "target_timestamp": "2025-05-25T22:00:00.000",
+      "actual_solar_mw": 519.89,
+      "solar_mw": 112.68936065673827
+    },
+    {
+      "target_timestamp": "2025-05-26T18:00:00.000",
+      "actual_solar_mw": 4724.26,
+      "solar_mw": 6126.861939413548
+    },
+    {
+      "target_timestamp": "2025-05-27T15:00:00.000",
+      "actual_solar_mw": 37366.94,
+      "solar_mw": 38672.15916992188
+    },
+    {
+      "target_timestamp": "2025-05-28T11:00:00.000",
+      "actual_solar_mw": 50844.17,
+      "solar_mw": 46010.97561767578
+    },
+    {
+      "target_timestamp": "2025-05-29T08:00:00.000",
+      "actual_solar_mw": 23940.69,
+      "solar_mw": 27416.467707519532
+    },
+    {
+      "target_timestamp": "2025-05-30T05:00:00.000",
+      "actual_solar_mw": 249.2,
+      "solar_mw": 214.7907970428467
+    },
+    {
+      "target_timestamp": "2025-05-31T01:00:00.000",
+      "actual_solar_mw": 0.0,
+      "solar_mw": 31.939802169799805
+    },
+    {
+      "target_timestamp": "2025-05-31T22:00:00.000",
+      "actual_solar_mw": 0.0,
+      "solar_mw": 14.764345169067383
+    },
+    {
+      "target_timestamp": "2025-06-01T18:00:00.000",
+      "actual_solar_mw": 5345.34,
+      "solar_mw": 5009.806850585937
+    },
+    {
+      "target_timestamp": "2025-06-02T15:00:00.000",
+      "actual_solar_mw": 43652.12,
+      "solar_mw": 43675.41142822266
+    },
+    {
+      "target_timestamp": "2025-06-03T12:00:00.000",
+      "actual_solar_mw": 55958.41,
+      "solar_mw": 56606.74580810547
+    },
+    {
+      "target_timestamp": "2025-06-04T08:00:00.000",
+      "actual_solar_mw": 33996.08,
+      "solar_mw": 28399.85306640625
+    },
+    {
+      "target_timestamp": "2025-06-05T05:00:00.000",
+      "actual_solar_mw": 79.56,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-06-06T01:00:00.000",
+      "actual_solar_mw": 0.0,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-06-06T22:00:00.000",
+      "actual_solar_mw": 0.0,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-06-07T19:00:00.000",
+      "actual_solar_mw": 783.27,
+      "solar_mw": 606.9411669921875
+    },
+    {
+      "target_timestamp": "2025-06-08T15:00:00.000",
+      "actual_solar_mw": 46132.53,
+      "solar_mw": 45449.25795898437
+    },
+    {
+      "target_timestamp": "2025-06-09T12:00:00.000",
+      "actual_solar_mw": 57590.18,
+      "solar_mw": 61613.366174926756
+    },
+    {
+      "target_timestamp": "2025-06-10T08:00:00.000",
+      "actual_solar_mw": 33588.09,
+      "solar_mw": 32803.01266845703
+    },
+    {
+      "target_timestamp": "2025-06-11T05:00:00.000",
+      "actual_solar_mw": 27.85,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-06-12T02:00:00.000",
+      "actual_solar_mw": 0.0,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-06-12T22:00:00.000",
+      "actual_solar_mw": 0.0,
+      "solar_mw": 0.0
+    },
+    {
+      "target_timestamp": "2025-06-13T19:00:00.000",
+      "actual_solar_mw": 445.87,
+      "solar_mw": 348.8276898193359
+    },
+    {
+      "target_timestamp": "2025-06-14T15:00:00.000",
+      "actual_solar_mw": 33602.0,
+      "solar_mw": 41203.62860351562
+    },
+    {
+      "target_timestamp": "2025-06-15T12:00:00.000",
+      "actual_solar_mw": 37230.03,
+      "solar_mw": 44160.31928955078
+    },
+    {
+      "target_timestamp": "2025-06-16T09:00:00.000",
+      "actual_solar_mw": 33336.06,
+      "solar_mw": 34167.52231445313
+    },
+    {
+      "target_timestamp": "2025-06-17T05:00:00.000",
+      "actual_solar_mw": 9.48,
+      "solar_mw": 31.832112121582032
+    },
+    {
+      "target_timestamp": "2025-06-18T02:00:00.000",
+      "actual_solar_mw": 0.0,
+      "solar_mw": 25.957860946655273
+    },
+    {
+      "target_timestamp": "2025-06-18T22:00:00.000",
+      "actual_solar_mw": 3858.08,
+      "solar_mw": 19.74152374267578
+    },
+    {
+      "target_timestamp": "2025-06-19T19:00:00.000",
+      "actual_solar_mw": 793.17,
+      "solar_mw": 572.6327891540527
+    },
+    {
+      "target_timestamp": "2025-06-20T16:00:00.000",
+      "actual_solar_mw": 29399.82,
+      "solar_mw": 26841.64560546875
+    },
+    {
+      "target_timestamp": "2025-06-21T12:00:00.000",
+      "actual_solar_mw": 41535.77,
+      "solar_mw": 45229.21658081055
+    },
+    {
+      "target_timestamp": "2025-06-22T09:00:00.000",
+      "actual_solar_mw": 37781.87,
+      "solar_mw": 33284.52590087891
+    },
+    {
+      "target_timestamp": "2025-06-23T05:00:00.000",
+      "actual_solar_mw": 115.57,
+      "solar_mw": 115.48631507873534
+    },
+    {
+      "target_timestamp": "2025-06-24T02:00:00.000",
+      "actual_solar_mw": 0.0,
+      "solar_mw": 20.125398635864258
+    },
+    {
+      "target_timestamp": "2025-06-24T23:00:00.000",
+      "actual_solar_mw": 0.0,
+      "solar_mw": 27.199546813964844
+    }
+  ],
+  "comparison_is_display_sample": true,
+  "retrospective": true
+}

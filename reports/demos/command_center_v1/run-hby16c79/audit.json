@@ -1,0 +1,29 @@
+{
+  "counts": {
+    "forecast_records": 720,
+    "unique_target_hours": 720,
+    "trusted_records": 719,
+    "scored_records": 719,
+    "scored_unique_target_hours": 719,
+    "excluded_target_records": 1,
+    "trusted_unscored_records": 0,
+    "fallback_records": 170
+  },
+  "reasons": [
+    {
+      "reason": "target_april_anomaly",
+      "forecast_records": 1
+    }
+  ],
+  "rows": [
+    {
+      "origin": "2025-04-03T16:00:00.000",
+      "horizon": 24,
+      "target_timestamp": "2025-04-04T16:00:00.000",
+      "target_exclusion_reasons": "[\"target_april_anomaly\"]"
+    }
+  ],
+  "total": 1,
+  "policy": "grid_evaluation_target_v1",
+  "context": "retrospective target audit; reasons can overlap"
+}

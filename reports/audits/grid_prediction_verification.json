@@ -1,0 +1,180 @@
+{
+  "status": "passed",
+  "verified_at_utc": "2026-11-05T04:49:25.924191+00:00",
+  "training_disabled": true,
+  "all_origins_use_common_24h_target": true,
+  "demand": {
+    "saved_test_rows_compared": 4603,
+    "max_feature_difference": 8.731149137020111e-11,
+    "max_prediction_difference_mw": 0.006250000005820766
+  },
+  "wind": {
+    "saved_test_rows_compared": 4991,
+    "max_feature_difference": 5.4924953474255744e-09,
+    "max_prediction_difference_mw": 3.637978807091713e-12
+  },
+  "quality_orchestration": {
+    "seasonal_origins_checked": 32,
+    "demand_selected_model_origins": 32,
+    "truncation_and_future_measurement_invariance": true
+  },
+  "cli": {
+    "json_stdout_equals_optional_output": true,
+    "invalid_request_exit_code": 1,
+    "all_blocked_exit_code": 2
+  },
+  "january_target_excluded_from_historical_scoring": true,
+  "note": "Numerical parity uses all saved rows. The stricter inference policy may instead return labelled persistence or block on some historically scored rows; those outputs are not represented as new benchmark scores.",
+  "examples": {
+    "normal": {
+      "schema_version": 1,
+      "origin": "2025-06-24 23:00:00",
+      "target_timestamp": "2025-06-25 23:00:00",
+      "horizon_hours": 24,
+      "timestamp_convention": "timezone-naive source clock; no conversion",
+      "origin_observation_assumed_available": true,
+      "run_context": "retrospective_simulation_with_fixed_saved_models; not evidence of an actually issued forecast",
+      "inference_quality_policy": "inference_quality_v1",
+      "target_quality": "unknown",
+      "status": "ok",
+      "components": {
+        "demand": {
+          "target_timestamp": "2025-06-25 23:00:00",
+          "forecast_mw": 209757.703125,
+          "method": "xgboost",
+          "status": "ok",
+          "reasons": [],
+          "unavailable_quality_checks": [],
+          "selected_model_id": "demand_v1",
+          "selected_artifact_sha256": "e602b19e94e7fb0ada350090ffa882b70c92ca198e572fef54d9dfbaaac2cc5b",
+          "artifact_validated": true
+        },
+        "wind": {
+          "target_timestamp": "2025-06-25 23:00:00",
+          "forecast_mw": 16604.1377734375,
+          "method": "residual_xgb",
+          "status": "ok",
+          "reasons": [],
+          "unavailable_quality_checks": [],
+          "selected_model_id": "renewable_v3_wind",
+          "selected_artifact_sha256": "dab3449844651229a4215cff38d7e2f20ec204a2f95d2d122e7ec3d89f0d2aa4",
+          "artifact_validated": true
+        },
+        "solar": {
+          "target_timestamp": "2025-06-25 23:00:00",
+          "forecast_mw": 0.0,
+          "method": "prior_day_persistence",
+          "status": "ok",
+          "reasons": [],
+          "unavailable_quality_checks": [],
+          "selected_model_id": "solar_prior_day_v3",
+          "selected_artifact_sha256": null,
+          "artifact_validated": null
+        }
+      }
+    },
+    "labelled_fallback": {
+      "schema_version": 1,
+      "origin": "2025-01-09 15:00:00",
+      "target_timestamp": "2025-01-10 15:00:00",
+      "horizon_hours": 24,
+      "timestamp_convention": "timezone-naive source clock; no conversion",
+      "origin_observation_assumed_available": true,
+      "run_context": "retrospective_simulation_with_fixed_saved_models; not evidence of an actually issued forecast",
+      "inference_quality_policy": "inference_quality_v1",
+      "target_quality": "unknown",
+      "status": "degraded",
+      "components": {
+        "demand": {
+          "target_timestamp": "2025-01-10 15:00:00",
+          "forecast_mw": 203618.1,
+          "method": "prior_day_persistence",
+          "status": "fallback",
+          "reasons": [
+            "demand:frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_model_id": "demand_v1",
+          "selected_artifact_sha256": "e602b19e94e7fb0ada350090ffa882b70c92ca198e572fef54d9dfbaaac2cc5b",
+          "artifact_validated": true
+        },
+        "wind": {
+          "target_timestamp": "2025-01-10 15:00:00",
+          "forecast_mw": 2767.74,
+          "method": "prior_day_persistence",
+          "status": "fallback",
+          "reasons": [
+            "wind:frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_model_id": "renewable_v3_wind",
+          "selected_artifact_sha256": "dab3449844651229a4215cff38d7e2f20ec204a2f95d2d122e7ec3d89f0d2aa4",
+          "artifact_validated": true
+        },
+        "solar": {
+          "target_timestamp": "2025-01-10 15:00:00",
+          "forecast_mw": 39729.1,
+          "method": "prior_day_persistence",
+          "status": "ok",
+          "reasons": [],
+          "unavailable_quality_checks": [],
+          "selected_model_id": "solar_prior_day_v3",
+          "selected_artifact_sha256": null,
+          "artifact_validated": null
+        }
+      }
+    },
+    "blocked_demand_component": {
+      "schema_version": 1,
+      "origin": "2025-01-09 02:00:00",
+      "target_timestamp": "2025-01-10 02:00:00",
+      "horizon_hours": 24,
+      "timestamp_convention": "timezone-naive source clock; no conversion",
+      "origin_observation_assumed_available": true,
+      "run_context": "retrospective_simulation_with_fixed_saved_models; not evidence of an actually issued forecast",
+      "inference_quality_policy": "inference_quality_v1",
+      "target_quality": "unknown",
+      "status": "degraded",
+      "components": {
+        "demand": {
+          "target_timestamp": "2025-01-10 02:00:00",
+          "forecast_mw": null,
+          "method": null,
+          "status": "blocked",
+          "reasons": [
+            "demand:frozen_reading",
+            "wind:frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_model_id": "demand_v1",
+          "selected_artifact_sha256": "e602b19e94e7fb0ada350090ffa882b70c92ca198e572fef54d9dfbaaac2cc5b",
+          "artifact_validated": true
+        },
+        "wind": {
+          "target_timestamp": "2025-01-10 02:00:00",
+          "forecast_mw": null,
+          "method": null,
+          "status": "blocked",
+          "reasons": [
+            "wind:frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_model_id": "renewable_v3_wind",
+          "selected_artifact_sha256": "dab3449844651229a4215cff38d7e2f20ec204a2f95d2d122e7ec3d89f0d2aa4",
+          "artifact_validated": true
+        },
+        "solar": {
+          "target_timestamp": "2025-01-10 02:00:00",
+          "forecast_mw": 175.65,
+          "method": "prior_day_persistence",
+          "status": "ok",
+          "reasons": [],
+          "unavailable_quality_checks": [],
+          "selected_model_id": "solar_prior_day_v3",
+          "selected_artifact_sha256": null,
+          "artifact_validated": null
+        }
+      }
+    }
+  }
+}

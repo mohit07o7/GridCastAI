@@ -1,0 +1,1461 @@
+{
+  "saved": {
+    "horizon": 24,
+    "month": "all",
+    "cohort": "delivered",
+    "quantity": "net",
+    "nominal_rows": 4991,
+    "trusted_targets": 4924,
+    "rows": 4924,
+    "coverage_trusted_pct": 100.0,
+    "forecast_mae_mw": 4789.747279096964,
+    "forecast_rmse_mw": 6920.098565121855,
+    "forecast_wape_pct": 2.858645587164392,
+    "forecast_mean_signed_error_mw": 301.1419761478191,
+    "baseline_mae_mw": 6101.698300162469,
+    "baseline_rmse_mw": 8376.29700821698,
+    "baseline_wape_pct": 3.641652033728272,
+    "baseline_mean_signed_error_mw": 31.964441510966708,
+    "mae_improvement_mw": 1311.9510210655053,
+    "mae_improvement_pct": 21.50140758402578
+  },
+  "counts": {
+    "forecast_records": 4991,
+    "unique_target_hours": 4991,
+    "trusted_records": 4924,
+    "scored_records": 4924,
+    "scored_unique_target_hours": 4924,
+    "excluded_target_records": 67,
+    "trusted_unscored_records": 0,
+    "fallback_records": 578
+  },
+  "monthly": [
+    {
+      "horizon": 24,
+      "month": "2024-11",
+      "cohort": "delivered",
+      "quantity": "net",
+      "nominal_rows": 47,
+      "trusted_targets": 47,
+      "rows": 47,
+      "coverage_trusted_pct": 100.0,
+      "forecast_mae_mw": 3474.9855796913416,
+      "forecast_rmse_mw": 4589.059460334865,
+      "forecast_wape_pct": 2.258167382120889,
+      "forecast_mean_signed_error_mw": -238.26085707705073,
+      "baseline_mae_mw": 3858.2410638297906,
+      "baseline_rmse_mw": 5225.250210045125,
+      "baseline_wape_pct": 2.507220223766715,
+      "baseline_mean_signed_error_mw": 14.901914893616388,
+      "mae_improvement_mw": 383.25548413844894,
+      "mae_improvement_pct": 9.933425045194546
+    },
+    {
+      "horizon": 24,
+      "month": "2024-12",
+      "cohort": "delivered",
+      "quantity": "net",
+      "nominal_rows": 744,
+      "trusted_targets": 744,
+      "rows": 744,
+      "coverage_trusted_pct": 100.0,
+      "forecast_mae_mw": 3450.3880023267234,
+      "forecast_rmse_mw": 4909.751519880362,
+      "forecast_wape_pct": 2.243490562858096,
+      "forecast_mean_signed_error_mw": 1279.1346855745428,
+      "baseline_mae_mw": 5178.124301075269,
+      "baseline_rmse_mw": 6761.753303063374,
+      "baseline_wape_pct": 3.366888881753218,
+      "baseline_mean_signed_error_mw": -137.05634408602134,
+      "mae_improvement_mw": 1727.736298748545,
+      "mae_improvement_pct": 33.366064588093614
+    },
+    {
+      "horizon": 24,
+      "month": "2025-01",
+      "cohort": "delivered",
+      "quantity": "net",
+      "nominal_rows": 744,
+      "trusted_targets": 726,
+      "rows": 726,
+      "coverage_trusted_pct": 100.0,
+      "forecast_mae_mw": 5110.911351747109,
+      "forecast_rmse_mw": 7743.321719239064,
+      "forecast_wape_pct": 3.149642851333367,
+      "forecast_mean_signed_error_mw": 305.1972475842451,
+      "baseline_mae_mw": 5966.818099173553,
+      "baseline_rmse_mw": 8762.259167418426,
+      "baseline_wape_pct": 3.677102707884814,
+      "baseline_mean_signed_error_mw": -286.41595041322296,
+      "mae_improvement_mw": 855.9067474264439,
+      "mae_improvement_pct": 14.344441764447172
+    },
+    {
+      "horizon": 24,
+      "month": "2025-02",
+      "cohort": "delivered",
+      "quantity": "net",
+      "nominal_rows": 672,
+      "trusted_targets": 672,
+      "rows": 672,
+      "coverage_trusted_pct": 100.0,
+      "forecast_mae_mw": 3648.118482393563,
+      "forecast_rmse_mw": 5221.871338452603,
+      "forecast_wape_pct": 2.125906956077305,
+      "forecast_mean_signed_error_mw": -280.9128204364651,
+      "baseline_mae_mw": 5205.46050595238,
+      "baseline_rmse_mw": 7088.351667549501,
+      "baseline_wape_pct": 3.033433467854131,
+      "baseline_mean_signed_error_mw": 63.89559523809506,
+      "mae_improvement_mw": 1557.3420235588171,
+      "mae_improvement_pct": 29.917468815256903
+    },
+    {
+      "horizon": 24,
+      "month": "2025-03",
+      "cohort": "delivered",
+      "quantity": "net",
+      "nominal_rows": 744,
+      "trusted_targets": 696,
+      "rows": 696,
+      "coverage_trusted_pct": 100.0,
+      "forecast_mae_mw": 4306.173992026564,
+      "forecast_rmse_mw": 6786.942379917686,
+      "forecast_wape_pct": 2.493512904085777,
+      "forecast_mean_signed_error_mw": 278.9121544568018,
+      "baseline_mae_mw": 5743.959482758621,
+      "baseline_rmse_mw": 8082.710669883019,
+      "baseline_wape_pct": 3.326070223201546,
+      "baseline_mean_signed_error_mw": 355.0194540229888,
+      "mae_improvement_mw": 1437.785490732057,
+      "mae_improvement_pct": 25.031261015120176
+    },
+    {
+      "horizon": 24,
+      "month": "2025-04",
+      "cohort": "delivered",
+      "quantity": "net",
+      "nominal_rows": 720,
+      "trusted_targets": 719,
+      "rows": 719,
+      "coverage_trusted_pct": 100.0,
+      "forecast_mae_mw": 5586.01814731955,
+      "forecast_rmse_mw": 7784.666921540123,
+      "forecast_wape_pct": 3.187854445194011,
+      "forecast_mean_signed_error_mw": 118.94233426921384,
+      "baseline_mae_mw": 6434.173101529901,
+      "baseline_rmse_mw": 8740.609111942002,
+      "baseline_wape_pct": 3.671883402795985,
+      "baseline_mean_signed_error_mw": -164.69015299026435,
+      "mae_improvement_mw": 848.1549542103512,
+      "mae_improvement_pct": 13.182035062262766
+    },
+    {
+      "horizon": 24,
+      "month": "2025-05",
+      "cohort": "delivered",
+      "quantity": "net",
+      "nominal_rows": 744,
+      "trusted_targets": 744,
+      "rows": 744,
+      "coverage_trusted_pct": 100.0,
+      "forecast_mae_mw": 6372.528838696201,
+      "forecast_rmse_mw": 8520.772116075414,
+      "forecast_wape_pct": 3.801415123987672,
+      "forecast_mean_signed_error_mw": 755.2019336879093,
+      "baseline_mae_mw": 7810.320577956991,
+      "baseline_rmse_mw": 10122.205899532775,
+      "baseline_wape_pct": 4.65910339831626,
+      "baseline_mean_signed_error_mw": 868.2881586021504,
+      "mae_improvement_mw": 1437.7917392607887,
+      "mae_improvement_pct": 18.408869711681977
+    },
+    {
+      "horizon": 24,
+      "month": "2025-06",
+      "cohort": "delivered",
+      "quantity": "net",
+      "nominal_rows": 576,
+      "trusted_targets": 576,
+      "rows": 576,
+      "coverage_trusted_pct": 100.0,
+      "forecast_mae_mw": 5100.068997216636,
+      "forecast_rmse_mw": 6636.896794342938,
+      "forecast_wape_pct": 2.957037415198048,
+      "forecast_mean_signed_error_mw": -576.332080123503,
+      "baseline_mae_mw": 6503.604947916667,
+      "baseline_rmse_mw": 8744.553523484663,
+      "baseline_wape_pct": 3.770812350803936,
+      "baseline_mean_signed_error_mw": -609.4186284722224,
+      "mae_improvement_mw": 1403.5359507000312,
+      "mae_improvement_pct": 21.58089185828597
+    }
+  ],
+  "mape": {
+    "forecast_pct": 2.9350431392513143,
+    "baseline_pct": 3.7427140020404654,
+    "paired_nonzero_actual_rows": 4924,
+    "excluded_zero_actual_rows": 0,
+    "definition": "Derived MAPE; identical paired nonzero-actual rows; not the saved WAPE metric"
+  },
+  "error_histogram": {
+    "counts": [
+      2,
+      0,
+      1,
+      0,
+      0,
+      4,
+      7,
+      24,
+      96,
+      255,
+      891,
+      1801,
+      1148,
+      409,
+      167,
+      54,
+      23,
+      23,
+      13,
+      3,
+      1,
+      0,
+      0,
+      2
+    ],
+    "edges": [
+      -54167.07883644104,
+      -49529.38183013598,
+      -44891.684823830925,
+      -40253.987817525864,
+      -35616.29081122081,
+      -30978.59380491575,
+      -26340.896798610687,
+      -21703.19979230563,
+      -17065.502786000572,
+      -12427.80577969551,
+      -7790.108773390457,
+      -3152.4117670853957,
+      1485.2852392196655,
+      6122.9822455247195,
+      10760.67925182978,
+      15398.376258134842,
+      20036.073264439896,
+      24673.77027074495,
+      29311.46727705002,
+      33949.16428335507,
+      38586.861289660126,
+      43224.558295965195,
+      47862.25530227025,
+      52499.9523085753,
+      57137.64931488037
+    ],
+    "signed_error": "forecast minus actual"
+  },
+  "comparison_sample": [
+    {
+      "target_timestamp": "2024-11-29T01:00:00.000",
+      "actual_net_mw": 131176.81,
+      "net_demand_mw": 133487.8302896881
+    },
+    {
+      "target_timestamp": "2024-11-29T21:00:00.000",
+      "actual_net_mw": 152590.15,
+      "net_demand_mw": 150837.9814522171
+    },
+    {
+      "target_timestamp": "2024-11-30T18:00:00.000",
+      "actual_net_mw": 179813.36,
+      "net_demand_mw": 185372.42507385253
+    },
+    {
+      "target_timestamp": "2024-12-01T14:00:00.000",
+      "actual_net_mw": 136727.56,
+      "net_demand_mw": 135897.98544189453
+    },
+    {
+      "target_timestamp": "2024-12-02T11:00:00.000",
+      "actual_net_mw": 147350.55000000002,
+      "net_demand_mw": 148933.40809570314
+    },
+    {
+      "target_timestamp": "2024-12-03T07:00:00.000",
+      "actual_net_mw": 172235.87,
+      "net_demand_mw": 174671.0287789154
+    },
+    {
+      "target_timestamp": "2024-12-04T04:00:00.000",
+      "actual_net_mw": 127900.08,
+      "net_demand_mw": 129533.31850620269
+    },
+    {
+      "target_timestamp": "2024-12-05T01:00:00.000",
+      "actual_net_mw": 133466.66,
+      "net_demand_mw": 127981.67765693665
+    },
+    {
+      "target_timestamp": "2024-12-05T21:00:00.000",
+      "actual_net_mw": 158573.57,
+      "net_demand_mw": 153558.8276435852
+    },
+    {
+      "target_timestamp": "2024-12-06T18:00:00.000",
+      "actual_net_mw": 187449.94,
+      "net_demand_mw": 189289.77249336246
+    },
+    {
+      "target_timestamp": "2024-12-07T14:00:00.000",
+      "actual_net_mw": 142388.4,
+      "net_demand_mw": 143897.9762988281
+    },
+    {
+      "target_timestamp": "2024-12-08T11:00:00.000",
+      "actual_net_mw": 138730.91999999998,
+      "net_demand_mw": 142276.87975830078
+    },
+    {
+      "target_timestamp": "2024-12-09T08:00:00.000",
+      "actual_net_mw": 170201.32,
+      "net_demand_mw": 170110.17769165037
+    },
+    {
+      "target_timestamp": "2024-12-10T04:00:00.000",
+      "actual_net_mw": 131309.66000000003,
+      "net_demand_mw": 133121.86592674255
+    },
+    {
+      "target_timestamp": "2024-12-11T01:00:00.000",
+      "actual_net_mw": 131970.02999999997,
+      "net_demand_mw": 131763.52605743406
+    },
+    {
+      "target_timestamp": "2024-12-11T21:00:00.000",
+      "actual_net_mw": 152220.75,
+      "net_demand_mw": 155740.13110282898
+    },
+    {
+      "target_timestamp": "2024-12-12T18:00:00.000",
+      "actual_net_mw": 181117.53,
+      "net_demand_mw": 186960.2268286133
+    },
+    {
+      "target_timestamp": "2024-12-13T15:00:00.000",
+      "actual_net_mw": 150887.0,
+      "net_demand_mw": 153621.52494262697
+    },
+    {
+      "target_timestamp": "2024-12-14T11:00:00.000",
+      "actual_net_mw": 146131.43,
+      "net_demand_mw": 151218.18655517578
+    },
+    {
+      "target_timestamp": "2024-12-15T08:00:00.000",
+      "actual_net_mw": 163553.91999999998,
+      "net_demand_mw": 165576.75274986267
+    },
+    {
+      "target_timestamp": "2024-12-16T04:00:00.000",
+      "actual_net_mw": 123667.18,
+      "net_demand_mw": 127545.43185058594
+    },
+    {
+      "target_timestamp": "2024-12-17T01:00:00.000",
+      "actual_net_mw": 127654.79,
+      "net_demand_mw": 126773.90134033203
+    },
+    {
+      "target_timestamp": "2024-12-17T22:00:00.000",
+      "actual_net_mw": 145214.66999999998,
+      "net_demand_mw": 146454.87364013674
+    },
+    {
+      "target_timestamp": "2024-12-18T18:00:00.000",
+      "actual_net_mw": 191349.13,
+      "net_demand_mw": 192681.28324172975
+    },
+    {
+      "target_timestamp": "2024-12-19T15:00:00.000",
+      "actual_net_mw": 163775.88000000003,
+      "net_demand_mw": 164745.0918347168
+    },
+    {
+      "target_timestamp": "2024-12-20T11:00:00.000",
+      "actual_net_mw": 168349.41999999998,
+      "net_demand_mw": 163088.45503417967
+    },
+    {
+      "target_timestamp": "2024-12-21T08:00:00.000",
+      "actual_net_mw": 188541.34,
+      "net_demand_mw": 187656.59451248168
+    },
+    {
+      "target_timestamp": "2024-12-22T05:00:00.000",
+      "actual_net_mw": 150565.9,
+      "net_demand_mw": 150938.90921951292
+    },
+    {
+      "target_timestamp": "2024-12-23T01:00:00.000",
+      "actual_net_mw": 136022.24,
+      "net_demand_mw": 136886.52170547485
+    },
+    {
+      "target_timestamp": "2024-12-23T22:00:00.000",
+      "actual_net_mw": 150507.14,
+      "net_demand_mw": 150751.31799636842
+    },
+    {
+      "target_timestamp": "2024-12-24T18:00:00.000",
+      "actual_net_mw": 191906.36,
+      "net_demand_mw": 193639.41419532773
+    },
+    {
+      "target_timestamp": "2024-12-25T15:00:00.000",
+      "actual_net_mw": 164709.1,
+      "net_demand_mw": 165021.2669177246
+    },
+    {
+      "target_timestamp": "2024-12-26T12:00:00.000",
+      "actual_net_mw": 164278.88,
+      "net_demand_mw": 161485.60277832032
+    },
+    {
+      "target_timestamp": "2024-12-27T08:00:00.000",
+      "actual_net_mw": 181992.01000000004,
+      "net_demand_mw": 193805.13400024414
+    },
+    {
+      "target_timestamp": "2024-12-28T05:00:00.000",
+      "actual_net_mw": 133341.44,
+      "net_demand_mw": 146591.61973022463
+    },
+    {
+      "target_timestamp": "2024-12-29T01:00:00.000",
+      "actual_net_mw": 128206.9,
+      "net_demand_mw": 124509.37649467468
+    },
+    {
+      "target_timestamp": "2024-12-29T22:00:00.000",
+      "actual_net_mw": 138964.39,
+      "net_demand_mw": 139386.24457702634
+    },
+    {
+      "target_timestamp": "2024-12-30T19:00:00.000",
+      "actual_net_mw": 179549.1,
+      "net_demand_mw": 177771.34502828596
+    },
+    {
+      "target_timestamp": "2024-12-31T15:00:00.000",
+      "actual_net_mw": 155024.95,
+      "net_demand_mw": 151651.03274536133
+    },
+    {
+      "target_timestamp": "2025-01-01T12:00:00.000",
+      "actual_net_mw": 141703.53,
+      "net_demand_mw": 150517.23755004883
+    },
+    {
+      "target_timestamp": "2025-01-02T08:00:00.000",
+      "actual_net_mw": 182226.09000000003,
+      "net_demand_mw": 181842.4382574463
+    },
+    {
+      "target_timestamp": "2025-01-03T05:00:00.000",
+      "actual_net_mw": 150479.61,
+      "net_demand_mw": 144661.6516908646
+    },
+    {
+      "target_timestamp": "2025-01-04T02:00:00.000",
+      "actual_net_mw": 135830.4,
+      "net_demand_mw": 134110.03199569703
+    },
+    {
+      "target_timestamp": "2025-01-04T22:00:00.000",
+      "actual_net_mw": 156937.75,
+      "net_demand_mw": 152882.5962313843
+    },
+    {
+      "target_timestamp": "2025-01-05T19:00:00.000",
+      "actual_net_mw": 177781.92,
+      "net_demand_mw": 181034.45986572266
+    },
+    {
+      "target_timestamp": "2025-01-06T15:00:00.000",
+      "actual_net_mw": 157260.87,
+      "net_demand_mw": 157232.00625244144
+    },
+    {
+      "target_timestamp": "2025-01-07T12:00:00.000",
+      "actual_net_mw": 152792.08,
+      "net_demand_mw": 155994.06607910155
+    },
+    {
+      "target_timestamp": "2025-01-08T09:00:00.000",
+      "actual_net_mw": 158164.75,
+      "net_demand_mw": 189091.97174438473
+    },
+    {
+      "target_timestamp": "2025-01-09T16:00:00.000",
+      "actual_net_mw": 175819.83000000002,
+      "net_demand_mw": 174714.46919189452
+    },
+    {
+      "target_timestamp": "2025-01-10T20:00:00.000",
+      "actual_net_mw": 182117.44999999998,
+      "net_demand_mw": 180498.43112224576
+    },
+    {
+      "target_timestamp": "2025-01-11T16:00:00.000",
+      "actual_net_mw": 179276.90000000002,
+      "net_demand_mw": 181293.6048590088
+    },
+    {
+      "target_timestamp": "2025-01-12T13:00:00.000",
+      "actual_net_mw": 146354.7,
+      "net_demand_mw": 157534.08454833983
+    },
+    {
+      "target_timestamp": "2025-01-13T10:00:00.000",
+      "actual_net_mw": 184167.13999999998,
+      "net_demand_mw": 174719.59057617188
+    },
+    {
+      "target_timestamp": "2025-01-14T06:00:00.000",
+      "actual_net_mw": 163281.45,
+      "net_demand_mw": 163866.82410846712
+    },
+    {
+      "target_timestamp": "2025-01-15T03:00:00.000",
+      "actual_net_mw": 121222.21000000002,
+      "net_demand_mw": 129782.01284469604
+    },
+    {
+      "target_timestamp": "2025-01-15T23:00:00.000",
+      "actual_net_mw": 139110.37000000002,
+      "net_demand_mw": 129723.36631507875
+    },
+    {
+      "target_timestamp": "2025-01-16T20:00:00.000",
+      "actual_net_mw": 170878.29,
+      "net_demand_mw": 163970.87518920898
+    },
+    {
+      "target_timestamp": "2025-01-17T17:00:00.000",
+      "actual_net_mw": 180040.02000000002,
+      "net_demand_mw": 181412.19866088865
+    },
+    {
+      "target_timestamp": "2025-01-18T13:00:00.000",
+      "actual_net_mw": 147356.86,
+      "net_demand_mw": 141491.879375
+    },
+    {
+      "target_timestamp": "2025-01-19T10:00:00.000",
+      "actual_net_mw": 174362.95,
+      "net_demand_mw": 172796.68951660156
+    },
+    {
+      "target_timestamp": "2025-01-20T06:00:00.000",
+      "actual_net_mw": 172567.31,
+      "net_demand_mw": 169908.67366119384
+    },
+    {
+      "target_timestamp": "2025-01-21T03:00:00.000",
+      "actual_net_mw": 140734.22,
+      "net_demand_mw": 135396.9349121094
+    },
+    {
+      "target_timestamp": "2025-01-22T00:00:00.000",
+      "actual_net_mw": 148626.91999999998,
+      "net_demand_mw": 148027.40891100882
+    },
+    {
+      "target_timestamp": "2025-01-22T20:00:00.000",
+      "actual_net_mw": 178046.27000000002,
+      "net_demand_mw": 181110.40432983398
+    },
+    {
+      "target_timestamp": "2025-01-23T17:00:00.000",
+      "actual_net_mw": 182819.08000000002,
+      "net_demand_mw": 189425.53335205078
+    },
+    {
+      "target_timestamp": "2025-01-24T13:00:00.000",
+      "actual_net_mw": 141941.18000000002,
+      "net_demand_mw": 142678.24896240234
+    },
+    {
+      "target_timestamp": "2025-01-25T10:00:00.000",
+      "actual_net_mw": 170487.38,
+      "net_demand_mw": 171203.7360693359
+    },
+    {
+      "target_timestamp": "2025-01-26T07:00:00.000",
+      "actual_net_mw": 192299.18,
+      "net_demand_mw": 191249.49463989257
+    },
+    {
+      "target_timestamp": "2025-01-27T03:00:00.000",
+      "actual_net_mw": 138437.15,
+      "net_demand_mw": 143145.76286376955
+    },
+    {
+      "target_timestamp": "2025-01-28T00:00:00.000",
+      "actual_net_mw": 154203.47,
+      "net_demand_mw": 143900.54179870605
+    },
+    {
+      "target_timestamp": "2025-01-28T20:00:00.000",
+      "actual_net_mw": 186260.07,
+      "net_demand_mw": 184032.03216308594
+    },
+    {
+      "target_timestamp": "2025-01-29T17:00:00.000",
+      "actual_net_mw": 189535.95,
+      "net_demand_mw": 192187.4894317627
+    },
+    {
+      "target_timestamp": "2025-01-30T14:00:00.000",
+      "actual_net_mw": 159704.58,
+      "net_demand_mw": 156266.48765441895
+    },
+    {
+      "target_timestamp": "2025-01-31T10:00:00.000",
+      "actual_net_mw": 191103.37000000002,
+      "net_demand_mw": 186661.71746826175
+    },
+    {
+      "target_timestamp": "2025-02-01T07:00:00.000",
+      "actual_net_mw": 198297.80000000002,
+      "net_demand_mw": 198052.2656988525
+    },
+    {
+      "target_timestamp": "2025-02-02T03:00:00.000",
+      "actual_net_mw": 148503.49,
+      "net_demand_mw": 148707.2428756714
+    },
+    {
+      "target_timestamp": "2025-02-03T00:00:00.000",
+      "actual_net_mw": 148400.2,
+      "net_demand_mw": 150591.0674990845
+    },
+    {
+      "target_timestamp": "2025-02-03T21:00:00.000",
+      "actual_net_mw": 172699.36000000002,
+      "net_demand_mw": 168063.6840209961
+    },
+    {
+      "target_timestamp": "2025-02-04T17:00:00.000",
+      "actual_net_mw": 189729.95,
+      "net_demand_mw": 190280.65424194335
+    },
+    {
+      "target_timestamp": "2025-02-05T14:00:00.000",
+      "actual_net_mw": 150968.4,
+      "net_demand_mw": 152007.12980041504
+    },
+    {
+      "target_timestamp": "2025-02-06T10:00:00.000",
+      "actual_net_mw": 168266.37,
+      "net_demand_mw": 175601.93107543947
+    },
+    {
+      "target_timestamp": "2025-02-07T07:00:00.000",
+      "actual_net_mw": 197771.21000000002,
+      "net_demand_mw": 198027.38155487063
+    },
+    {
+      "target_timestamp": "2025-02-08T04:00:00.000",
+      "actual_net_mw": 157005.79,
+      "net_demand_mw": 148981.35583984375
+    },
+    {
+      "target_timestamp": "2025-02-09T00:00:00.000",
+      "actual_net_mw": 161965.72,
+      "net_demand_mw": 154923.9178955078
+    },
+    {
+      "target_timestamp": "2025-02-09T21:00:00.000",
+      "actual_net_mw": 166864.99000000002,
+      "net_demand_mw": 168440.62588134766
+    },
+    {
+      "target_timestamp": "2025-02-10T17:00:00.000",
+      "actual_net_mw": 189540.38,
+      "net_demand_mw": 182022.5082946777
+    },
+    {
+      "target_timestamp": "2025-02-11T14:00:00.000",
+      "actual_net_mw": 157062.69,
+      "net_demand_mw": 157874.20779064178
+    },
+    {
+      "target_timestamp": "2025-02-12T11:00:00.000",
+      "actual_net_mw": 172340.16000000003,
+      "net_demand_mw": 168331.27691223146
+    },
+    {
+      "target_timestamp": "2025-02-13T07:00:00.000",
+      "actual_net_mw": 202433.38,
+      "net_demand_mw": 203293.82367679596
+    },
+    {
+      "target_timestamp": "2025-02-14T04:00:00.000",
+      "actual_net_mw": 166008.86000000002,
+      "net_demand_mw": 164185.44670043947
+    },
+    {
+      "target_timestamp": "2025-02-15T00:00:00.000",
+      "actual_net_mw": 162117.13999999998,
+      "net_demand_mw": 164298.0333642578
+    },
+    {
+      "target_timestamp": "2025-02-15T21:00:00.000",
+      "actual_net_mw": 173099.56,
+      "net_demand_mw": 172207.28884033204
+    },
+    {
+      "target_timestamp": "2025-02-16T18:00:00.000",
+      "actual_net_mw": 185903.65,
+      "net_demand_mw": 187134.12802368164
+    },
+    {
+      "target_timestamp": "2025-02-17T14:00:00.000",
+      "actual_net_mw": 156396.24000000002,
+      "net_demand_mw": 150302.9462133789
+    },
+    {
+      "target_timestamp": "2025-02-18T11:00:00.000",
+      "actual_net_mw": 171174.87,
+      "net_demand_mw": 167798.80555114744
+    },
+    {
+      "target_timestamp": "2025-02-19T07:00:00.000",
+      "actual_net_mw": 202868.07,
+      "net_demand_mw": 201169.84184452056
+    },
+    {
+      "target_timestamp": "2025-02-20T04:00:00.000",
+      "actual_net_mw": 160720.01,
+      "net_demand_mw": 165372.1515661621
+    },
+    {
+      "target_timestamp": "2025-02-21T01:00:00.000",
+      "actual_net_mw": 163119.65,
+      "net_demand_mw": 163305.64042274476
+    },
+    {
+      "target_timestamp": "2025-02-21T21:00:00.000",
+      "actual_net_mw": 178689.71000000002,
+      "net_demand_mw": 176522.30561920165
+    },
+    {
+      "target_timestamp": "2025-02-22T18:00:00.000",
+      "actual_net_mw": 197963.79,
+      "net_demand_mw": 194278.70777709963
+    },
+    {
+      "target_timestamp": "2025-02-23T14:00:00.000",
+      "actual_net_mw": 138694.49,
+      "net_demand_mw": 142394.4126098633
+    },
+    {
+      "target_timestamp": "2025-02-24T11:00:00.000",
+      "actual_net_mw": 156773.12,
+      "net_demand_mw": 156142.1255895996
+    },
+    {
+      "target_timestamp": "2025-02-25T08:00:00.000",
+      "actual_net_mw": 191250.2,
+      "net_demand_mw": 189871.9387213135
+    },
+    {
+      "target_timestamp": "2025-02-26T04:00:00.000",
+      "actual_net_mw": 164680.86000000002,
+      "net_demand_mw": 164553.05594970702
+    },
+    {
+      "target_timestamp": "2025-02-27T01:00:00.000",
+      "actual_net_mw": 160082.5,
+      "net_demand_mw": 165234.48000232698
+    },
+    {
+      "target_timestamp": "2025-02-27T21:00:00.000",
+      "actual_net_mw": 173963.63999999998,
+      "net_demand_mw": 170638.3855292511
+    },
+    {
+      "target_timestamp": "2025-02-28T18:00:00.000",
+      "actual_net_mw": 193700.86,
+      "net_demand_mw": 196070.97364074708
+    },
+    {
+      "target_timestamp": "2025-03-01T15:00:00.000",
+      "actual_net_mw": 157987.8,
+      "net_demand_mw": 159596.4699487305
+    },
+    {
+      "target_timestamp": "2025-03-02T11:00:00.000",
+      "actual_net_mw": 145981.71999999997,
+      "net_demand_mw": 148820.51642333984
+    },
+    {
+      "target_timestamp": "2025-03-03T08:00:00.000",
+      "actual_net_mw": 183643.4,
+      "net_demand_mw": 181466.83203125
+    },
+    {
+      "target_timestamp": "2025-03-04T04:00:00.000",
+      "actual_net_mw": 167001.47,
+      "net_demand_mw": 166244.44013427733
+    },
+    {
+      "target_timestamp": "2025-03-05T01:00:00.000",
+      "actual_net_mw": 163750.11000000002,
+      "net_demand_mw": 168758.27572265625
+    },
+    {
+      "target_timestamp": "2025-03-05T22:00:00.000",
+      "actual_net_mw": 178293.43000000002,
+      "net_demand_mw": 178384.60812438963
+    },
+    {
+      "target_timestamp": "2025-03-08T18:00:00.000",
+      "actual_net_mw": 198910.96000000002,
+      "net_demand_mw": 193927.41958007813
+    },
+    {
+      "target_timestamp": "2025-03-09T15:00:00.000",
+      "actual_net_mw": 156337.35,
+      "net_demand_mw": 156427.89872192382
+    },
+    {
+      "target_timestamp": "2025-03-10T11:00:00.000",
+      "actual_net_mw": 164317.98,
+      "net_demand_mw": 161203.92529418948
+    },
+    {
+      "target_timestamp": "2025-03-11T08:00:00.000",
+      "actual_net_mw": 192006.27999999997,
+      "net_demand_mw": 188458.54258544924
+    },
+    {
+      "target_timestamp": "2025-03-12T05:00:00.000",
+      "actual_net_mw": 185478.14,
+      "net_demand_mw": 183656.65139007568
+    },
+    {
+      "target_timestamp": "2025-03-13T01:00:00.000",
+      "actual_net_mw": 176879.05,
+      "net_demand_mw": 176674.46537506103
+    },
+    {
+      "target_timestamp": "2025-03-13T22:00:00.000",
+      "actual_net_mw": 180090.85,
+      "net_demand_mw": 183915.6156350708
+    },
+    {
+      "target_timestamp": "2025-03-14T18:00:00.000",
+      "actual_net_mw": 160026.79,
+      "net_demand_mw": 190404.50956054687
+    },
+    {
+      "target_timestamp": "2025-03-15T15:00:00.000",
+      "actual_net_mw": 149058.15,
+      "net_demand_mw": 133051.83626953125
+    },
+    {
+      "target_timestamp": "2025-03-16T11:00:00.000",
+      "actual_net_mw": 143380.43000000002,
+      "net_demand_mw": 135792.34871337892
+    },
+    {
+      "target_timestamp": "2025-03-17T08:00:00.000",
+      "actual_net_mw": 175177.57,
+      "net_demand_mw": 174066.98063583372
+    },
+    {
+      "target_timestamp": "2025-03-18T05:00:00.000",
+      "actual_net_mw": 183864.12,
+      "net_demand_mw": 181497.73337890624
+    },
+    {
+      "target_timestamp": "2025-03-19T01:00:00.000",
+      "actual_net_mw": 179212.2,
+      "net_demand_mw": 179706.08475219726
+    },
+    {
+      "target_timestamp": "2025-03-19T22:00:00.000",
+      "actual_net_mw": 189723.91,
+      "net_demand_mw": 188439.85283325196
+    },
+    {
+      "target_timestamp": "2025-03-20T18:00:00.000",
+      "actual_net_mw": 197158.0,
+      "net_demand_mw": 199915.45498046873
+    },
+    {
+      "target_timestamp": "2025-03-21T15:00:00.000",
+      "actual_net_mw": 162245.77999999997,
+      "net_demand_mw": 166317.81048400878
+    },
+    {
+      "target_timestamp": "2025-03-22T12:00:00.000",
+      "actual_net_mw": 146381.69999999998,
+      "net_demand_mw": 153014.53984985352
+    },
+    {
+      "target_timestamp": "2025-03-23T08:00:00.000",
+      "actual_net_mw": 162701.72999999998,
+      "net_demand_mw": 163902.95408203124
+    },
+    {
+      "target_timestamp": "2025-03-24T05:00:00.000",
+      "actual_net_mw": 175136.86000000002,
+      "net_demand_mw": 175687.51682861327
+    },
+    {
+      "target_timestamp": "2025-03-25T01:00:00.000",
+      "actual_net_mw": 178631.34000000003,
+      "net_demand_mw": 171912.24104919433
+    },
+    {
+      "target_timestamp": "2025-03-25T22:00:00.000",
+      "actual_net_mw": 189970.67,
+      "net_demand_mw": 190138.0206800842
+    },
+    {
+      "target_timestamp": "2025-03-26T19:00:00.000",
+      "actual_net_mw": 199569.68000000002,
+      "net_demand_mw": 202100.34358673095
+    },
+    {
+      "target_timestamp": "2025-03-27T15:00:00.000",
+      "actual_net_mw": 160546.91,
+      "net_demand_mw": 159068.12753479002
+    },
+    {
+      "target_timestamp": "2025-03-28T12:00:00.000",
+      "actual_net_mw": 148115.53000000003,
+      "net_demand_mw": 150426.72046264648
+    },
+    {
+      "target_timestamp": "2025-03-29T08:00:00.000",
+      "actual_net_mw": 167725.21999999997,
+      "net_demand_mw": 171209.77098632813
+    },
+    {
+      "target_timestamp": "2025-03-30T05:00:00.000",
+      "actual_net_mw": 185971.7,
+      "net_demand_mw": 180165.5598590088
+    },
+    {
+      "target_timestamp": "2025-03-31T02:00:00.000",
+      "actual_net_mw": 173430.98,
+      "net_demand_mw": 178439.6917578125
+    },
+    {
+      "target_timestamp": "2025-03-31T22:00:00.000",
+      "actual_net_mw": 187681.90000000002,
+      "net_demand_mw": 193464.07083740234
+    },
+    {
+      "target_timestamp": "2025-04-01T19:00:00.000",
+      "actual_net_mw": 196399.61,
+      "net_demand_mw": 197931.8653555298
+    },
+    {
+      "target_timestamp": "2025-04-02T15:00:00.000",
+      "actual_net_mw": 159004.66999999998,
+      "net_demand_mw": 155623.01048721315
+    },
+    {
+      "target_timestamp": "2025-04-03T12:00:00.000",
+      "actual_net_mw": 144639.97999999998,
+      "net_demand_mw": 144598.21919787407
+    },
+    {
+      "target_timestamp": "2025-04-04T09:00:00.000",
+      "actual_net_mw": 152970.6,
+      "net_demand_mw": 165144.9990487671
+    },
+    {
+      "target_timestamp": "2025-04-05T06:00:00.000",
+      "actual_net_mw": 187128.47,
+      "net_demand_mw": 180769.30983184814
+    },
+    {
+      "target_timestamp": "2025-04-06T03:00:00.000",
+      "actual_net_mw": 172764.31,
+      "net_demand_mw": 174239.71450195313
+    },
+    {
+      "target_timestamp": "2025-04-06T23:00:00.000",
+      "actual_net_mw": 183550.21,
+      "net_demand_mw": 190027.62040161135
+    },
+    {
+      "target_timestamp": "2025-04-07T20:00:00.000",
+      "actual_net_mw": 202227.58,
+      "net_demand_mw": 186659.12082199097
+    },
+    {
+      "target_timestamp": "2025-04-08T17:00:00.000",
+      "actual_net_mw": 191475.39,
+      "net_demand_mw": 188302.65617919923
+    },
+    {
+      "target_timestamp": "2025-04-09T13:00:00.000",
+      "actual_net_mw": 144212.19,
+      "net_demand_mw": 148786.74690612793
+    },
+    {
+      "target_timestamp": "2025-04-10T10:00:00.000",
+      "actual_net_mw": 145155.99999999997,
+      "net_demand_mw": 156768.66765441894
+    },
+    {
+      "target_timestamp": "2025-04-11T06:00:00.000",
+      "actual_net_mw": 172983.63,
+      "net_demand_mw": 188483.47256011964
+    },
+    {
+      "target_timestamp": "2025-04-12T03:00:00.000",
+      "actual_net_mw": 164559.13,
+      "net_demand_mw": 165773.48357543943
+    },
+    {
+      "target_timestamp": "2025-04-13T00:00:00.000",
+      "actual_net_mw": 184089.84,
+      "net_demand_mw": 170672.0873474121
+    },
+    {
+      "target_timestamp": "2025-04-13T20:00:00.000",
+      "actual_net_mw": 187204.59,
+      "net_demand_mw": 184361.0906915283
+    },
+    {
+      "target_timestamp": "2025-04-14T17:00:00.000",
+      "actual_net_mw": 170488.74000000002,
+      "net_demand_mw": 167263.81540771484
+    },
+    {
+      "target_timestamp": "2025-04-15T13:00:00.000",
+      "actual_net_mw": 134142.62,
+      "net_demand_mw": 134161.15459838865
+    },
+    {
+      "target_timestamp": "2025-04-16T10:00:00.000",
+      "actual_net_mw": 150661.22999999998,
+      "net_demand_mw": 145390.94990722658
+    },
+    {
+      "target_timestamp": "2025-04-17T07:00:00.000",
+      "actual_net_mw": 176415.60000000003,
+      "net_demand_mw": 181767.20260375977
+    },
+    {
+      "target_timestamp": "2025-04-18T03:00:00.000",
+      "actual_net_mw": 183244.83,
+      "net_demand_mw": 179895.5013367462
+    },
+    {
+      "target_timestamp": "2025-04-19T00:00:00.000",
+      "actual_net_mw": 184567.56,
+      "net_demand_mw": 198408.02721679685
+    },
+    {
+      "target_timestamp": "2025-04-19T20:00:00.000",
+      "actual_net_mw": 205319.26,
+      "net_demand_mw": 189805.4887585449
+    },
+    {
+      "target_timestamp": "2025-04-20T17:00:00.000",
+      "actual_net_mw": 167821.13000000003,
+      "net_demand_mw": 170916.10255126955
+    },
+    {
+      "target_timestamp": "2025-04-21T14:00:00.000",
+      "actual_net_mw": 161062.38,
+      "net_demand_mw": 146611.37006835936
+    },
+    {
+      "target_timestamp": "2025-04-22T10:00:00.000",
+      "actual_net_mw": 159153.05,
+      "net_demand_mw": 157445.59900146484
+    },
+    {
+      "target_timestamp": "2025-04-23T07:00:00.000",
+      "actual_net_mw": 183034.16999999998,
+      "net_demand_mw": 180039.58399902342
+    },
+    {
+      "target_timestamp": "2025-04-24T03:00:00.000",
+      "actual_net_mw": 192150.41,
+      "net_demand_mw": 193342.1642834473
+    },
+    {
+      "target_timestamp": "2025-04-25T00:00:00.000",
+      "actual_net_mw": 210382.16,
+      "net_demand_mw": 206483.14239257813
+    },
+    {
+      "target_timestamp": "2025-04-25T21:00:00.000",
+      "actual_net_mw": 210747.09,
+      "net_demand_mw": 215878.82881591795
+    },
+    {
+      "target_timestamp": "2025-04-26T17:00:00.000",
+      "actual_net_mw": 190569.30000000002,
+      "net_demand_mw": 191761.34161865234
+    },
+    {
+      "target_timestamp": "2025-04-27T14:00:00.000",
+      "actual_net_mw": 150141.22999999998,
+      "net_demand_mw": 160707.12969177245
+    },
+    {
+      "target_timestamp": "2025-04-28T10:00:00.000",
+      "actual_net_mw": 154142.63,
+      "net_demand_mw": 147597.02784454345
+    },
+    {
+      "target_timestamp": "2025-04-29T07:00:00.000",
+      "actual_net_mw": 176900.57,
+      "net_demand_mw": 177822.13999145507
+    },
+    {
+      "target_timestamp": "2025-04-30T04:00:00.000",
+      "actual_net_mw": 186545.49,
+      "net_demand_mw": 183870.73640869142
+    },
+    {
+      "target_timestamp": "2025-05-01T00:00:00.000",
+      "actual_net_mw": 198859.37000000002,
+      "net_demand_mw": 197144.7894848633
+    },
+    {
+      "target_timestamp": "2025-05-01T21:00:00.000",
+      "actual_net_mw": 183107.63999999998,
+      "net_demand_mw": 196464.6096923828
+    },
+    {
+      "target_timestamp": "2025-05-02T17:00:00.000",
+      "actual_net_mw": 180891.00999999998,
+      "net_demand_mw": 167389.57752357482
+    },
+    {
+      "target_timestamp": "2025-05-03T14:00:00.000",
+      "actual_net_mw": 147338.68,
+      "net_demand_mw": 142957.7215283203
+    },
+    {
+      "target_timestamp": "2025-05-04T11:00:00.000",
+      "actual_net_mw": 123854.73000000001,
+      "net_demand_mw": 134828.47122680664
+    },
+    {
+      "target_timestamp": "2025-05-05T07:00:00.000",
+      "actual_net_mw": 161337.16,
+      "net_demand_mw": 164127.37143630983
+    },
+    {
+      "target_timestamp": "2025-05-06T04:00:00.000",
+      "actual_net_mw": 161254.26,
+      "net_demand_mw": 169159.18625793458
+    },
+    {
+      "target_timestamp": "2025-05-07T00:00:00.000",
+      "actual_net_mw": 178461.21,
+      "net_demand_mw": 175260.16209228514
+    },
+    {
+      "target_timestamp": "2025-05-07T21:00:00.000",
+      "actual_net_mw": 188443.49,
+      "net_demand_mw": 187750.32837524413
+    },
+    {
+      "target_timestamp": "2025-05-08T18:00:00.000",
+      "actual_net_mw": 182019.08000000002,
+      "net_demand_mw": 176512.83397094728
+    },
+    {
+      "target_timestamp": "2025-05-09T14:00:00.000",
+      "actual_net_mw": 152848.94999999998,
+      "net_demand_mw": 146096.79921142576
+    },
+    {
+      "target_timestamp": "2025-05-10T11:00:00.000",
+      "actual_net_mw": 147478.62,
+      "net_demand_mw": 141264.6378100586
+    },
+    {
+      "target_timestamp": "2025-05-11T07:00:00.000",
+      "actual_net_mw": 167265.04,
+      "net_demand_mw": 162699.58363769532
+    },
+    {
+      "target_timestamp": "2025-05-12T04:00:00.000",
+      "actual_net_mw": 174589.88999999998,
+      "net_demand_mw": 183387.67895446776
+    },
+    {
+      "target_timestamp": "2025-05-13T01:00:00.000",
+      "actual_net_mw": 195229.68999999997,
+      "net_demand_mw": 186017.12513549806
+    },
+    {
+      "target_timestamp": "2025-05-13T21:00:00.000",
+      "actual_net_mw": 198505.06,
+      "net_demand_mw": 200554.5945626831
+    },
+    {
+      "target_timestamp": "2025-05-14T18:00:00.000",
+      "actual_net_mw": 195372.63,
+      "net_demand_mw": 179539.18244995116
+    },
+    {
+      "target_timestamp": "2025-05-15T14:00:00.000",
+      "actual_net_mw": 167797.62,
+      "net_demand_mw": 166046.76697875976
+    },
+    {
+      "target_timestamp": "2025-05-16T11:00:00.000",
+      "actual_net_mw": 153442.91,
+      "net_demand_mw": 156251.46359375
+    },
+    {
+      "target_timestamp": "2025-05-17T08:00:00.000",
+      "actual_net_mw": 155033.46000000002,
+      "net_demand_mw": 154602.95406982422
+    },
+    {
+      "target_timestamp": "2025-05-18T04:00:00.000",
+      "actual_net_mw": 186202.57,
+      "net_demand_mw": 184946.190032959
+    },
+    {
+      "target_timestamp": "2025-05-19T01:00:00.000",
+      "actual_net_mw": 191521.22999999998,
+      "net_demand_mw": 194759.68803985594
+    },
+    {
+      "target_timestamp": "2025-05-19T21:00:00.000",
+      "actual_net_mw": 213614.14,
+      "net_demand_mw": 204303.9066644287
+    },
+    {
+      "target_timestamp": "2025-05-20T18:00:00.000",
+      "actual_net_mw": 187974.80999999997,
+      "net_demand_mw": 193147.01601440427
+    },
+    {
+      "target_timestamp": "2025-05-21T15:00:00.000",
+      "actual_net_mw": 162954.26999999996,
+      "net_demand_mw": 169444.70460571288
+    },
+    {
+      "target_timestamp": "2025-05-22T11:00:00.000",
+      "actual_net_mw": 122279.85,
+      "net_demand_mw": 145582.03715759277
+    },
+    {
+      "target_timestamp": "2025-05-23T08:00:00.000",
+      "actual_net_mw": 142284.32,
+      "net_demand_mw": 137467.54595458982
+    },
+    {
+      "target_timestamp": "2025-05-24T04:00:00.000",
+      "actual_net_mw": 174961.16,
+      "net_demand_mw": 172775.32800170901
+    },
+    {
+      "target_timestamp": "2025-05-25T01:00:00.000",
+      "actual_net_mw": 165203.77999999997,
+      "net_demand_mw": 189337.63402770995
+    },
+    {
+      "target_timestamp": "2025-05-25T22:00:00.000",
+      "actual_net_mw": 179271.69999999998,
+      "net_demand_mw": 179587.56520721436
+    },
+    {
+      "target_timestamp": "2025-05-26T18:00:00.000",
+      "actual_net_mw": 170943.94,
+      "net_demand_mw": 163704.09889066455
+    },
+    {
+      "target_timestamp": "2025-05-27T15:00:00.000",
+      "actual_net_mw": 144021.36,
+      "net_demand_mw": 144249.26091552735
+    },
+    {
+      "target_timestamp": "2025-05-28T11:00:00.000",
+      "actual_net_mw": 132354.43,
+      "net_demand_mw": 132337.5846948242
+    },
+    {
+      "target_timestamp": "2025-05-29T08:00:00.000",
+      "actual_net_mw": 148354.78999999998,
+      "net_demand_mw": 143607.32382080078
+    },
+    {
+      "target_timestamp": "2025-05-30T05:00:00.000",
+      "actual_net_mw": 157086.13,
+      "net_demand_mw": 170458.10293098452
+    },
+    {
+      "target_timestamp": "2025-05-31T01:00:00.000",
+      "actual_net_mw": 167974.26,
+      "net_demand_mw": 172298.08541755678
+    },
+    {
+      "target_timestamp": "2025-05-31T22:00:00.000",
+      "actual_net_mw": 187683.22,
+      "net_demand_mw": 183583.32703666686
+    },
+    {
+      "target_timestamp": "2025-06-01T18:00:00.000",
+      "actual_net_mw": 148522.56,
+      "net_demand_mw": 149688.99510253905
+    },
+    {
+      "target_timestamp": "2025-06-02T15:00:00.000",
+      "actual_net_mw": 142428.36000000002,
+      "net_demand_mw": 137333.06139404298
+    },
+    {
+      "target_timestamp": "2025-06-03T12:00:00.000",
+      "actual_net_mw": 124395.79000000001,
+      "net_demand_mw": 127210.1938305664
+    },
+    {
+      "target_timestamp": "2025-06-04T08:00:00.000",
+      "actual_net_mw": 140193.15000000002,
+      "net_demand_mw": 140225.67915527345
+    },
+    {
+      "target_timestamp": "2025-06-05T05:00:00.000",
+      "actual_net_mw": 175395.46,
+      "net_demand_mw": 172923.46485839845
+    },
+    {
+      "target_timestamp": "2025-06-06T01:00:00.000",
+      "actual_net_mw": 194083.94,
+      "net_demand_mw": 182987.57385498047
+    },
+    {
+      "target_timestamp": "2025-06-06T22:00:00.000",
+      "actual_net_mw": 208372.09,
+      "net_demand_mw": 206356.5927331543
+    },
+    {
+      "target_timestamp": "2025-06-07T19:00:00.000",
+      "actual_net_mw": 195752.91,
+      "net_demand_mw": 198379.78094726562
+    },
+    {
+      "target_timestamp": "2025-06-08T15:00:00.000",
+      "actual_net_mw": 159164.95,
+      "net_demand_mw": 158439.47228515623
+    },
+    {
+      "target_timestamp": "2025-06-09T12:00:00.000",
+      "actual_net_mw": 159250.93000000002,
+      "net_demand_mw": 143556.05335388184
+    },
+    {
+      "target_timestamp": "2025-06-10T08:00:00.000",
+      "actual_net_mw": 161244.12000000002,
+      "net_demand_mw": 160252.93541748048
+    },
+    {
+      "target_timestamp": "2025-06-11T05:00:00.000",
+      "actual_net_mw": 193502.16999999998,
+      "net_demand_mw": 192713.15001464845
+    },
+    {
+      "target_timestamp": "2025-06-12T02:00:00.000",
+      "actual_net_mw": 198036.22,
+      "net_demand_mw": 195341.02411132812
+    },
+    {
+      "target_timestamp": "2025-06-12T22:00:00.000",
+      "actual_net_mw": 217716.16999999998,
+      "net_demand_mw": 211537.0641748047
+    },
+    {
+      "target_timestamp": "2025-06-13T19:00:00.000",
+      "actual_net_mw": 206974.65000000002,
+      "net_demand_mw": 211628.35008361816
+    },
+    {
+      "target_timestamp": "2025-06-14T15:00:00.000",
+      "actual_net_mw": 189518.0,
+      "net_demand_mw": 178522.6877701378
+    },
+    {
+      "target_timestamp": "2025-06-15T12:00:00.000",
+      "actual_net_mw": 150486.12,
+      "net_demand_mw": 166779.52157699584
+    },
+    {
+      "target_timestamp": "2025-06-16T09:00:00.000",
+      "actual_net_mw": 153696.34,
+      "net_demand_mw": 152288.1141595459
+    },
+    {
+      "target_timestamp": "2025-06-17T05:00:00.000",
+      "actual_net_mw": 177168.43,
+      "net_demand_mw": 177745.02756073
+    },
+    {
+      "target_timestamp": "2025-06-18T02:00:00.000",
+      "actual_net_mw": 173292.97999999998,
+      "net_demand_mw": 182781.30702919007
+    },
+    {
+      "target_timestamp": "2025-06-18T22:00:00.000",
+      "actual_net_mw": 192868.08,
+      "net_demand_mw": 195217.1063131714
+    },
+    {
+      "target_timestamp": "2025-06-19T19:00:00.000",
+      "actual_net_mw": 182872.4,
+      "net_demand_mw": 188366.47302871707
+    },
+    {
+      "target_timestamp": "2025-06-20T16:00:00.000",
+      "actual_net_mw": 151530.40999999997,
+      "net_demand_mw": 152715.94318359374
+    },
+    {
+      "target_timestamp": "2025-06-21T12:00:00.000",
+      "actual_net_mw": 142164.43000000002,
+      "net_demand_mw": 135954.19466918946
+    },
+    {
+      "target_timestamp": "2025-06-22T09:00:00.000",
+      "actual_net_mw": 141867.7,
+      "net_demand_mw": 140650.76516357422
+    },
+    {
+      "target_timestamp": "2025-06-23T05:00:00.000",
+      "actual_net_mw": 168593.77,
+      "net_demand_mw": 181514.5999837494
+    },
+    {
+      "target_timestamp": "2025-06-24T02:00:00.000",
+      "actual_net_mw": 173115.56,
+      "net_demand_mw": 174491.69862968443
+    },
+    {
+      "target_timestamp": "2025-06-24T23:00:00.000",
+      "actual_net_mw": 195027.47999999998,
+      "net_demand_mw": 191677.990741272
+    }
+  ],
+  "comparison_is_display_sample": true,
+  "retrospective": true
+}

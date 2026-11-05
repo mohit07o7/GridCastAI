@@ -1,0 +1,82 @@
+demand_h01: train=21738 val=4991 best=999 selected=residual_xgboost
+demand_h02: train=21735 val=4991 best=999 selected=residual_xgboost
+demand_h03: train=21733 val=4991 best=998 selected=residual_xgboost
+demand_h04: train=21732 val=4991 best=999 selected=residual_xgboost
+demand_h05: train=21731 val=4991 best=709 selected=residual_xgboost
+demand_h06: train=21730 val=4991 best=964 selected=residual_xgboost
+demand_h07: train=21729 val=4991 best=572 selected=residual_xgboost
+demand_h08: train=21728 val=4991 best=437 selected=residual_xgboost
+demand_h09: train=21728 val=4991 best=453 selected=residual_xgboost
+demand_h10: train=21728 val=4991 best=436 selected=residual_xgboost
+demand_h11: train=21728 val=4991 best=410 selected=residual_xgboost
+demand_h12: train=21728 val=4991 best=369 selected=residual_xgboost
+demand_h13: train=21728 val=4991 best=396 selected=residual_xgboost
+demand_h14: train=21728 val=4991 best=444 selected=residual_xgboost
+demand_h15: train=21728 val=4991 best=322 selected=residual_xgboost
+demand_h16: train=21728 val=4991 best=348 selected=residual_xgboost
+demand_h17: train=21728 val=4991 best=285 selected=residual_xgboost
+demand_h18: train=21728 val=4991 best=251 selected=residual_xgboost
+demand_h19: train=21728 val=4991 best=190 selected=residual_xgboost
+demand_h20: train=21728 val=4991 best=235 selected=residual_xgboost
+demand_h21: train=21728 val=4991 best=239 selected=residual_xgboost
+demand_h22: train=21728 val=4991 best=246 selected=residual_xgboost
+demand_h23: train=21728 val=4991 best=221 selected=residual_xgboost
+demand_h24: train=21728 val=4991 best=220 selected=residual_xgboost
+wind_h01: train=21809 val=4343 best=999 selected=residual_xgboost
+wind_h02: train=21802 val=4341 best=996 selected=residual_xgboost
+wind_h03: train=21798 val=4339 best=992 selected=residual_xgboost
+wind_h04: train=21794 val=4337 best=862 selected=residual_xgboost
+wind_h05: train=21790 val=4335 best=750 selected=residual_xgboost
+wind_h06: train=21788 val=4333 best=565 selected=residual_xgboost
+wind_h07: train=21786 val=4331 best=553 selected=residual_xgboost
+wind_h08: train=21785 val=4329 best=364 selected=residual_xgboost
+wind_h09: train=21784 val=4327 best=436 selected=residual_xgboost
+wind_h10: train=21783 val=4325 best=351 selected=residual_xgboost
+wind_h11: train=21782 val=4323 best=399 selected=residual_xgboost
+wind_h12: train=21781 val=4321 best=249 selected=residual_xgboost
+wind_h13: train=21780 val=4319 best=250 selected=residual_xgboost
+wind_h14: train=21779 val=4317 best=217 selected=residual_xgboost
+wind_h15: train=21778 val=4315 best=178 selected=residual_xgboost
+wind_h16: train=21777 val=4313 best=181 selected=residual_xgboost
+wind_h17: train=21776 val=4311 best=175 selected=residual_xgboost
+wind_h18: train=21776 val=4309 best=126 selected=residual_xgboost
+wind_h19: train=21776 val=4307 best=127 selected=residual_xgboost
+wind_h20: train=21776 val=4305 best=118 selected=residual_xgboost
+wind_h21: train=21776 val=4303 best=90 selected=residual_xgboost
+wind_h22: train=21776 val=4301 best=88 selected=residual_xgboost
+wind_h23: train=21776 val=4299 best=85 selected=residual_xgboost
+wind_h24: train=21776 val=4297 best=88 selected=residual_xgboost
+solar_h01: train=22351 val=4991 best=999 selected=residual_xgboost
+solar_h02: train=22347 val=4991 best=999 selected=residual_xgboost
+solar_h03: train=22346 val=4991 best=990 selected=residual_xgboost
+solar_h04: train=22345 val=4991 best=627 selected=residual_xgboost
+solar_h05: train=22344 val=4991 best=499 selected=residual_xgboost
+solar_h06: train=22343 val=4991 best=269 selected=residual_xgboost
+solar_h07: train=22342 val=4991 best=253 selected=residual_xgboost
+solar_h08: train=22342 val=4991 best=319 selected=residual_xgboost
+solar_h09: train=22342 val=4991 best=286 selected=residual_xgboost
+solar_h10: train=22342 val=4991 best=264 selected=residual_xgboost
+solar_h11: train=22342 val=4991 best=389 selected=residual_xgboost
+solar_h12: train=22342 val=4991 best=296 selected=residual_xgboost
+solar_h13: train=22342 val=4991 best=312 selected=residual_xgboost
+solar_h14: train=22342 val=4991 best=316 selected=residual_xgboost
+solar_h15: train=22342 val=4991 best=230 selected=residual_xgboost
+solar_h16: train=22342 val=4991 best=233 selected=residual_xgboost
+solar_h17: train=22342 val=4991 best=272 selected=residual_xgboost
+solar_h18: train=22342 val=4991 best=266 selected=residual_xgboost
+solar_h19: train=22342 val=4991 best=266 selected=residual_xgboost
+solar_h20: train=22342 val=4991 best=213 selected=residual_xgboost
+solar_h21: train=22342 val=4991 best=205 selected=residual_xgboost
+solar_h22: train=22342 val=4991 best=247 selected=residual_xgboost
+solar_h23: train=22342 val=4991 best=330 selected=residual_xgboost
+solar_h24: train=22342 val=4991 best=334 selected=residual_xgboost
+{
+  "bundle": "/Users/mohityadav/Desktop/GridCastAI/models/grid_curve_v1",
+  "candidates": 72,
+  "selected_counts": {
+    "demand": 24,
+    "wind": 24,
+    "solar": 24
+  },
+  "test_origins": 4991
+}

@@ -1,0 +1,3335 @@
+{
+  "schema_version": 1,
+  "model_id": "grid_curve_v1",
+  "created_at_utc": "2026-11-05T05:56:05.037072+00:00",
+  "features": [
+    {
+      "name": "lag_0",
+      "dtype": "float64"
+    },
+    {
+      "name": "lag_1",
+      "dtype": "float64"
+    },
+    {
+      "name": "lag_3",
+      "dtype": "float64"
+    },
+    {
+      "name": "lag_6",
+      "dtype": "float64"
+    },
+    {
+      "name": "lag_24",
+      "dtype": "float64"
+    },
+    {
+      "name": "lag_48",
+      "dtype": "float64"
+    },
+    {
+      "name": "lag_168",
+      "dtype": "float64"
+    },
+    {
+      "name": "recent_mean_24",
+      "dtype": "float64"
+    },
+    {
+      "name": "recent_std_24",
+      "dtype": "float64"
+    },
+    {
+      "name": "recent_mean_168",
+      "dtype": "float64"
+    },
+    {
+      "name": "recent_std_168",
+      "dtype": "float64"
+    },
+    {
+      "name": "target_previous_day",
+      "dtype": "float64"
+    },
+    {
+      "name": "target_previous_week",
+      "dtype": "float64"
+    },
+    {
+      "name": "target_hour_sin",
+      "dtype": "float64"
+    },
+    {
+      "name": "target_hour_cos",
+      "dtype": "float64"
+    },
+    {
+      "name": "target_dow_sin",
+      "dtype": "float64"
+    },
+    {
+      "name": "target_dow_cos",
+      "dtype": "float64"
+    },
+    {
+      "name": "target_month_sin",
+      "dtype": "float64"
+    },
+    {
+      "name": "target_month_cos",
+      "dtype": "float64"
+    },
+    {
+      "name": "target_year",
+      "dtype": "float64"
+    }
+  ],
+  "feature_version": "direct_curve_features_v1",
+  "inference_policy": "curve_inference_quality_v1",
+  "training_target_policy": "curve_component_target_quality_v1",
+  "evaluation_target_policy": "grid_evaluation_target_v1",
+  "horizons": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+  ],
+  "parameters": {
+    "n_estimators": 1000,
+    "early_stopping_rounds": 50,
+    "max_depth": 4,
+    "learning_rate": 0.03,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "min_child_weight": 5,
+    "reg_lambda": 2.0,
+    "objective": "reg:absoluteerror",
+    "eval_metric": "mae",
+    "random_state": 42,
+    "n_jobs": 4,
+    "tree_method": "hist"
+  },
+  "fit_scope": "training only; validation early stopping and method selection; no refit",
+  "validation_start_origin": "2024-05-03 02:00:00",
+  "test_start_origin": "2024-11-28 01:00:00",
+  "max_horizon_purge_hours": 24,
+  "selection": "lowest validation MAE on identical eligible rows; ties within 1e-9 MW favor baseline",
+  "baseline_tie_order": [
+    "previous_day",
+    "last_observation",
+    "previous_week"
+  ],
+  "source": {
+    "path": "data/processed/full_hourly_stacked.csv",
+    "sha256": "717ad938f1ec651acac450e5c009aef18bc8cd5fcaebfc7c17d12f7e49f65afc"
+  },
+  "code_sha256": {
+    "src/common/curve_features.py": "cafc41de0b175523a3f40666cc4af10218664fc176a391166197c9e51691a376",
+    "src/common/curve_model.py": "c371c662b12af11992a9845734f52a934fed2ed775172d703f37dcd8ba05b477",
+    "src/forecasting/train_grid_curve.py": "2ccd8e290ccdc28148994b7ef45f2f1d261e3697de889514f99534162cc79a24"
+  },
+  "versions": {
+    "python": "3.14.3",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "xgboost": "3.4.1",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1"
+  },
+  "entries": {
+    "demand_h01": {
+      "component": "demand",
+      "horizon": 1,
+      "model_file": "demand_h01.json",
+      "best_iteration": 999,
+      "boosted_rounds": 1000,
+      "splits": {
+        "train": {
+          "rows": 21738,
+          "first_origin": "2021-09-15 13:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-15 14:00:00",
+          "last_target": "2024-05-02 02:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 03:00:00",
+          "last_target": "2024-11-27 01:00:00"
+        },
+        "test": {
+          "rows": 4617,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 02:00:00",
+          "last_target": "2025-06-24 00:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1840.777108100065,
+        "previous_day": 5326.981875375676,
+        "last_observation": 3625.4149108395113,
+        "previous_week": 8540.699164496093
+      },
+      "baseline_ranking": [
+        "last_observation",
+        "previous_day",
+        "previous_week"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 01:00:00",
+      "model_sha256": "49c7d467583d99d2544024919276cb860e94b9527cfed6cc0262d36248124041"
+    },
+    "demand_h02": {
+      "component": "demand",
+      "horizon": 2,
+      "model_file": "demand_h02.json",
+      "best_iteration": 999,
+      "boosted_rounds": 1000,
+      "splits": {
+        "train": {
+          "rows": 21735,
+          "first_origin": "2021-09-15 13:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-15 15:00:00",
+          "last_target": "2024-05-02 03:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 04:00:00",
+          "last_target": "2024-11-27 02:00:00"
+        },
+        "test": {
+          "rows": 4616,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 03:00:00",
+          "last_target": "2025-06-24 01:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 2250.828995786717,
+        "previous_day": 5326.649841715087,
+        "last_observation": 6561.075399719495,
+        "previous_week": 8540.392226006812
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "last_observation",
+        "previous_week"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 02:00:00",
+      "model_sha256": "95a24ddeb6e1b86c8cff32a4b5543401caefe9aa712285dbe6ca13f572b3da22"
+    },
+    "demand_h03": {
+      "component": "demand",
+      "horizon": 3,
+      "model_file": "demand_h03.json",
+      "best_iteration": 998,
+      "boosted_rounds": 1000,
+      "splits": {
+        "train": {
+          "rows": 21733,
+          "first_origin": "2021-09-15 13:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-15 16:00:00",
+          "last_target": "2024-05-02 04:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 05:00:00",
+          "last_target": "2024-11-27 03:00:00"
+        },
+        "test": {
+          "rows": 4615,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 04:00:00",
+          "last_target": "2025-06-24 02:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 2601.228402292226,
+        "previous_day": 5326.266255259467,
+        "last_observation": 8833.772382288118,
+        "previous_week": 8540.209627329192
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 03:00:00",
+      "model_sha256": "1f6cc6cd1017f4687bae8a8cb07d5cc9da06994b8c98794c165e3e3c02b38014"
+    },
+    "demand_h04": {
+      "component": "demand",
+      "horizon": 4,
+      "model_file": "demand_h04.json",
+      "best_iteration": 999,
+      "boosted_rounds": 1000,
+      "splits": {
+        "train": {
+          "rows": 21732,
+          "first_origin": "2021-09-15 13:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-15 17:00:00",
+          "last_target": "2024-05-02 05:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 06:00:00",
+          "last_target": "2024-11-27 04:00:00"
+        },
+        "test": {
+          "rows": 4614,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 05:00:00",
+          "last_target": "2025-06-24 03:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 2844.450258123401,
+        "previous_day": 5325.910737327189,
+        "last_observation": 10729.088455219397,
+        "previous_week": 8540.024604287717
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 04:00:00",
+      "model_sha256": "b33afc1d4f328c85002d0307a0228065f116068abbc45831b384726169441a5a"
+    },
+    "demand_h05": {
+      "component": "demand",
+      "horizon": 5,
+      "model_file": "demand_h05.json",
+      "best_iteration": 709,
+      "boosted_rounds": 760,
+      "splits": {
+        "train": {
+          "rows": 21731,
+          "first_origin": "2021-09-15 13:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-15 18:00:00",
+          "last_target": "2024-05-02 06:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 07:00:00",
+          "last_target": "2024-11-27 05:00:00"
+        },
+        "test": {
+          "rows": 4613,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 06:00:00",
+          "last_target": "2025-06-24 04:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 3121.43849510331,
+        "previous_day": 5325.6226888399115,
+        "last_observation": 12243.118371067922,
+        "previous_week": 8539.717140853536
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 05:00:00",
+      "model_sha256": "afdf0b4bf7a4a3d274ad52ee0ec62d5a022afc9a4016003ed14f9fa6d4062b68"
+    },
+    "demand_h06": {
+      "component": "demand",
+      "horizon": 6,
+      "model_file": "demand_h06.json",
+      "best_iteration": 964,
+      "boosted_rounds": 1000,
+      "splits": {
+        "train": {
+          "rows": 21730,
+          "first_origin": "2021-09-15 13:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-15 19:00:00",
+          "last_target": "2024-05-02 07:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 08:00:00",
+          "last_target": "2024-11-27 06:00:00"
+        },
+        "test": {
+          "rows": 4612,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 07:00:00",
+          "last_target": "2025-06-24 05:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 3241.4884102783476,
+        "previous_day": 5325.349499098377,
+        "last_observation": 13338.200841514727,
+        "previous_week": 8539.41737327189
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 06:00:00",
+      "model_sha256": "182215854929f8a20ad4ece9b1aae88c0d91ee285cfed7a8b24e2d6ed50ff704"
+    },
+    "demand_h07": {
+      "component": "demand",
+      "horizon": 7,
+      "model_file": "demand_h07.json",
+      "best_iteration": 572,
+      "boosted_rounds": 623,
+      "splits": {
+        "train": {
+          "rows": 21729,
+          "first_origin": "2021-09-15 13:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-15 20:00:00",
+          "last_target": "2024-05-02 08:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 09:00:00",
+          "last_target": "2024-11-27 07:00:00"
+        },
+        "test": {
+          "rows": 4612,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 08:00:00",
+          "last_target": "2025-06-24 06:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 3371.65608401108,
+        "previous_day": 5325.300014025245,
+        "last_observation": 13935.73554998998,
+        "previous_week": 8539.911083951112
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 07:00:00",
+      "model_sha256": "0cc933d6ed44fd7dc3f14a45e534998edafb2c550799ee7cb23dda84e6a21742"
+    },
+    "demand_h08": {
+      "component": "demand",
+      "horizon": 8,
+      "model_file": "demand_h08.json",
+      "best_iteration": 437,
+      "boosted_rounds": 488,
+      "splits": {
+        "train": {
+          "rows": 21728,
+          "first_origin": "2021-09-15 13:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-15 21:00:00",
+          "last_target": "2024-05-02 09:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 10:00:00",
+          "last_target": "2024-11-27 08:00:00"
+        },
+        "test": {
+          "rows": 4612,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 09:00:00",
+          "last_target": "2025-06-24 07:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 3527.729362888723,
+        "previous_day": 5324.976698056502,
+        "last_observation": 14249.745966740133,
+        "previous_week": 8539.928114606291
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 08:00:00",
+      "model_sha256": "246a4a16430c54b79d124c2dc4e9ec81a9e756efce20edd1c62e28321e8ed2a0"
+    },
+    "demand_h09": {
+      "component": "demand",
+      "horizon": 9,
+      "model_file": "demand_h09.json",
+      "best_iteration": 453,
+      "boosted_rounds": 504,
+      "splits": {
+        "train": {
+          "rows": 21728,
+          "first_origin": "2021-09-15 13:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-15 22:00:00",
+          "last_target": "2024-05-02 10:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 11:00:00",
+          "last_target": "2024-11-27 09:00:00"
+        },
+        "test": {
+          "rows": 4612,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 10:00:00",
+          "last_target": "2025-06-24 08:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 3609.8286419901256,
+        "previous_day": 5324.421448607493,
+        "last_observation": 14466.116537767983,
+        "previous_week": 8539.941825285514
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 09:00:00",
+      "model_sha256": "3e44b15d93caff2435abace78a6882a32d8aa48965ab71c1a58f92bd35ec7c10"
+    },
+    "demand_h10": {
+      "component": "demand",
+      "horizon": 10,
+      "model_file": "demand_h10.json",
+      "best_iteration": 436,
+      "boosted_rounds": 487,
+      "splits": {
+        "train": {
+          "rows": 21728,
+          "first_origin": "2021-09-15 13:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-15 23:00:00",
+          "last_target": "2024-05-02 11:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 12:00:00",
+          "last_target": "2024-11-27 10:00:00"
+        },
+        "test": {
+          "rows": 4612,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 11:00:00",
+          "last_target": "2025-06-24 09:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 3666.2436684308777,
+        "previous_day": 5323.783346022841,
+        "last_observation": 14613.27266680024,
+        "previous_week": 8539.546129032258
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 10:00:00",
+      "model_sha256": "c9f06b49147b254a14b0898f0ed1da62e02bdbfa291cfe34a603d91dc9eb61ec"
+    },
+    "demand_h11": {
+      "component": "demand",
+      "horizon": 11,
+      "model_file": "demand_h11.json",
+      "best_iteration": 410,
+      "boosted_rounds": 461,
+      "splits": {
+        "train": {
+          "rows": 21728,
+          "first_origin": "2021-09-15 13:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-16 00:00:00",
+          "last_target": "2024-05-02 12:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 13:00:00",
+          "last_target": "2024-11-27 11:00:00"
+        },
+        "test": {
+          "rows": 4612,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 12:00:00",
+          "last_target": "2025-06-24 10:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 3757.5360298460373,
+        "previous_day": 5323.051508715688,
+        "last_observation": 14831.295023041474,
+        "previous_week": 8538.854193548388
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 11:00:00",
+      "model_sha256": "a321de68a4c2ed1467ea7704cb41ec755d7d77d2e08b7ac330cc88338d372ade"
+    },
+    "demand_h12": {
+      "component": "demand",
+      "horizon": 12,
+      "model_file": "demand_h12.json",
+      "best_iteration": 369,
+      "boosted_rounds": 420,
+      "splits": {
+        "train": {
+          "rows": 21728,
+          "first_origin": "2021-09-15 13:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-16 01:00:00",
+          "last_target": "2024-05-02 13:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 14:00:00",
+          "last_target": "2024-11-27 12:00:00"
+        },
+        "test": {
+          "rows": 4612,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 13:00:00",
+          "last_target": "2025-06-24 11:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 3822.2573349665754,
+        "previous_day": 5322.6076277299135,
+        "last_observation": 14967.973622520536,
+        "previous_week": 8537.901230214386
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 12:00:00",
+      "model_sha256": "a66a5808e755ab3ab16fe289655bc982eff33dd05086e3b9ead19c4d0671734b"
+    },
+    "demand_h13": {
+      "component": "demand",
+      "horizon": 13,
+      "model_file": "demand_h13.json",
+      "best_iteration": 396,
+      "boosted_rounds": 447,
+      "splits": {
+        "train": {
+          "rows": 21728,
+          "first_origin": "2021-09-15 13:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-16 02:00:00",
+          "last_target": "2024-05-02 14:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 15:00:00",
+          "last_target": "2024-11-27 13:00:00"
+        },
+        "test": {
+          "rows": 4612,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 14:00:00",
+          "last_target": "2025-06-24 12:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 3888.55739381867,
+        "previous_day": 5322.166171107994,
+        "last_observation": 15066.019781606894,
+        "previous_week": 8536.954866760167
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 13:00:00",
+      "model_sha256": "2eab50982a34188e3466749e51dfb9deacc139f03a711a3536d4d1f2a4c82cd9"
+    },
+    "demand_h14": {
+      "component": "demand",
+      "horizon": 14,
+      "model_file": "demand_h14.json",
+      "best_iteration": 444,
+      "boosted_rounds": 495,
+      "splits": {
+        "train": {
+          "rows": 21728,
+          "first_origin": "2021-09-15 13:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-16 03:00:00",
+          "last_target": "2024-05-02 15:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 16:00:00",
+          "last_target": "2024-11-27 14:00:00"
+        },
+        "test": {
+          "rows": 4612,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 15:00:00",
+          "last_target": "2025-06-24 13:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 3918.255161998211,
+        "previous_day": 5321.865217391304,
+        "last_observation": 15076.223504307758,
+        "previous_week": 8536.289198557404
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 14:00:00",
+      "model_sha256": "6ecc950c23b39e6e29e36a4915ff85468da8a3dcb775cb1282454d6cda000092"
+    },
+    "demand_h15": {
+      "component": "demand",
+      "horizon": 15,
+      "model_file": "demand_h15.json",
+      "best_iteration": 322,
+      "boosted_rounds": 373,
+      "splits": {
+        "train": {
+          "rows": 21728,
+          "first_origin": "2021-09-15 13:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-16 04:00:00",
+          "last_target": "2024-05-02 16:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 17:00:00",
+          "last_target": "2024-11-27 15:00:00"
+        },
+        "test": {
+          "rows": 4612,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 16:00:00",
+          "last_target": "2025-06-24 14:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 3987.763676149865,
+        "previous_day": 5321.645463834902,
+        "last_observation": 15087.140528952114,
+        "previous_week": 8535.563360048087
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 15:00:00",
+      "model_sha256": "ab1dd7f2ffe8b07ace207ea6df51d71ec966b0392e1522d854c5b2b4871303dd"
+    },
+    "demand_h16": {
+      "component": "demand",
+      "horizon": 16,
+      "model_file": "demand_h16.json",
+      "best_iteration": 348,
+      "boosted_rounds": 399,
+      "splits": {
+        "train": {
+          "rows": 21728,
+          "first_origin": "2021-09-15 13:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-16 05:00:00",
+          "last_target": "2024-05-02 17:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 18:00:00",
+          "last_target": "2024-11-27 16:00:00"
+        },
+        "test": {
+          "rows": 4612,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 17:00:00",
+          "last_target": "2025-06-24 15:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 4014.464291294709,
+        "previous_day": 5321.676918453216,
+        "last_observation": 14955.757483470245,
+        "previous_week": 8535.078809857745
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 16:00:00",
+      "model_sha256": "c87ccd2ea7a475a84ed00b4a3cafa86bcdcfc532fb118e686ec7ce527491d386"
+    },
+    "demand_h17": {
+      "component": "demand",
+      "horizon": 17,
+      "model_file": "demand_h17.json",
+      "best_iteration": 285,
+      "boosted_rounds": 336,
+      "splits": {
+        "train": {
+          "rows": 21728,
+          "first_origin": "2021-09-15 13:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-16 06:00:00",
+          "last_target": "2024-05-02 18:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 19:00:00",
+          "last_target": "2024-11-27 17:00:00"
+        },
+        "test": {
+          "rows": 4612,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 18:00:00",
+          "last_target": "2025-06-24 16:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 4044.8046903644167,
+        "previous_day": 5321.716315367662,
+        "last_observation": 14667.530034061312,
+        "previous_week": 8534.335874574233
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 17:00:00",
+      "model_sha256": "dd7becdfbafc81956929b10850371473cbc2ec3fe2e8dcc32e2e1de05d5c988f"
+    },
+    "demand_h18": {
+      "component": "demand",
+      "horizon": 18,
+      "model_file": "demand_h18.json",
+      "best_iteration": 251,
+      "boosted_rounds": 302,
+      "splits": {
+        "train": {
+          "rows": 21728,
+          "first_origin": "2021-09-15 13:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-16 07:00:00",
+          "last_target": "2024-05-02 19:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 20:00:00",
+          "last_target": "2024-11-27 18:00:00"
+        },
+        "test": {
+          "rows": 4612,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 19:00:00",
+          "last_target": "2025-06-24 17:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 4062.1800338852286,
+        "previous_day": 5321.343227810057,
+        "last_observation": 14090.166131035863,
+        "previous_week": 8533.270494890803
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 18:00:00",
+      "model_sha256": "c6286f818306f9eaae3f2f99f7f162eccb63f0f8ceb40b5bce564904447de41a"
+    },
+    "demand_h19": {
+      "component": "demand",
+      "horizon": 19,
+      "model_file": "demand_h19.json",
+      "best_iteration": 190,
+      "boosted_rounds": 241,
+      "splits": {
+        "train": {
+          "rows": 21728,
+          "first_origin": "2021-09-15 13:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-16 08:00:00",
+          "last_target": "2024-05-02 20:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 21:00:00",
+          "last_target": "2024-11-27 19:00:00"
+        },
+        "test": {
+          "rows": 4612,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 20:00:00",
+          "last_target": "2025-06-24 18:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 4080.187993292559,
+        "previous_day": 5321.014988980165,
+        "last_observation": 13117.82886395512,
+        "previous_week": 8531.929745541975
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 19:00:00",
+      "model_sha256": "0a76162f86f7933054c8ea58cba5c0de825d48e9194d427afdedeb4d478b095f"
+    },
+    "demand_h20": {
+      "component": "demand",
+      "horizon": 20,
+      "model_file": "demand_h20.json",
+      "best_iteration": 235,
+      "boosted_rounds": 286,
+      "splits": {
+        "train": {
+          "rows": 21728,
+          "first_origin": "2021-09-15 13:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-16 09:00:00",
+          "last_target": "2024-05-02 21:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 22:00:00",
+          "last_target": "2024-11-27 20:00:00"
+        },
+        "test": {
+          "rows": 4612,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 21:00:00",
+          "last_target": "2025-06-24 19:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 4081.133454856454,
+        "previous_day": 5320.831284311761,
+        "last_observation": 11778.374355840513,
+        "previous_week": 8530.915786415548
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 20:00:00",
+      "model_sha256": "d689a4960cd95145fb009f638dc5ba72088becc1dee4adf46a447b572213a277"
+    },
+    "demand_h21": {
+      "component": "demand",
+      "horizon": 21,
+      "model_file": "demand_h21.json",
+      "best_iteration": 239,
+      "boosted_rounds": 290,
+      "splits": {
+        "train": {
+          "rows": 21728,
+          "first_origin": "2021-09-15 13:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-16 10:00:00",
+          "last_target": "2024-05-02 22:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 23:00:00",
+          "last_target": "2024-11-27 21:00:00"
+        },
+        "test": {
+          "rows": 4612,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 22:00:00",
+          "last_target": "2025-06-24 20:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 4069.2503550823703,
+        "previous_day": 5320.448120617111,
+        "last_observation": 10129.416834301743,
+        "previous_week": 8530.428962131838
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 21:00:00",
+      "model_sha256": "a77508105dcb72e470f5fca7a446db11bd4803a7f0c105c932efcd4aac398f33"
+    },
+    "demand_h22": {
+      "component": "demand",
+      "horizon": 22,
+      "model_file": "demand_h22.json",
+      "best_iteration": 246,
+      "boosted_rounds": 297,
+      "splits": {
+        "train": {
+          "rows": 21728,
+          "first_origin": "2021-09-15 13:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-16 11:00:00",
+          "last_target": "2024-05-02 23:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-04 00:00:00",
+          "last_target": "2024-11-27 22:00:00"
+        },
+        "test": {
+          "rows": 4612,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 23:00:00",
+          "last_target": "2025-06-24 21:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 4049.273505031668,
+        "previous_day": 5319.936028851933,
+        "last_observation": 8279.363490282509,
+        "previous_week": 8530.381939491084
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "last_observation",
+        "previous_week"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 22:00:00",
+      "model_sha256": "2cb76b5fd9ab0ff6253e55a3de7ed0ce133fbc94d982b82e26674ff17efb4b41"
+    },
+    "demand_h23": {
+      "component": "demand",
+      "horizon": 23,
+      "model_file": "demand_h23.json",
+      "best_iteration": 221,
+      "boosted_rounds": 272,
+      "splits": {
+        "train": {
+          "rows": 21728,
+          "first_origin": "2021-09-15 13:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-16 12:00:00",
+          "last_target": "2024-05-03 00:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-04 01:00:00",
+          "last_target": "2024-11-27 23:00:00"
+        },
+        "test": {
+          "rows": 4611,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-29 00:00:00",
+          "last_target": "2025-06-24 22:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 4056.742400245923,
+        "previous_day": 5319.426131035864,
+        "last_observation": 6379.529386896414,
+        "previous_week": 8530.462684832699
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "last_observation",
+        "previous_week"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 23:00:00",
+      "model_sha256": "062852abc0e331a4e9266375a963a27724cfe467328b87d9587b29538f2e8edc"
+    },
+    "demand_h24": {
+      "component": "demand",
+      "horizon": 24,
+      "model_file": "demand_h24.json",
+      "best_iteration": 220,
+      "boosted_rounds": 271,
+      "splits": {
+        "train": {
+          "rows": 21728,
+          "first_origin": "2021-09-15 13:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-16 13:00:00",
+          "last_target": "2024-05-03 01:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-04 02:00:00",
+          "last_target": "2024-11-28 00:00:00"
+        },
+        "test": {
+          "rows": 4610,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-29 01:00:00",
+          "last_target": "2025-06-24 23:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 4064.3859062504634,
+        "previous_day": 5318.910587056703,
+        "last_observation": 5318.910587056703,
+        "previous_week": 8530.537976357442
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "last_observation",
+        "previous_week"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-28 00:00:00",
+      "model_sha256": "de548fd07564cd6c3b794613e3260e1e1b957b2dce3d615fcd53199e98be9435"
+    },
+    "wind_h01": {
+      "component": "wind",
+      "horizon": 1,
+      "model_file": "wind_h01.json",
+      "best_iteration": 999,
+      "boosted_rounds": 1000,
+      "splits": {
+        "train": {
+          "rows": 21809,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-04-24 09:00:00",
+          "first_target": "2021-09-08 01:00:00",
+          "last_target": "2024-04-24 10:00:00"
+        },
+        "validation": {
+          "rows": 4343,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 03:00:00",
+          "last_target": "2024-11-27 01:00:00"
+        },
+        "test": {
+          "rows": 4788,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 02:00:00",
+          "last_target": "2025-06-24 00:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 473.54857418108395,
+        "previous_day": 1845.9131406861616,
+        "last_observation": 509.3948031314759,
+        "previous_week": 3764.0816739580937
+      },
+      "baseline_ranking": [
+        "last_observation",
+        "previous_day",
+        "previous_week"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 01:00:00",
+      "model_sha256": "350fad68a6a8c33792108202ea59fc0d7fffc9b7b7b733baec0f30852e2d9de1"
+    },
+    "wind_h02": {
+      "component": "wind",
+      "horizon": 2,
+      "model_file": "wind_h02.json",
+      "best_iteration": 996,
+      "boosted_rounds": 1000,
+      "splits": {
+        "train": {
+          "rows": 21802,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-04-24 08:00:00",
+          "first_target": "2021-09-08 02:00:00",
+          "last_target": "2024-04-24 10:00:00"
+        },
+        "validation": {
+          "rows": 4341,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 04:00:00",
+          "last_target": "2024-11-27 02:00:00"
+        },
+        "test": {
+          "rows": 4787,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 03:00:00",
+          "last_target": "2025-06-24 01:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 745.2276188822447,
+        "previous_day": 1845.5270697995854,
+        "last_observation": 922.488196268141,
+        "previous_week": 3765.607224141903
+      },
+      "baseline_ranking": [
+        "last_observation",
+        "previous_day",
+        "previous_week"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 02:00:00",
+      "model_sha256": "5807b5fd91db0bedc3ee0633c0ddf60eeae2c79833aec0a3519e4bfbf63cbc26"
+    },
+    "wind_h03": {
+      "component": "wind",
+      "horizon": 3,
+      "model_file": "wind_h03.json",
+      "best_iteration": 992,
+      "boosted_rounds": 1000,
+      "splits": {
+        "train": {
+          "rows": 21798,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-04-24 07:00:00",
+          "first_target": "2021-09-08 03:00:00",
+          "last_target": "2024-04-24 10:00:00"
+        },
+        "validation": {
+          "rows": 4339,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 05:00:00",
+          "last_target": "2024-11-27 03:00:00"
+        },
+        "test": {
+          "rows": 4786,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 04:00:00",
+          "last_target": "2025-06-24 02:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 942.5288365862077,
+        "previous_day": 1844.872890066836,
+        "last_observation": 1271.051723899516,
+        "previous_week": 3766.986418529615
+      },
+      "baseline_ranking": [
+        "last_observation",
+        "previous_day",
+        "previous_week"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 03:00:00",
+      "model_sha256": "0a2d233f91d93b7254761fa2b0128ec996b275833bc59f31f84f82251dbb6380"
+    },
+    "wind_h04": {
+      "component": "wind",
+      "horizon": 4,
+      "model_file": "wind_h04.json",
+      "best_iteration": 862,
+      "boosted_rounds": 913,
+      "splits": {
+        "train": {
+          "rows": 21794,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-04-24 06:00:00",
+          "first_target": "2021-09-08 04:00:00",
+          "last_target": "2024-04-24 10:00:00"
+        },
+        "validation": {
+          "rows": 4337,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 06:00:00",
+          "last_target": "2024-11-27 04:00:00"
+        },
+        "test": {
+          "rows": 4785,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 05:00:00",
+          "last_target": "2025-06-24 03:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1095.925557237485,
+        "previous_day": 1844.3695411574822,
+        "last_observation": 1571.3070140650218,
+        "previous_week": 3768.038877103989
+      },
+      "baseline_ranking": [
+        "last_observation",
+        "previous_day",
+        "previous_week"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 04:00:00",
+      "model_sha256": "57b0c866fac9ee680fc9eced76682203d9a50759808ab64811ac84a20d82c326"
+    },
+    "wind_h05": {
+      "component": "wind",
+      "horizon": 5,
+      "model_file": "wind_h05.json",
+      "best_iteration": 750,
+      "boosted_rounds": 801,
+      "splits": {
+        "train": {
+          "rows": 21790,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-04-24 05:00:00",
+          "first_target": "2021-09-08 05:00:00",
+          "last_target": "2024-04-24 10:00:00"
+        },
+        "validation": {
+          "rows": 4335,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 07:00:00",
+          "last_target": "2024-11-27 05:00:00"
+        },
+        "test": {
+          "rows": 4784,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 06:00:00",
+          "last_target": "2025-06-24 04:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1221.9948700935834,
+        "previous_day": 1843.7884521337946,
+        "last_observation": 1837.677713956171,
+        "previous_week": 3768.6203875432534
+      },
+      "baseline_ranking": [
+        "last_observation",
+        "previous_day",
+        "previous_week"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 05:00:00",
+      "model_sha256": "9247b350178e24ad85ba143e5fa22780265d0d39bc3c0097275f9a0da4d4fcbb"
+    },
+    "wind_h06": {
+      "component": "wind",
+      "horizon": 6,
+      "model_file": "wind_h06.json",
+      "best_iteration": 565,
+      "boosted_rounds": 616,
+      "splits": {
+        "train": {
+          "rows": 21788,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-04-24 04:00:00",
+          "first_target": "2021-09-08 06:00:00",
+          "last_target": "2024-04-24 10:00:00"
+        },
+        "validation": {
+          "rows": 4333,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 08:00:00",
+          "last_target": "2024-11-27 06:00:00"
+        },
+        "test": {
+          "rows": 4783,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 07:00:00",
+          "last_target": "2025-06-24 05:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1331.0676650388218,
+        "previous_day": 1843.9140203092543,
+        "last_observation": 2063.9302030925455,
+        "previous_week": 3769.10323794138
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "last_observation",
+        "previous_week"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 06:00:00",
+      "model_sha256": "6ba80448c50fff117e55391be25fb1b5740b9699fd2fffba02037f90793af389"
+    },
+    "wind_h07": {
+      "component": "wind",
+      "horizon": 7,
+      "model_file": "wind_h07.json",
+      "best_iteration": 553,
+      "boosted_rounds": 604,
+      "splits": {
+        "train": {
+          "rows": 21786,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-04-24 03:00:00",
+          "first_target": "2021-09-08 07:00:00",
+          "last_target": "2024-04-24 10:00:00"
+        },
+        "validation": {
+          "rows": 4331,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 09:00:00",
+          "last_target": "2024-11-27 07:00:00"
+        },
+        "test": {
+          "rows": 4783,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 08:00:00",
+          "last_target": "2025-06-24 06:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1412.5999524635001,
+        "previous_day": 1844.6798337566381,
+        "last_observation": 2256.143574232279,
+        "previous_week": 3769.4718794735627
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "last_observation",
+        "previous_week"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 07:00:00",
+      "model_sha256": "a9d5d0b3df2d9ded32977a7e7ecd024bf366569e40f5fcf834f9cc8dbcc0c542"
+    },
+    "wind_h08": {
+      "component": "wind",
+      "horizon": 8,
+      "model_file": "wind_h08.json",
+      "best_iteration": 364,
+      "boosted_rounds": 415,
+      "splits": {
+        "train": {
+          "rows": 21785,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-04-24 02:00:00",
+          "first_target": "2021-09-08 08:00:00",
+          "last_target": "2024-04-24 10:00:00"
+        },
+        "validation": {
+          "rows": 4329,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 10:00:00",
+          "last_target": "2024-11-27 08:00:00"
+        },
+        "test": {
+          "rows": 4783,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 09:00:00",
+          "last_target": "2025-06-24 07:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1499.306229513179,
+        "previous_day": 1845.114155694156,
+        "last_observation": 2414.383264033264,
+        "previous_week": 3770.1112658812654
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "last_observation",
+        "previous_week"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 08:00:00",
+      "model_sha256": "9d7e3ef59db9a789b67836c652406b46804c685d2ef4859f89c55ec90e220fd7"
+    },
+    "wind_h09": {
+      "component": "wind",
+      "horizon": 9,
+      "model_file": "wind_h09.json",
+      "best_iteration": 436,
+      "boosted_rounds": 487,
+      "splits": {
+        "train": {
+          "rows": 21784,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-04-24 01:00:00",
+          "first_target": "2021-09-08 09:00:00",
+          "last_target": "2024-04-24 10:00:00"
+        },
+        "validation": {
+          "rows": 4327,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 11:00:00",
+          "last_target": "2024-11-27 09:00:00"
+        },
+        "test": {
+          "rows": 4783,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 10:00:00",
+          "last_target": "2025-06-24 08:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1540.6836609084637,
+        "previous_day": 1844.8376057314538,
+        "last_observation": 2541.656817656575,
+        "previous_week": 3771.1396625837765
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "last_observation",
+        "previous_week"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 09:00:00",
+      "model_sha256": "b1890cc11055f656f9006a168feb447b3e01cdf1cd81cd492d760f7e7be8e7c1"
+    },
+    "wind_h10": {
+      "component": "wind",
+      "horizon": 10,
+      "model_file": "wind_h10.json",
+      "best_iteration": 351,
+      "boosted_rounds": 402,
+      "splits": {
+        "train": {
+          "rows": 21783,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-04-24 00:00:00",
+          "first_target": "2021-09-08 10:00:00",
+          "last_target": "2024-04-24 10:00:00"
+        },
+        "validation": {
+          "rows": 4325,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 12:00:00",
+          "last_target": "2024-11-27 10:00:00"
+        },
+        "test": {
+          "rows": 4783,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 11:00:00",
+          "last_target": "2025-06-24 09:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1592.9609238329328,
+        "previous_day": 1844.092510982659,
+        "last_observation": 2639.694531791907,
+        "previous_week": 3772.857678612717
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "last_observation",
+        "previous_week"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 10:00:00",
+      "model_sha256": "b7a7e1c9eab8ba0acb52873fdd851766a4e9fed51dc7eb56df4a58f6927e0773"
+    },
+    "wind_h11": {
+      "component": "wind",
+      "horizon": 11,
+      "model_file": "wind_h11.json",
+      "best_iteration": 399,
+      "boosted_rounds": 450,
+      "splits": {
+        "train": {
+          "rows": 21782,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-04-23 23:00:00",
+          "first_target": "2021-09-08 11:00:00",
+          "last_target": "2024-04-24 10:00:00"
+        },
+        "validation": {
+          "rows": 4323,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 13:00:00",
+          "last_target": "2024-11-27 11:00:00"
+        },
+        "test": {
+          "rows": 4783,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 12:00:00",
+          "last_target": "2025-06-24 10:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1623.1797716611186,
+        "previous_day": 1843.2288133240806,
+        "last_observation": 2703.2271616932685,
+        "previous_week": 3773.8296090677773
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "last_observation",
+        "previous_week"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 11:00:00",
+      "model_sha256": "b55bbd3989e6d21305ed70f86d8f63875db56e2ac3cef83ad08ec4de1141dda6"
+    },
+    "wind_h12": {
+      "component": "wind",
+      "horizon": 12,
+      "model_file": "wind_h12.json",
+      "best_iteration": 249,
+      "boosted_rounds": 300,
+      "splits": {
+        "train": {
+          "rows": 21781,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-04-23 22:00:00",
+          "first_target": "2021-09-08 12:00:00",
+          "last_target": "2024-04-24 10:00:00"
+        },
+        "validation": {
+          "rows": 4321,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 14:00:00",
+          "last_target": "2024-11-27 12:00:00"
+        },
+        "test": {
+          "rows": 4783,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 13:00:00",
+          "last_target": "2025-06-24 11:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1661.0847948422459,
+        "previous_day": 1842.4627377921777,
+        "last_observation": 2732.4968086091185,
+        "previous_week": 3774.2598287433466
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "last_observation",
+        "previous_week"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 12:00:00",
+      "model_sha256": "6d45290ddcf85b573263a647a795bf3fee95e2d228c929ff5bc25466b2604c51"
+    },
+    "wind_h13": {
+      "component": "wind",
+      "horizon": 13,
+      "model_file": "wind_h13.json",
+      "best_iteration": 250,
+      "boosted_rounds": 301,
+      "splits": {
+        "train": {
+          "rows": 21780,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-04-23 21:00:00",
+          "first_target": "2021-09-08 13:00:00",
+          "last_target": "2024-04-24 10:00:00"
+        },
+        "validation": {
+          "rows": 4319,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 15:00:00",
+          "last_target": "2024-11-27 13:00:00"
+        },
+        "test": {
+          "rows": 4783,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 14:00:00",
+          "last_target": "2025-06-24 12:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1675.6324194417548,
+        "previous_day": 1841.7839916647372,
+        "last_observation": 2729.2657559620284,
+        "previous_week": 3774.3661125260483
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "last_observation",
+        "previous_week"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 13:00:00",
+      "model_sha256": "87843f47f1a8c7cfcac6c4fc43a109b3b90c8d6ec0ff4d2e0367cef46e33b063"
+    },
+    "wind_h14": {
+      "component": "wind",
+      "horizon": 14,
+      "model_file": "wind_h14.json",
+      "best_iteration": 217,
+      "boosted_rounds": 268,
+      "splits": {
+        "train": {
+          "rows": 21779,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-04-23 20:00:00",
+          "first_target": "2021-09-08 14:00:00",
+          "last_target": "2024-04-24 10:00:00"
+        },
+        "validation": {
+          "rows": 4317,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 16:00:00",
+          "last_target": "2024-11-27 14:00:00"
+        },
+        "test": {
+          "rows": 4783,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 15:00:00",
+          "last_target": "2025-06-24 13:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1696.0141220859016,
+        "previous_day": 1841.3747903636781,
+        "last_observation": 2702.197711373639,
+        "previous_week": 3775.2025480657867
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "last_observation",
+        "previous_week"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 14:00:00",
+      "model_sha256": "9074ae640f98a916571f04805d3932f729156367cff96537d5f1b5e9ce9c5932"
+    },
+    "wind_h15": {
+      "component": "wind",
+      "horizon": 15,
+      "model_file": "wind_h15.json",
+      "best_iteration": 178,
+      "boosted_rounds": 229,
+      "splits": {
+        "train": {
+          "rows": 21778,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-04-23 19:00:00",
+          "first_target": "2021-09-08 15:00:00",
+          "last_target": "2024-04-24 10:00:00"
+        },
+        "validation": {
+          "rows": 4315,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 17:00:00",
+          "last_target": "2024-11-27 15:00:00"
+        },
+        "test": {
+          "rows": 4783,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 16:00:00",
+          "last_target": "2025-06-24 14:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1715.8921612066476,
+        "previous_day": 1841.2780950173812,
+        "last_observation": 2650.7895063731166,
+        "previous_week": 3776.5911031286214
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "last_observation",
+        "previous_week"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 15:00:00",
+      "model_sha256": "e56cb6c719efdb0d138b9bc97350151cf641dea3c2d9e9689e45809743ac56f4"
+    },
+    "wind_h16": {
+      "component": "wind",
+      "horizon": 16,
+      "model_file": "wind_h16.json",
+      "best_iteration": 181,
+      "boosted_rounds": 232,
+      "splits": {
+        "train": {
+          "rows": 21777,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-04-23 18:00:00",
+          "first_target": "2021-09-08 16:00:00",
+          "last_target": "2024-04-24 10:00:00"
+        },
+        "validation": {
+          "rows": 4313,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 18:00:00",
+          "last_target": "2024-11-27 16:00:00"
+        },
+        "test": {
+          "rows": 4783,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 17:00:00",
+          "last_target": "2025-06-24 15:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1732.0029296811408,
+        "previous_day": 1841.3087804312545,
+        "last_observation": 2579.5105054486435,
+        "previous_week": 3777.8775770925113
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "last_observation",
+        "previous_week"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 16:00:00",
+      "model_sha256": "3b4d41b3590eca46805d0ed598302bf46704c3e28514c7a7baf358bb496e8dc9"
+    },
+    "wind_h17": {
+      "component": "wind",
+      "horizon": 17,
+      "model_file": "wind_h17.json",
+      "best_iteration": 175,
+      "boosted_rounds": 226,
+      "splits": {
+        "train": {
+          "rows": 21776,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-04-23 17:00:00",
+          "first_target": "2021-09-08 17:00:00",
+          "last_target": "2024-04-24 10:00:00"
+        },
+        "validation": {
+          "rows": 4311,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 19:00:00",
+          "last_target": "2024-11-27 17:00:00"
+        },
+        "test": {
+          "rows": 4783,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 18:00:00",
+          "last_target": "2025-06-24 16:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1744.9186991417978,
+        "previous_day": 1841.0610948735793,
+        "last_observation": 2486.9622454186965,
+        "previous_week": 3778.4877337044773
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "last_observation",
+        "previous_week"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 17:00:00",
+      "model_sha256": "bbc87ccc380d038d2a9de5f8af46838afe94da6f05aea0f2c311b8e6c36bd083"
+    },
+    "wind_h18": {
+      "component": "wind",
+      "horizon": 18,
+      "model_file": "wind_h18.json",
+      "best_iteration": 126,
+      "boosted_rounds": 177,
+      "splits": {
+        "train": {
+          "rows": 21776,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-04-24 15:00:00",
+          "first_target": "2021-09-08 18:00:00",
+          "last_target": "2024-04-25 09:00:00"
+        },
+        "validation": {
+          "rows": 4309,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 20:00:00",
+          "last_target": "2024-11-27 18:00:00"
+        },
+        "test": {
+          "rows": 4783,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 19:00:00",
+          "last_target": "2025-06-24 17:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1753.0321717977395,
+        "previous_day": 1840.9727361336738,
+        "last_observation": 2383.6191181248546,
+        "previous_week": 3779.0925411928524
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "last_observation",
+        "previous_week"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 18:00:00",
+      "model_sha256": "a631adf1520f1561ac4c1cd49610a242a4fc98f6e96b44cb53b3d22fcb9ee2db"
+    },
+    "wind_h19": {
+      "component": "wind",
+      "horizon": 19,
+      "model_file": "wind_h19.json",
+      "best_iteration": 127,
+      "boosted_rounds": 178,
+      "splits": {
+        "train": {
+          "rows": 21776,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-04-24 15:00:00",
+          "first_target": "2021-09-08 19:00:00",
+          "last_target": "2024-04-25 10:00:00"
+        },
+        "validation": {
+          "rows": 4307,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 21:00:00",
+          "last_target": "2024-11-27 19:00:00"
+        },
+        "test": {
+          "rows": 4783,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 20:00:00",
+          "last_target": "2025-06-24 18:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1762.4329688827843,
+        "previous_day": 1841.268279544927,
+        "last_observation": 2266.8890921755283,
+        "previous_week": 3780.293647550499
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "last_observation",
+        "previous_week"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 19:00:00",
+      "model_sha256": "7690feec7ed8f005993e4362970f04ed8ef65094bab9177f755b11e2b76bba57"
+    },
+    "wind_h20": {
+      "component": "wind",
+      "horizon": 20,
+      "model_file": "wind_h20.json",
+      "best_iteration": 118,
+      "boosted_rounds": 169,
+      "splits": {
+        "train": {
+          "rows": 21776,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-04-24 15:00:00",
+          "first_target": "2021-09-08 20:00:00",
+          "last_target": "2024-04-25 11:00:00"
+        },
+        "validation": {
+          "rows": 4305,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 22:00:00",
+          "last_target": "2024-11-27 20:00:00"
+        },
+        "test": {
+          "rows": 4783,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 21:00:00",
+          "last_target": "2025-06-24 19:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1767.1558506300364,
+        "previous_day": 1841.3171637630662,
+        "last_observation": 2144.5067897793265,
+        "previous_week": 3781.6562229965157
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "last_observation",
+        "previous_week"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 20:00:00",
+      "model_sha256": "cc717f543b35e28e7c359c2219de5799fe5c5110a7738d9035d0c84e8e227a64"
+    },
+    "wind_h21": {
+      "component": "wind",
+      "horizon": 21,
+      "model_file": "wind_h21.json",
+      "best_iteration": 90,
+      "boosted_rounds": 141,
+      "splits": {
+        "train": {
+          "rows": 21776,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-04-24 15:00:00",
+          "first_target": "2021-09-08 21:00:00",
+          "last_target": "2024-04-25 12:00:00"
+        },
+        "validation": {
+          "rows": 4303,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 23:00:00",
+          "last_target": "2024-11-27 21:00:00"
+        },
+        "test": {
+          "rows": 4783,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 22:00:00",
+          "last_target": "2025-06-24 20:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1771.4245319973002,
+        "previous_day": 1841.2660818033928,
+        "last_observation": 2023.12914478271,
+        "previous_week": 3782.632851498954
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "last_observation",
+        "previous_week"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 21:00:00",
+      "model_sha256": "526429bbf997cc5aba5b0365a3c5f734d32929b23623e52d6824442719eb6d7a"
+    },
+    "wind_h22": {
+      "component": "wind",
+      "horizon": 22,
+      "model_file": "wind_h22.json",
+      "best_iteration": 88,
+      "boosted_rounds": 139,
+      "splits": {
+        "train": {
+          "rows": 21776,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-04-24 15:00:00",
+          "first_target": "2021-09-08 22:00:00",
+          "last_target": "2024-04-25 13:00:00"
+        },
+        "validation": {
+          "rows": 4301,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-04 00:00:00",
+          "last_target": "2024-11-27 22:00:00"
+        },
+        "test": {
+          "rows": 4783,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 23:00:00",
+          "last_target": "2025-06-24 21:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1766.938913907386,
+        "previous_day": 1840.9719600093003,
+        "last_observation": 1919.7115089514068,
+        "previous_week": 3783.212299465241
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "last_observation",
+        "previous_week"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 22:00:00",
+      "model_sha256": "dc59aae96c54d49ec232455c8d1569755480fdaec37ddb37e3b93daa43c9c79f"
+    },
+    "wind_h23": {
+      "component": "wind",
+      "horizon": 23,
+      "model_file": "wind_h23.json",
+      "best_iteration": 85,
+      "boosted_rounds": 136,
+      "splits": {
+        "train": {
+          "rows": 21776,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-04-24 15:00:00",
+          "first_target": "2021-09-08 23:00:00",
+          "last_target": "2024-04-25 14:00:00"
+        },
+        "validation": {
+          "rows": 4299,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-04 01:00:00",
+          "last_target": "2024-11-27 23:00:00"
+        },
+        "test": {
+          "rows": 4782,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-29 00:00:00",
+          "last_target": "2025-06-24 22:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1763.598084300901,
+        "previous_day": 1840.8287229588275,
+        "last_observation": 1847.3595626889974,
+        "previous_week": 3783.47812281926
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "last_observation",
+        "previous_week"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 23:00:00",
+      "model_sha256": "2e13073487c56efa6abf091dbb1da4286e6e1dcde1acb627d0f455a87c64436d"
+    },
+    "wind_h24": {
+      "component": "wind",
+      "horizon": 24,
+      "model_file": "wind_h24.json",
+      "best_iteration": 88,
+      "boosted_rounds": 139,
+      "splits": {
+        "train": {
+          "rows": 21776,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-04-24 15:00:00",
+          "first_target": "2021-09-09 00:00:00",
+          "last_target": "2024-04-25 15:00:00"
+        },
+        "validation": {
+          "rows": 4297,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-04 02:00:00",
+          "last_target": "2024-11-28 00:00:00"
+        },
+        "test": {
+          "rows": 4781,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-29 01:00:00",
+          "last_target": "2025-06-24 23:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1753.6703611629853,
+        "previous_day": 1840.707740283919,
+        "last_observation": 1840.707740283919,
+        "previous_week": 3783.780716779149
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "last_observation",
+        "previous_week"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-28 00:00:00",
+      "model_sha256": "8bfd3748b46313df8568a31ae298e31a1c4476ae6d3cbd51f792ad4f7072fb94"
+    },
+    "solar_h01": {
+      "component": "solar",
+      "horizon": 1,
+      "model_file": "solar_h01.json",
+      "best_iteration": 999,
+      "boosted_rounds": 1000,
+      "splits": {
+        "train": {
+          "rows": 22351,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-08 01:00:00",
+          "last_target": "2024-05-02 02:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 03:00:00",
+          "last_target": "2024-11-27 01:00:00"
+        },
+        "test": {
+          "rows": 4774,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 02:00:00",
+          "last_target": "2025-06-24 00:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 626.2830316539943,
+        "previous_day": 1045.344462031657,
+        "last_observation": 3692.7841795231425,
+        "previous_week": 1682.4164175515928
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 01:00:00",
+      "model_sha256": "2328b90503bc86ffa227c903adaf2f1d5aedc3b73b6ceefd424a40c24b422d60"
+    },
+    "solar_h02": {
+      "component": "solar",
+      "horizon": 2,
+      "model_file": "solar_h02.json",
+      "best_iteration": 999,
+      "boosted_rounds": 1000,
+      "splits": {
+        "train": {
+          "rows": 22347,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-08 02:00:00",
+          "last_target": "2024-05-02 03:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 04:00:00",
+          "last_target": "2024-11-27 02:00:00"
+        },
+        "test": {
+          "rows": 4773,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 03:00:00",
+          "last_target": "2025-06-24 01:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 815.8074732899435,
+        "previous_day": 1045.341857343218,
+        "last_observation": 7319.099851733119,
+        "previous_week": 1682.341512722901
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 02:00:00",
+      "model_sha256": "9e3e66d0a66bac4b8c09ceec370298d7568eb6f7c1c683e4c59a100ef98c43dc"
+    },
+    "solar_h03": {
+      "component": "solar",
+      "horizon": 3,
+      "model_file": "solar_h03.json",
+      "best_iteration": 990,
+      "boosted_rounds": 1000,
+      "splits": {
+        "train": {
+          "rows": 22346,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-08 03:00:00",
+          "last_target": "2024-05-02 04:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 05:00:00",
+          "last_target": "2024-11-27 03:00:00"
+        },
+        "test": {
+          "rows": 4772,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 04:00:00",
+          "last_target": "2025-06-24 02:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 915.5214931848536,
+        "previous_day": 1045.3350330595072,
+        "last_observation": 10814.750186335405,
+        "previous_week": 1682.2664856742135
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 03:00:00",
+      "model_sha256": "45781bac0d4c4027ad5288ab65e627a1388a959471464c401d4ef1973989915b"
+    },
+    "solar_h04": {
+      "component": "solar",
+      "horizon": 4,
+      "model_file": "solar_h04.json",
+      "best_iteration": 627,
+      "boosted_rounds": 678,
+      "splits": {
+        "train": {
+          "rows": 22345,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-08 04:00:00",
+          "last_target": "2024-05-02 05:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 06:00:00",
+          "last_target": "2024-11-27 04:00:00"
+        },
+        "test": {
+          "rows": 4771,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 05:00:00",
+          "last_target": "2025-06-24 03:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 985.9024485415493,
+        "previous_day": 1045.3276798236827,
+        "last_observation": 14142.668865958725,
+        "previous_week": 1682.1925986776196
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 04:00:00",
+      "model_sha256": "0e16433f5fe352928d421a3cbbf9451993c0a243537b7064c56d9412f1e89b27"
+    },
+    "solar_h05": {
+      "component": "solar",
+      "horizon": 5,
+      "model_file": "solar_h05.json",
+      "best_iteration": 499,
+      "boosted_rounds": 550,
+      "splits": {
+        "train": {
+          "rows": 22344,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-08 05:00:00",
+          "last_target": "2024-05-02 06:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 07:00:00",
+          "last_target": "2024-11-27 05:00:00"
+        },
+        "test": {
+          "rows": 4770,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 06:00:00",
+          "last_target": "2025-06-24 04:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1006.966762229761,
+        "previous_day": 1045.3066159086356,
+        "last_observation": 17239.154225606093,
+        "previous_week": 1682.1944700460833
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 05:00:00",
+      "model_sha256": "4aa9e98cdce46cc258019ac5c08181ae2d39bca6929ea1c98b03fdefafafbf60"
+    },
+    "solar_h06": {
+      "component": "solar",
+      "horizon": 6,
+      "model_file": "solar_h06.json",
+      "best_iteration": 269,
+      "boosted_rounds": 320,
+      "splits": {
+        "train": {
+          "rows": 22343,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-08 06:00:00",
+          "last_target": "2024-05-02 07:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 08:00:00",
+          "last_target": "2024-11-27 06:00:00"
+        },
+        "test": {
+          "rows": 4769,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 07:00:00",
+          "last_target": "2025-06-24 05:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1019.2672213888382,
+        "previous_day": 1045.2073071528753,
+        "last_observation": 19968.380318573432,
+        "previous_week": 1682.1503205770387
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 06:00:00",
+      "model_sha256": "ed694bff3896312585e137cf4b2ab3813b6c98dfe684f05237607f42b24d0a39"
+    },
+    "solar_h07": {
+      "component": "solar",
+      "horizon": 7,
+      "model_file": "solar_h07.json",
+      "best_iteration": 253,
+      "boosted_rounds": 304,
+      "splits": {
+        "train": {
+          "rows": 22342,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-08 07:00:00",
+          "last_target": "2024-05-02 08:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 09:00:00",
+          "last_target": "2024-11-27 07:00:00"
+        },
+        "test": {
+          "rows": 4768,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 08:00:00",
+          "last_target": "2025-06-24 06:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1016.3898867515559,
+        "previous_day": 1044.589054297736,
+        "last_observation": 22408.43788619515,
+        "previous_week": 1682.340701262272
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 07:00:00",
+      "model_sha256": "9f3bc664c0678cbb969d550a18fa1a55c6f405e8c7254a804e59165303d597fd"
+    },
+    "solar_h08": {
+      "component": "solar",
+      "horizon": 8,
+      "model_file": "solar_h08.json",
+      "best_iteration": 319,
+      "boosted_rounds": 370,
+      "splits": {
+        "train": {
+          "rows": 22342,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-08 08:00:00",
+          "last_target": "2024-05-02 09:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 10:00:00",
+          "last_target": "2024-11-27 08:00:00"
+        },
+        "test": {
+          "rows": 4767,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 09:00:00",
+          "last_target": "2025-06-24 07:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1015.1836426950792,
+        "previous_day": 1043.845435784412,
+        "last_observation": 24223.68285513925,
+        "previous_week": 1682.659416950511
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 08:00:00",
+      "model_sha256": "b0cf1f4ca4353ff3ed3076fd76944c32bae642fe61cae326590bc042d3850fde"
+    },
+    "solar_h09": {
+      "component": "solar",
+      "horizon": 9,
+      "model_file": "solar_h09.json",
+      "best_iteration": 286,
+      "boosted_rounds": 337,
+      "splits": {
+        "train": {
+          "rows": 22342,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-08 09:00:00",
+          "last_target": "2024-05-02 10:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 11:00:00",
+          "last_target": "2024-11-27 09:00:00"
+        },
+        "test": {
+          "rows": 4766,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 10:00:00",
+          "last_target": "2025-06-24 08:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1016.0072918826467,
+        "previous_day": 1043.1597415347626,
+        "last_observation": 25788.728511320376,
+        "previous_week": 1682.4280665197352
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 09:00:00",
+      "model_sha256": "fbb2fc474462f43d2d81ccff8accd488a848f4cee7a9d70a0893687809c74847"
+    },
+    "solar_h10": {
+      "component": "solar",
+      "horizon": 10,
+      "model_file": "solar_h10.json",
+      "best_iteration": 264,
+      "boosted_rounds": 315,
+      "splits": {
+        "train": {
+          "rows": 22342,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-08 10:00:00",
+          "last_target": "2024-05-02 11:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 12:00:00",
+          "last_target": "2024-11-27 10:00:00"
+        },
+        "test": {
+          "rows": 4765,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 11:00:00",
+          "last_target": "2025-06-24 09:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1016.633016587375,
+        "previous_day": 1042.5804267681829,
+        "last_observation": 26609.021580845525,
+        "previous_week": 1682.0080705269488
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 10:00:00",
+      "model_sha256": "0945acf7df7cbe75e2245d10873e2ff83114d304f878a611e28883a05deaa535"
+    },
+    "solar_h11": {
+      "component": "solar",
+      "horizon": 11,
+      "model_file": "solar_h11.json",
+      "best_iteration": 389,
+      "boosted_rounds": 440,
+      "splits": {
+        "train": {
+          "rows": 22342,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-08 11:00:00",
+          "last_target": "2024-05-02 12:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 13:00:00",
+          "last_target": "2024-11-27 11:00:00"
+        },
+        "test": {
+          "rows": 4764,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 12:00:00",
+          "last_target": "2025-06-24 10:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1014.1704747570965,
+        "previous_day": 1042.3771628932077,
+        "last_observation": 27237.72606692046,
+        "previous_week": 1681.3977078741734
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 11:00:00",
+      "model_sha256": "2a4a4db0eb622f3015eafdc700b0fe50a114bb7341fec92b10bd3a0f591515c8"
+    },
+    "solar_h12": {
+      "component": "solar",
+      "horizon": 12,
+      "model_file": "solar_h12.json",
+      "best_iteration": 296,
+      "boosted_rounds": 347,
+      "splits": {
+        "train": {
+          "rows": 22342,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-08 12:00:00",
+          "last_target": "2024-05-02 13:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 14:00:00",
+          "last_target": "2024-11-27 12:00:00"
+        },
+        "test": {
+          "rows": 4763,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 13:00:00",
+          "last_target": "2025-06-24 11:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1016.0903402182984,
+        "previous_day": 1042.045553997195,
+        "last_observation": 27322.342149869764,
+        "previous_week": 1681.0395471849326
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 12:00:00",
+      "model_sha256": "f4b919f3b36e36725c3600bffc68029192c230d717e9a19ea3b34330466d55d7"
+    },
+    "solar_h13": {
+      "component": "solar",
+      "horizon": 13,
+      "model_file": "solar_h13.json",
+      "best_iteration": 312,
+      "boosted_rounds": 363,
+      "splits": {
+        "train": {
+          "rows": 22342,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-08 13:00:00",
+          "last_target": "2024-05-02 14:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 15:00:00",
+          "last_target": "2024-11-27 13:00:00"
+        },
+        "test": {
+          "rows": 4762,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 14:00:00",
+          "last_target": "2025-06-24 12:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1013.387922088649,
+        "previous_day": 1041.740110198357,
+        "last_observation": 27240.598409136444,
+        "previous_week": 1681.080567020637
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 13:00:00",
+      "model_sha256": "dea3c641e30f0529cf6ed62e98822c31daaf0c00b587955bf61aa2941802f274"
+    },
+    "solar_h14": {
+      "component": "solar",
+      "horizon": 14,
+      "model_file": "solar_h14.json",
+      "best_iteration": 316,
+      "boosted_rounds": 367,
+      "splits": {
+        "train": {
+          "rows": 22342,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-08 14:00:00",
+          "last_target": "2024-05-02 15:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 16:00:00",
+          "last_target": "2024-11-27 14:00:00"
+        },
+        "test": {
+          "rows": 4761,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 15:00:00",
+          "last_target": "2025-06-24 13:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1014.190724944489,
+        "previous_day": 1041.6923301943498,
+        "last_observation": 26613.231230214384,
+        "previous_week": 1681.3247826086956
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 14:00:00",
+      "model_sha256": "a7f46af886fbdc476416df76399101f2bab7eb94f19de2120653e33479cb9995"
+    },
+    "solar_h15": {
+      "component": "solar",
+      "horizon": 15,
+      "model_file": "solar_h15.json",
+      "best_iteration": 230,
+      "boosted_rounds": 281,
+      "splits": {
+        "train": {
+          "rows": 22342,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-08 15:00:00",
+          "last_target": "2024-05-02 16:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 17:00:00",
+          "last_target": "2024-11-27 15:00:00"
+        },
+        "test": {
+          "rows": 4760,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 16:00:00",
+          "last_target": "2025-06-24 14:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1013.9427868075254,
+        "previous_day": 1041.3029252654778,
+        "last_observation": 25797.225355640156,
+        "previous_week": 1681.1690402724905
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 15:00:00",
+      "model_sha256": "a4f65060b07c50a610dcc05cf2575036eb981acc154522ee178013b1178fdfa1"
+    },
+    "solar_h16": {
+      "component": "solar",
+      "horizon": 16,
+      "model_file": "solar_h16.json",
+      "best_iteration": 233,
+      "boosted_rounds": 284,
+      "splits": {
+        "train": {
+          "rows": 22342,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-08 16:00:00",
+          "last_target": "2024-05-02 17:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 18:00:00",
+          "last_target": "2024-11-27 16:00:00"
+        },
+        "test": {
+          "rows": 4759,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 17:00:00",
+          "last_target": "2025-06-24 15:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1017.3638431992904,
+        "previous_day": 1040.9397114806652,
+        "last_observation": 24234.45973151673,
+        "previous_week": 1680.9539711480663
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 16:00:00",
+      "model_sha256": "77f861ae20ac07dd7112f03d0d63fcb5e70a3ef80eea063522460b4049c768cc"
+    },
+    "solar_h17": {
+      "component": "solar",
+      "horizon": 17,
+      "model_file": "solar_h17.json",
+      "best_iteration": 272,
+      "boosted_rounds": 323,
+      "splits": {
+        "train": {
+          "rows": 22342,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-08 17:00:00",
+          "last_target": "2024-05-02 18:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 19:00:00",
+          "last_target": "2024-11-27 17:00:00"
+        },
+        "test": {
+          "rows": 4758,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 18:00:00",
+          "last_target": "2025-06-24 16:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1013.5792306941646,
+        "previous_day": 1040.8864335804446,
+        "last_observation": 22422.41548387097,
+        "previous_week": 1680.9084612302142
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 17:00:00",
+      "model_sha256": "34deb45bcef16fce949567103930a8105d0338ab299cb6ff9df9edcf67cf1d4e"
+    },
+    "solar_h18": {
+      "component": "solar",
+      "horizon": 18,
+      "model_file": "solar_h18.json",
+      "best_iteration": 266,
+      "boosted_rounds": 317,
+      "splits": {
+        "train": {
+          "rows": 22342,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-08 18:00:00",
+          "last_target": "2024-05-02 19:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 20:00:00",
+          "last_target": "2024-11-27 18:00:00"
+        },
+        "test": {
+          "rows": 4757,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 19:00:00",
+          "last_target": "2025-06-24 17:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1013.5774259871743,
+        "previous_day": 1040.8496233219796,
+        "last_observation": 19984.1011420557,
+        "previous_week": 1680.9006752153875
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 18:00:00",
+      "model_sha256": "31c41602207e9030dd2c7222b6bd367c609c69171bba7523a05942ac5860eb5a"
+    },
+    "solar_h19": {
+      "component": "solar",
+      "horizon": 19,
+      "model_file": "solar_h19.json",
+      "best_iteration": 266,
+      "boosted_rounds": 317,
+      "splits": {
+        "train": {
+          "rows": 22342,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-08 19:00:00",
+          "last_target": "2024-05-02 20:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 21:00:00",
+          "last_target": "2024-11-27 19:00:00"
+        },
+        "test": {
+          "rows": 4756,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 20:00:00",
+          "last_target": "2025-06-24 18:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1015.426795956914,
+        "previous_day": 1040.832131837307,
+        "last_observation": 17260.00264275696,
+        "previous_week": 1680.9059406932479
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 19:00:00",
+      "model_sha256": "6e0135badef876da8371bfbb630201c457a6bcde4afa89b746bbccddcd374b09"
+    },
+    "solar_h20": {
+      "component": "solar",
+      "horizon": 20,
+      "model_file": "solar_h20.json",
+      "best_iteration": 213,
+      "boosted_rounds": 264,
+      "splits": {
+        "train": {
+          "rows": 22342,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-08 20:00:00",
+          "last_target": "2024-05-02 21:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 22:00:00",
+          "last_target": "2024-11-27 20:00:00"
+        },
+        "test": {
+          "rows": 4755,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 21:00:00",
+          "last_target": "2025-06-24 19:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1016.8774821059536,
+        "previous_day": 1040.8052995391704,
+        "last_observation": 14170.673718693648,
+        "previous_week": 1680.8743738729713
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 20:00:00",
+      "model_sha256": "1977ecf43b85b0a53ccec52d3a20726cb006db1f895930540e89a3f26e2b8c14"
+    },
+    "solar_h21": {
+      "component": "solar",
+      "horizon": 21,
+      "model_file": "solar_h21.json",
+      "best_iteration": 205,
+      "boosted_rounds": 256,
+      "splits": {
+        "train": {
+          "rows": 22342,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-08 21:00:00",
+          "last_target": "2024-05-02 22:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-03 23:00:00",
+          "last_target": "2024-11-27 21:00:00"
+        },
+        "test": {
+          "rows": 4754,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 22:00:00",
+          "last_target": "2025-06-24 20:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1015.7069539772815,
+        "previous_day": 1040.7786074934884,
+        "last_observation": 10875.000312562614,
+        "previous_week": 1680.8470246443594
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 21:00:00",
+      "model_sha256": "06621ca0d81c3ad89b1158404b2eaf939619c99413dc662e3393943ffa033173"
+    },
+    "solar_h22": {
+      "component": "solar",
+      "horizon": 22,
+      "model_file": "solar_h22.json",
+      "best_iteration": 247,
+      "boosted_rounds": 298,
+      "splits": {
+        "train": {
+          "rows": 22342,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-08 22:00:00",
+          "last_target": "2024-05-02 23:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-04 00:00:00",
+          "last_target": "2024-11-27 22:00:00"
+        },
+        "test": {
+          "rows": 4753,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-28 23:00:00",
+          "last_target": "2025-06-24 21:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1015.2675956400954,
+        "previous_day": 1040.7424624323783,
+        "last_observation": 7418.557940292528,
+        "previous_week": 1680.8203225806453
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 22:00:00",
+      "model_sha256": "b5980ff9b884bd7efc14d4d0563b1da513173f4d2421808001f1604abcbee299"
+    },
+    "solar_h23": {
+      "component": "solar",
+      "horizon": 23,
+      "model_file": "solar_h23.json",
+      "best_iteration": 330,
+      "boosted_rounds": 381,
+      "splits": {
+        "train": {
+          "rows": 22342,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-08 23:00:00",
+          "last_target": "2024-05-03 00:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-04 01:00:00",
+          "last_target": "2024-11-27 23:00:00"
+        },
+        "test": {
+          "rows": 4752,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-29 00:00:00",
+          "last_target": "2025-06-24 22:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1010.3589772880761,
+        "previous_day": 1040.7291284311762,
+        "last_observation": 3902.4436225205363,
+        "previous_week": 1680.81648767782
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "previous_week",
+        "last_observation"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-27 23:00:00",
+      "model_sha256": "928ad92207eb578798fca985021f7f882b5acc3713f72853f60ab8b223bf1032"
+    },
+    "solar_h24": {
+      "component": "solar",
+      "horizon": 24,
+      "model_file": "solar_h24.json",
+      "best_iteration": 334,
+      "boosted_rounds": 385,
+      "splits": {
+        "train": {
+          "rows": 22342,
+          "first_origin": "2021-09-08 00:00:00",
+          "last_origin": "2024-05-02 01:00:00",
+          "first_target": "2021-09-09 00:00:00",
+          "last_target": "2024-05-03 01:00:00"
+        },
+        "validation": {
+          "rows": 4991,
+          "first_origin": "2024-05-03 02:00:00",
+          "last_origin": "2024-11-27 00:00:00",
+          "first_target": "2024-05-04 02:00:00",
+          "last_target": "2024-11-28 00:00:00"
+        },
+        "test": {
+          "rows": 4751,
+          "first_origin": "2024-11-28 01:00:00",
+          "last_origin": "2025-06-23 23:00:00",
+          "first_target": "2024-11-29 01:00:00",
+          "last_target": "2025-06-24 23:00:00"
+        }
+      },
+      "validation_mae_mw": {
+        "residual_xgboost": 1003.0163750742497,
+        "previous_day": 1040.7145582047688,
+        "last_observation": 1040.7145582047688,
+        "previous_week": 1680.816113003406
+      },
+      "baseline_ranking": [
+        "previous_day",
+        "last_observation",
+        "previous_week"
+      ],
+      "selected_method": "residual_xgboost",
+      "available_after_target": "2024-11-28 00:00:00",
+      "model_sha256": "0c9dcdcb4ec86961562a6482d57971db896fb07e294b2a6aa2cd9683f5d41c67"
+    }
+  },
+  "run_context": "retrospective; historical test has informed development",
+  "test_reference": {
+    "path": "test_reference.csv",
+    "sha256": "c27cff0f649a941651bb3843ff41534a488a72eea3646e54e3dbc6990a4419a3",
+    "rows": 359352
+  }
+}

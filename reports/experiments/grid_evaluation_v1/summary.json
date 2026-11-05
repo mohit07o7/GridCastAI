@@ -1,0 +1,276 @@
+{
+  "schema_version": 1,
+  "evaluation_policy": "grid_evaluation_target_v1",
+  "inference_policy": "inference_quality_v1",
+  "run_context": "retrospective; not an untouched holdout or operational dispatch validation",
+  "created_at_utc": "2026-11-05T05:24:43.510335+00:00",
+  "training_disabled": true,
+  "nominal": {
+    "rows": 4986,
+    "first_origin": "2024-11-28 06:00:00",
+    "last_origin": "2025-06-23 23:00:00",
+    "first_target": "2024-11-29 06:00:00",
+    "last_target": "2025-06-24 23:00:00"
+  },
+  "saved_alignment": {
+    "component_total_rows": {
+      "demand": 4603,
+      "wind": 4991,
+      "solar": 4751
+    },
+    "common_rows": 4363,
+    "component_present_in_nominal": {
+      "demand": 4603,
+      "wind": 4986,
+      "solar": 4746
+    },
+    "missing_patterns": {
+      "[]": 4363,
+      "[\"demand\"]": 383,
+      "[\"solar\"]": 240
+    },
+    "overlapping_exclusion_reason_counts": {
+      "demand": {
+        "demand_target_quality": 19,
+        "demand_input_quality": 371
+      },
+      "wind": {},
+      "solar": {
+        "solar_target_quality": 48,
+        "solar_input_quality": 216
+      }
+    }
+  },
+  "replay_counts": {
+    "nominal_origins": 4986,
+    "trusted_targets": 4919,
+    "target_excluded": 67,
+    "selected_only_scored": 4282,
+    "delivered_scored": 4890,
+    "any_fallback_all_origins": 651,
+    "fallback_rows_scored_delivered": 608,
+    "fallback_frequency_delivered_pct": 12.433537832310838,
+    "blocked_any_component_all_origins": 53,
+    "blocked_any_component_trusted_targets": 29,
+    "target_exclusion_flags": {
+      "target_invalid_components": 0,
+      "target_nonpositive_demand": 0,
+      "target_all_zero": 0,
+      "target_april_anomaly": 1,
+      "target_frozen_demand": 18,
+      "target_frozen_wind": 18,
+      "target_positive_solar_flatline": 48,
+      "target_renewable_inconsistency": 0,
+      "target_missing_observation": 0
+    },
+    "components": {
+      "demand": {
+        "statuses": {
+          "ok": 4552,
+          "fallback": 424,
+          "blocked": 10
+        },
+        "reason_counts": {
+          "demand:frozen_reading": 197,
+          "wind:frozen_reading": 25,
+          "solar:frozen_reading": 67,
+          "demand:sharp_demand_change": 170
+        },
+        "unavailable_check_counts": {}
+      },
+      "wind": {
+        "statuses": {
+          "ok": 4562,
+          "fallback": 416,
+          "blocked": 8
+        },
+        "reason_counts": {
+          "wind:frozen_reading": 424
+        },
+        "unavailable_check_counts": {}
+      },
+      "solar": {
+        "statuses": {
+          "ok": 4943,
+          "blocked": 43
+        },
+        "reason_counts": {
+          "solar:frozen_reading": 43
+        },
+        "unavailable_check_counts": {}
+      }
+    }
+  },
+  "saved_replay_parity": {
+    "demand": {
+      "selected_rows_compared": 4362,
+      "max_difference_mw": 0.006250000005820766
+    },
+    "wind": {
+      "selected_rows_compared": 4136,
+      "max_difference_mw": 3.637978807091713e-12
+    },
+    "solar": {
+      "selected_rows_compared": 4363,
+      "max_difference_mw": 0.0
+    },
+    "all_components_selected_common_rows": 4135
+  },
+  "cohorts": [
+    {
+      "cohort": "saved_benchmark",
+      "rows": 4363,
+      "nominal_rows": 4986,
+      "trusted_target_rows": 4919,
+      "coverage_nominal_pct": 87.50501403931007,
+      "coverage_trusted_pct": 88.6968896117097,
+      "target_start": "2024-11-29 06:00:00",
+      "target_end": "2025-06-24 23:00:00",
+      "paired_share_rows": 4363,
+      "predicted_net_mae_mw": 5624.0289805770735,
+      "predicted_net_rmse_mw": 7456.1298658468,
+      "predicted_net_wape_pct": 3.353616411850132,
+      "predicted_net_mean_signed_error_mw": -1573.9672454156157,
+      "predicted_renewable_mae_mw": 2502.0217032529413,
+      "predicted_renewable_rmse_mw": 3515.345125064878,
+      "predicted_renewable_wape_pct": 9.203814147659063,
+      "predicted_renewable_mean_signed_error_mw": -346.6302640961879,
+      "predicted_renewable_share_mae_pp": 1.3533942733876416,
+      "predicted_undefined_share_rows": 0,
+      "baseline_net_mae_mw": 5897.518338299335,
+      "baseline_net_rmse_mw": 8071.566052426008,
+      "baseline_net_wape_pct": 3.516698501521302,
+      "baseline_net_mean_signed_error_mw": -184.8135480174192,
+      "baseline_renewable_mae_mw": 2566.040073344029,
+      "baseline_renewable_rmse_mw": 3549.5660763689207,
+      "baseline_renewable_wape_pct": 9.439308979533775,
+      "baseline_renewable_mean_signed_error_mw": -44.648925051570025,
+      "baseline_renewable_share_mae_pp": 1.3666211272834907,
+      "baseline_undefined_share_rows": 0,
+      "mae_improvement_mw": 273.48935772226105,
+      "mae_improvement_pct": 4.637363413457856,
+      "bootstrap": {
+        "mae_improvement_mw": 273.4893577222612,
+        "ci95_low_mw": -193.8427757419498,
+        "ci95_high_mw": 755.4839913855933,
+        "days": 185,
+        "repeats": 1000,
+        "seed": 42
+      }
+    },
+    {
+      "cohort": "replay_selected_only",
+      "rows": 4282,
+      "nominal_rows": 4986,
+      "trusted_target_rows": 4919,
+      "coverage_nominal_pct": 85.88046530284798,
+      "coverage_trusted_pct": 87.05021345801993,
+      "target_start": "2024-11-29 06:00:00",
+      "target_end": "2025-06-24 23:00:00",
+      "paired_share_rows": 4282,
+      "predicted_net_mae_mw": 5592.478743196915,
+      "predicted_net_rmse_mw": 7509.643652090202,
+      "predicted_net_wape_pct": 3.343908950027111,
+      "predicted_net_mean_signed_error_mw": -1213.6863592774694,
+      "predicted_renewable_mae_mw": 2483.648442919342,
+      "predicted_renewable_rmse_mw": 3496.0585112819103,
+      "predicted_renewable_wape_pct": 9.271749442228797,
+      "predicted_renewable_mean_signed_error_mw": -319.1626749793027,
+      "predicted_renewable_share_mae_pp": 1.3540112314977366,
+      "predicted_undefined_share_rows": 0,
+      "baseline_net_mae_mw": 6026.848505371322,
+      "baseline_net_rmse_mw": 8300.635041138316,
+      "baseline_net_wape_pct": 3.6036315170771975,
+      "baseline_net_mean_signed_error_mw": 20.59910789350779,
+      "baseline_renewable_mae_mw": 2539.3447057449794,
+      "baseline_renewable_rmse_mw": 3523.4704384050096,
+      "baseline_renewable_wape_pct": 9.479670090281882,
+      "baseline_renewable_mean_signed_error_mw": 9.102505838393263,
+      "baseline_renewable_share_mae_pp": 1.3691050658169384,
+      "baseline_undefined_share_rows": 0,
+      "mae_improvement_mw": 434.3697621744068,
+      "mae_improvement_pct": 7.207245408396817,
+      "bootstrap": {
+        "mae_improvement_mw": 434.36976217440645,
+        "ci95_low_mw": -16.39223120494208,
+        "ci95_high_mw": 857.4105153790541,
+        "days": 187,
+        "repeats": 1000,
+        "seed": 42
+      }
+    },
+    {
+      "cohort": "replay_delivered",
+      "rows": 4890,
+      "nominal_rows": 4986,
+      "trusted_target_rows": 4919,
+      "coverage_nominal_pct": 98.07460890493381,
+      "coverage_trusted_pct": 99.4104492783086,
+      "target_start": "2024-11-29 06:00:00",
+      "target_end": "2025-06-24 23:00:00",
+      "paired_share_rows": 4890,
+      "predicted_net_mae_mw": 5849.982909886189,
+      "predicted_net_rmse_mw": 7818.434276489106,
+      "predicted_net_wape_pct": 3.4915515142554563,
+      "predicted_net_mean_signed_error_mw": -1196.6290828947492,
+      "predicted_renewable_mae_mw": 2509.5104738316254,
+      "predicted_renewable_rmse_mw": 3493.1028901399936,
+      "predicted_renewable_wape_pct": 9.265386459026338,
+      "predicted_renewable_mean_signed_error_mw": -404.5517967703835,
+      "predicted_renewable_share_mae_pp": 1.3703947714303764,
+      "predicted_undefined_share_rows": 0,
+      "baseline_net_mae_mw": 6112.888370143149,
+      "baseline_net_rmse_mw": 8385.596980530663,
+      "baseline_net_wape_pct": 3.6484661534956713,
+      "baseline_net_mean_signed_error_mw": 11.8067055214724,
+      "baseline_renewable_mae_mw": 2564.0385562372185,
+      "baseline_renewable_rmse_mw": 3519.9783331972135,
+      "baseline_renewable_wape_pct": 9.466710088326064,
+      "baseline_renewable_mean_signed_error_mw": -106.36157464212681,
+      "baseline_renewable_share_mae_pp": 1.3830796106411578,
+      "baseline_undefined_share_rows": 0,
+      "mae_improvement_mw": 262.9054602569595,
+      "mae_improvement_pct": 4.300838561702753,
+      "bootstrap": {
+        "mae_improvement_mw": 262.90546025696005,
+        "ci95_low_mw": -205.0132205272551,
+        "ci95_high_mw": 675.2779241782554,
+        "days": 206,
+        "repeats": 1000,
+        "seed": 42
+      }
+    }
+  ],
+  "source_artifact_sha256": {
+    "data/processed/full_hourly_stacked.csv": "717ad938f1ec651acac450e5c009aef18bc8cd5fcaebfc7c17d12f7e49f65afc",
+    "reports/experiments/xgboost_demand_predictions.csv": "d047a1669f85ee129a6052122dd4c45fbf6c4d22e0b34976a6ca17ef31bbab32",
+    "reports/experiments/renewable_v3_wind_predictions.csv": "31f7fa93fb9446cd312c64ce0847b8e1924ae7041061490c37e06d8ae3178017",
+    "reports/experiments/renewable_v3_solar_predictions.csv": "4c2c775ea7c82f2b1e9595a8cfe6cbe0fbf8f8353b2cb7b2be56c1e92e88a536",
+    "models/forecast_manifest.json": "1e46cf60c52cbe07c41f6a3ca491724cb679de03762db42e5a809469cc805469",
+    "models/demand_v1/model.json": "e602b19e94e7fb0ada350090ffa882b70c92ca198e572fef54d9dfbaaac2cc5b",
+    "models/demand_v1/metadata.json": "b4cb4f63d627a7309ab1975028b379f412d86d8738867037977a58124902c905",
+    "models/demand_v1/test_reference.csv": "c0b131e1685a14394a1050a25f8340fe82dc05e28dc9a21d7013ef1af96a2b8b",
+    "models/renewable_v3_wind.json": "dab3449844651229a4215cff38d7e2f20ec204a2f95d2d122e7ec3d89f0d2aa4",
+    "reports/experiments/renewable_v3_metadata.json": "b52b0dae5f3547c20b1bebe70f3e8b8e929fb9187167561fcaffb2c5317070b6"
+  },
+  "code_sha256": {
+    "src/analysis/evaluate_grid_forecasts.py": "083317681ef9635efd7336e93b2fa9f0f1dd4bb9d414e2e1266a6a77e56acfe3",
+    "src/common/grid_evaluation.py": "fb297e5c1d3e772c21553c433016299fa7511bf2ea7f0a1a21b781309e14e6b3",
+    "src/common/grid_prediction.py": "3a8c14ef63572d169c41597a484a227fed291060995f1de1130d342506b94a31",
+    "src/common/inference_history.py": "308d3ee262578315dcfebc7d9dd454a4005ba56dac0aac20167147abb5859b67",
+    "src/common/features.py": "80cad6b966b98f583900ba4831cc15757241a95201c4de4aa9152cf0fe623e54",
+    "src/common/splits.py": "7f8c5fcd2247b753b5dea269c3de9d440fad62354ba5815e784968880c01c00d",
+    "src/common/demand_model.py": "977a4f07bd3396792f28959cba511d4aeed8f4880073aa11cafec020c20fa479",
+    "src/forecasting/renewable_v3_full_history.py": "4c458504f6f5f359d425a265a5a95da3fb000b1c0494582d8e39d9c4337723b5"
+  },
+  "versions": {
+    "python": "3.14.3",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "xgboost": "3.4.1",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "joblib": "1.6.0",
+    "threadpoolctl": "3.7.0"
+  }
+}

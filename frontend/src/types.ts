@@ -1,0 +1,17 @@
+export type Component = 'demand'|'wind'|'solar';
+export type Quantity = Component|'net';
+export type Cohort = 'delivered'|'selected_only';
+export type Case = 'normal'|'fallback'|'blocked';
+export type Row = Record<string,string|number|boolean|null>;
+export interface ComponentForecast {forecast_mw:number|null;method:string|null;status:'ok'|'fallback'|'blocked';reasons:string[];unavailable_quality_checks:string[];selected_method:string;model_sha256:string}
+export interface Point {horizon:number;target_timestamp:string;components:Record<Component,ComponentForecast>;net_demand_mw:number|null;renewable_mw:number|null;target_quality:'unknown'}
+export interface Forecast {origin:string;model_id:string;status:'ok'|'degraded'|'blocked';complete_curve:boolean;delivered_target_hours:number;target_quality:'unknown';manifest_sha256:string;inference_quality_policy:string;points:Point[]}
+export interface ForecastResponse {forecast:Forecast;table:Row[];coverage:string;synthetic:boolean;inference_ms:number}
+export interface Status {api:string;coverage:{id:string;label:string};resources:Record<string,{available:boolean;detail:string}>;dataset:{first:string;last:string;rows:number}|null;model_id:string;months:string[];uptime_seconds:number;last_successful_forecast:{origin:string;status:string;completed_at_utc:string;synthetic:boolean}|null;optimization:string;training:string;timestamp_convention:string;evaluation_context:string}
+export interface MetricRow {quantity:Quantity;horizon:number;month:string;cohort:Cohort;rows:number;nominal_rows:number;trusted_targets:number;coverage_trusted_pct:number|null;forecast_mae_mw:number|null;baseline_mae_mw:number|null;forecast_rmse_mw:number|null;baseline_rmse_mw:number|null;forecast_wape_pct:number|null;baseline_wape_pct:number|null;forecast_mean_signed_error_mw:number|null;baseline_mean_signed_error_mw:number|null;mae_improvement_pct:number|null}
+export interface Counts {forecast_records:number;unique_target_hours:number;trusted_records:number;scored_records:number;scored_unique_target_hours:number;excluded_target_records:number;trusted_unscored_records:number;fallback_records:number}
+export interface Metrics {saved:MetricRow;monthly:MetricRow[];counts:Counts;mape:{forecast_pct:number|null;baseline_pct:number|null;paired_nonzero_actual_rows:number;excluded_zero_actual_rows:number;definition:string};error_histogram:{counts:number[];edges:number[];signed_error:string};comparison_sample:Row[];comparison_is_display_sample:boolean;retrospective:boolean}
+export interface History {rows:Row[];total:number;offset:number;limit:number;quality_context:string}
+export interface Audit {counts:Counts;reasons:{reason:string;forecast_records:number}[];rows:Row[];total:number;policy:string;context:string}
+export interface ModelInfo {id:string;entry:{component:Component;horizon:number;selected_method:string;model_sha256:string;best_iteration:number;boosted_rounds:number;available_after_target:string;splits:Record<string,{rows:number;first_origin:string;last_origin:string;first_target:string;last_target:string}>;validation_mae_mw:Record<string,number>};feature_importance:{feature:string;gain:number}[];importance_label:string;interpretation:string;fit_scope:string;inference_policy:string;source:{path:string;sha256:string};versions:Record<string,string>}
+export interface Log {id:string;time_utc:string;method:string;path:string;status:number;duration_ms:number}

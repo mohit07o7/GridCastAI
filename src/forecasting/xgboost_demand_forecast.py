@@ -4,6 +4,7 @@ import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from common.features import build_features, DEMAND_FEATURES, RENEWABLE_FEATURES
 from common.splits import chronological_split
+from common.demand_model import save_demand_bundle, sha256
 
 
 import numpy as np
@@ -80,8 +81,24 @@ model.fit(
     verbose=False,
 )
 
-# 6. Evaluate the untouched chronological test segment.
+# 6. Evaluate the historical eligible test segment.
 predictions = model.predict(X_test)
+
+# Check against the pre-existing experiment before writing any refreshed outputs.
+reference_comparison = {'existing_csv_present': PREDICTION_PATH.exists()}
+if PREDICTION_PATH.exists():
+    previous = pd.read_csv(PREDICTION_PATH)
+    if len(previous) != len(test):
+        raise ValueError('Existing test row count changed; investigate before replacing results')
+    for column, values in [('Forecast Origin', test.Timestamp),
+                           ('Target Timestamp', test['Target Timestamp'])]:
+        if not pd.to_datetime(previous[column]).reset_index(drop=True).equals(values.reset_index(drop=True)):
+            raise ValueError(f'Existing {column} alignment changed')
+    np.testing.assert_allclose(previous['Actual Demand (MW)'], y_test, rtol=0, atol=1e-9)
+    np.testing.assert_allclose(previous['XGBoost Forecast (MW)'], predictions, rtol=0, atol=0.02)
+    reference_comparison.update({'sha256': sha256(PREDICTION_PATH),
+        'max_prediction_difference_mw': float(np.max(np.abs(previous['XGBoost Forecast (MW)'] - predictions))),
+        'rows': len(previous)})
 
 mae = mean_absolute_error(y_test, predictions)
 rmse = np.sqrt(mean_squared_error(y_test, predictions))
@@ -146,3 +163,24 @@ importance = pd.Series(
     index=feature_cols,
 ).sort_values(ascending=False)
 print(importance.head(10).round(4).to_string())
+
+
+# Persist this exact fitted model; do not refit on validation or test observations.
+metadata = save_demand_bundle(
+    model, PROJECT_ROOT / 'models/demand_v1', feature_cols,
+    {'train': train, 'validation': validation, 'test': test}, DATA_PATH,
+    [Path(__file__), PROJECT_ROOT / 'src/common/features.py',
+     PROJECT_ROOT / 'src/common/splits.py', PROJECT_ROOT / 'src/common/demand_model.py'],
+    PROJECT_ROOT, {'MAE (MW)': float(mae), 'RMSE (MW)': float(rmse), 'MAPE (%)': float(mape)},
+)
+# Float64 serialization preserves the exact float32 predictions for load-only replay.
+reference = output.copy()
+reference['XGBoost Forecast (MW)'] = predictions.astype(np.float64)
+reference.to_csv(PROJECT_ROOT / 'models/demand_v1/test_reference.csv', index=False)
+import json
+(PROJECT_ROOT / 'models/demand_v1/training_reference.json').write_text(json.dumps({
+    'model_sha256': metadata['model_sha256'],
+    'test_reference_sha256': sha256(PROJECT_ROOT / 'models/demand_v1/test_reference.csv'),
+    'existing_experiment_comparison': reference_comparison,
+}, indent=2, allow_nan=False) + '\n')
+print('Saved model bundle: models/demand_v1')

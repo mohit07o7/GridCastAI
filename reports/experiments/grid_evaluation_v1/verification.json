@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "verified_at_utc": "2026-11-05T05:37:30.216220+00:00",
+  "saved_rows": 4363,
+  "replayed_origins": 4986,
+  "trusted_targets": 4919,
+  "runtime_versions": {
+    "python": "3.14.3",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "xgboost": "3.4.1",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1"
+  },
+  "checks": [
+    "origin/target uniqueness and horizon",
+    "source actual/persistence alignment",
+    "saved forecast identity",
+    "signed energy balance and component error identity",
+    "independent retrospective target policy",
+    "identical model/baseline cohort masks",
+    "independent net/renewable/share metrics",
+    "independent day-bootstrap intervals",
+    "monthly metrics and coverage",
+    "fallback/blocked counts",
+    "source/model/code hashes"
+  ],
+  "output_sha256": {
+    "summary.json": "613bb0dac5dfdb79280ef7f6d90baa23acc3f6b94d1f8a3d1a03c40c93e37998",
+    "monthly_metrics.csv": "51fb240973a36402cdf82766cb213cad2dee2d1ef1f60fb9a14100875cdc253f",
+    "saved_rows.csv": "f9b487dd1fd5ba241346af7c99c31969c68156a3fd60f3db06885782862c6ae3",
+    "report.md": "32bd0a7bf6215def1792706e6bba51abc3d994bb72534a91bc49c55075588797",
+    "metrics.csv": "e69396c0087b9ede241700a7ce657b6f6e0889b308ed334c379cd3684160123b",
+    "replay_rows.csv": "4e3e8cabfeff8cbd10cab9b5bc02d8cc4a07a5adf06ba505e8bfe79b225930fb",
+    "alignment_audit.csv": "7cc4e3b14d346abe1f57e980b15b1fb8dec1a9e45180abfceae271c7e6a46adf"
+  }
+}

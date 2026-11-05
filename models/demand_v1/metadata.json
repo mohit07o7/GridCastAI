@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "model_id": "demand_v1",
+  "created_at_utc": "2026-11-05T04:15:04.000581+00:00",
+  "target": "demand_mw",
+  "forecast_horizon_hours": 24,
+  "timestamp_convention": "timezone-naive source clock; no conversion",
+  "features": [
+    {
+      "name": "demand_lag_1",
+      "dtype": "float64"
+    },
+    {
+      "name": "demand_lag_24",
+      "dtype": "float64"
+    },
+    {
+      "name": "demand_lag_48",
+      "dtype": "float64"
+    },
+    {
+      "name": "demand_lag_168",
+      "dtype": "float64"
+    },
+    {
+      "name": "demand_mean_24h",
+      "dtype": "float64"
+    },
+    {
+      "name": "demand_mean_168h",
+      "dtype": "float64"
+    },
+    {
+      "name": "wind_lag_1",
+      "dtype": "float64"
+    },
+    {
+      "name": "wind_lag_24",
+      "dtype": "float64"
+    },
+    {
+      "name": "solar_lag_1",
+      "dtype": "float64"
+    },
+    {
+      "name": "solar_lag_24",
+      "dtype": "float64"
+    },
+    {
+      "name": "hour",
+      "dtype": "int32"
+    },
+    {
+      "name": "day_of_week",
+      "dtype": "int32"
+    },
+    {
+      "name": "month",
+      "dtype": "int32"
+    }
+  ],
+  "quality_policy_version": "demand_quality_v1",
+  "fit_scope": "training only; validation used for early stopping; no refit",
+  "parameters": {
+    "objective": "reg:squarederror",
+    "base_score": null,
+    "booster": null,
+    "callbacks": null,
+    "colsample_bylevel": null,
+    "colsample_bynode": null,
+    "colsample_bytree": 0.8,
+    "device": null,
+    "early_stopping_rounds": 50,
+    "enable_categorical": true,
+    "eval_metric": "mae",
+    "feature_types": null,
+    "feature_weights": null,
+    "gamma": null,
+    "grow_policy": null,
+    "importance_type": null,
+    "interaction_constraints": null,
+    "learning_rate": 0.03,
+    "max_bin": null,
+    "max_cat_threshold": null,
+    "max_cat_to_onehot": null,
+    "max_delta_step": null,
+    "max_depth": 6,
+    "max_leaves": null,
+    "min_child_weight": 5,
+    "missing": null,
+    "monotone_constraints": null,
+    "multi_strategy": null,
+    "n_estimators": 1000,
+    "n_jobs": 4,
+    "num_parallel_tree": null,
+    "random_state": 42,
+    "reg_alpha": null,
+    "reg_lambda": 1.0,
+    "sampling_method": null,
+    "scale_pos_weight": null,
+    "subsample": 0.8,
+    "tree_method": null,
+    "validate_parameters": null,
+    "verbosity": null
+  },
+  "best_iteration": 184,
+  "prediction_iteration_range": [
+    0,
+    185
+  ],
+  "boosted_rounds": 235,
+  "splits": {
+    "train": {
+      "rows": 22548,
+      "first_origin": "2021-09-08 00:00:00",
+      "last_origin": "2024-05-03 11:00:00",
+      "first_target": "2021-09-09 00:00:00",
+      "last_target": "2024-05-04 11:00:00"
+    },
+    "validation": {
+      "rows": 4962,
+      "first_origin": "2024-05-04 12:00:00",
+      "last_origin": "2024-11-27 05:00:00",
+      "first_target": "2024-05-05 12:00:00",
+      "last_target": "2024-11-28 05:00:00"
+    },
+    "test": {
+      "rows": 4603,
+      "first_origin": "2024-11-28 06:00:00",
+      "last_origin": "2025-06-23 23:00:00",
+      "first_target": "2024-11-29 06:00:00",
+      "last_target": "2025-06-24 23:00:00"
+    }
+  },
+  "versions": {
+    "python": "3.14.3",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "xgboost": "3.4.1",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "joblib": "1.6.0",
+    "threadpoolctl": "3.7.0"
+  },
+  "source_data": {
+    "path": "data/processed/demand_model_data.csv",
+    "sha256": "782534342b490a0bebdf80b679d5512636652eeefb308df7868f5f0b6eeb05f4"
+  },
+  "code_sha256": {
+    "src/forecasting/xgboost_demand_forecast.py": "ca1d4c9901f26a62889524747f03d50504470f0962121314747df1514d8a5506",
+    "src/common/features.py": "80cad6b966b98f583900ba4831cc15757241a95201c4de4aa9152cf0fe623e54",
+    "src/common/splits.py": "7f8c5fcd2247b753b5dea269c3de9d440fad62354ba5815e784968880c01c00d",
+    "src/common/demand_model.py": "977a4f07bd3396792f28959cba511d4aeed8f4880073aa11cafec020c20fa479"
+  },
+  "test_metrics": {
+    "MAE (MW)": 5106.446088081143,
+    "RMSE (MW)": 6982.279182735479,
+    "MAPE (%)": 2.589195702451579
+  },
+  "model_sha256": "e602b19e94e7fb0ada350090ffa882b70c92ca198e572fef54d9dfbaaac2cc5b"
+}

@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "training_disabled": true,
+  "battery_work_performed": false,
+  "origins": 4991,
+  "forecast_exposures_verified": 119784,
+  "metric_rows_independently_verified": 1728,
+  "native_model_reference_rows_previously_verified": 359352,
+  "checks": [
+    "one-to-one origin/horizon/target alignment",
+    "actuals against immutable source",
+    "independent retrospective target mask",
+    "identical candidate/baseline scoring masks",
+    "all delivered forecasts/statuses/methods reproduced load-only",
+    "all component/net MAE, RMSE, WAPE and signed errors by horizon/month",
+    "forecast-only CLI emits 24 future targets without target labels",
+    "source/model/code hashes"
+  ],
+  "verification_code_sha256": "2d98d252e713f843a2cdbdeb0b282dadff9f4d126cd3f94466e76b0bd719c05b",
+  "independent_metric_checker_sha256": "a30623245e750912de559e055ea9302b2816721344019345c3536bebe23125b2",
+  "output_sha256": {
+    "summary.json": "317935e7c0e6dbba423f13d690759f17a94ebad243c5023de985f72a93c9aae1",
+    "training.log": "5fb788453df3aeb0b7eab9fdafd54acae16d4d4fa15fb937a6baea8778841706",
+    "report.md": "a207609cc094860d26289880e2e02cbd7692bc8b5d485a0c7accf611328bd59a",
+    "preservation.json": "1e6744f51bfd613ef101e9a0d055718da544f2085549c79e3106c802b8ec38d6",
+    "forecast_rows.csv.gz": "d264cc45923be1238a3047fca50ee9a7147103aa01add1c05438c3b07d4fc651",
+    "verification.json": "5f00608a56e729b2ff9acf750bdd610f28d6d1bf8cbef029063633d5a3b4995a",
+    "forecast_metrics.csv": "1046bfb1a25734eb67a65af3228481683f01487b709c783c2e5825842f99db0f"
+  }
+}

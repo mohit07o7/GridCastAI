@@ -1,0 +1,13 @@
+
+> gridcast-command-center@1.0.0 test
+> vitest run
+
+
+ RUN  v4.1.12 /Users/mohityadav/Desktop/GridCastAI/frontend
+
+
+ Test Files  1 passed (1)
+      Tests  5 passed (5)
+   Start at  15:16:29
+   Duration  176ms (transform 31ms, setup 0ms, import 88ms, tests 3ms, environment 0ms)
+

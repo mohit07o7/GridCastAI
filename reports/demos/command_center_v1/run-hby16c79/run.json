@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "created_at_utc": "2026-11-05T09:56:02.154028+00:00",
+  "cases": {
+    "normal": {
+      "origin": "2025-06-24 23:00:00",
+      "status": "ok",
+      "synthetic": false
+    },
+    "fallback": {
+      "origin": "2025-01-09 15:00:00",
+      "status": "degraded",
+      "synthetic": false
+    },
+    "blocked": {
+      "origin": "2025-06-24 23:00:00",
+      "status": "blocked",
+      "synthetic": true
+    }
+  },
+  "checks": {
+    "api_matches_existing_cli_exactly": true,
+    "normal_fallback_blocked": true,
+    "paired_metrics_and_mape": true,
+    "selected_tree_gain": true,
+    "model_outage_preserves_history": true,
+    "training_disabled": true,
+    "battery_disabled": true
+  },
+  "context": "retrospective national aggregate demonstration; synthetic cases labelled; optimization deferred",
+  "output_sha256": {
+    "metrics.json": "bb0a282579f92f28dac75e31a3e54c5af0a40862052d3156cfd0da73e7591b09",
+    "model.json": "0117b8267a6fb83b0b01c14b21f9979ec7d7b7b243125a46d698b2913211eaae",
+    "audit.json": "2fee9ce9f3257c62af864898478236984b2061a6b9b9ef8af423e6f5629588ea",
+    "blocked.json": "0de4fecf5739dfd80d49e013e5e66f4836225a7bc668a49bba605602025f3e18",
+    "normal.json": "04a2808b8e1814dbe702ca1b6830d4396c0037a4a522c7d894c5f4d40212c72e",
+    "april4_history.csv": "5db2db585ee4b9127642a0a80ed4a0b3925fc37f44f246e3f43c6012e029a67a",
+    "fallback.json": "a884de4fab926c4ca266be4026072c7ba479834163c534c6e0c0016edec6f307",
+    "status.json": "2dbeec8c70c10a59aab2c6687e63c772cd57be6662ad646da42e6849c52a793c",
+    "solar_metrics.json": "d9722e6c0fd2966f319b541cab5b84a1b0e2e69ab0a18f2666a21dd88ff8ed1e"
+  }
+}

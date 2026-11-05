@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "training_disabled": true,
+  "candidates": 72,
+  "aligned_reference_rows": 359352,
+  "unique_origins": 4991,
+  "max_loaded_vs_in_memory_error_mw": 0.0,
+  "prediction_tolerance_mw": 1e-06,
+  "independent_feature_origins": 24,
+  "max_independent_feature_absolute_error": 1.2460077414289117e-08,
+  "future_data_invariance": true,
+  "prefix_batch_quality_parity": true,
+  "manifest_sha256": "4c60129d0ba7092eaeda4482edaedfb48787c4b99f7f39307ee5fcaa2af9ae4a"
+}

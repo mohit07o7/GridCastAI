@@ -1,0 +1,11 @@
+/Users/mohityadav/Desktop/GridCastAI/tests/test_command_api.py:8: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient
+..............................Replayed 1/1 origins
+................2026-11-05 15:31:37.758 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+.2026-11-05 15:31:42.604 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+.2026-11-05 15:31:42.768 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+.
+----------------------------------------------------------------------
+Ran 49 tests in 27.498s
+
+OK
