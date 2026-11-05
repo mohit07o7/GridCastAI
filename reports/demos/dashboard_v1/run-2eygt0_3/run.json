@@ -1,0 +1,79 @@
+{
+  "status": "passed",
+  "created_at_utc": "2026-11-05T08:34:30.112756+00:00",
+  "cases": {
+    "normal": {
+      "origin": "2025-06-24 23:00:00",
+      "status": "ok",
+      "complete_curve": true,
+      "synthetic_input": false
+    },
+    "fallback": {
+      "origin": "2025-01-09 15:00:00",
+      "status": "degraded",
+      "complete_curve": true,
+      "synthetic_input": false
+    },
+    "blocked": {
+      "origin": "2025-06-24 23:00:00",
+      "status": "blocked",
+      "complete_curve": false,
+      "synthetic_input": true
+    }
+  },
+  "checks": {
+    "aligned_24_hour_cases": true,
+    "normal_and_fallback_and_blocked": true,
+    "actuals_separate": true,
+    "future_data_invariance": true,
+    "historical_filter_matches_saved_metrics": true,
+    "training_disabled": true,
+    "battery_disabled": true
+  },
+  "accuracy_selection": {
+    "quantity": "net",
+    "horizon": 24,
+    "cohort": "delivered",
+    "month": "all"
+  },
+  "audit_selection": {
+    "month": "2025-04",
+    "horizon": 24,
+    "cohort": "delivered",
+    "counts": {
+      "forecast_records": 720,
+      "unique_target_hours": 720,
+      "trusted_records": 719,
+      "scored_records": 719,
+      "scored_unique_target_hours": 719,
+      "excluded_target_records": 1,
+      "trusted_unscored_records": 0,
+      "fallback_records": 170
+    }
+  },
+  "source": {
+    "path": "data/processed/full_hourly_stacked.csv",
+    "sha256": "717ad938f1ec651acac450e5c009aef18bc8cd5fcaebfc7c17d12f7e49f65afc"
+  },
+  "model_manifest_sha256": "4c60129d0ba7092eaeda4482edaedfb48787c4b99f7f39307ee5fcaa2af9ae4a",
+  "historical_verification": "passed",
+  "versions": {
+    "streamlit": "1.66.1",
+    "plotly": "7.1.0",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "xgboost": "3.4.1"
+  },
+  "output_sha256": {
+    "fallback.csv": "f1b3f4716db8a478825260a40db1441cc6aec4b0dea63b90e57d5db9cb734b61",
+    "blocked.json": "c1b6bb4d1ef4ed6a329beef512df7eb958063e6a43561c909bd9b2c78cee09db",
+    "april_exclusion_counts.csv": "c28988b7a9274aced5c3f8f8cad69e0ab5700db26d356fb5be442ce286226163",
+    "normal.json": "41682b197ea7068dc838096727f21c808e066b0f634e9cd6a938aa1ba302ffe6",
+    "fallback.json": "632a0798e6b22c5654376317feb741ee916fb44b70f450c13eaaa4560892e17e",
+    "blocked.csv": "7adf0594a5d3dd4c55dbe6a7413845f201a27c806af06f27fdb1341bfac213a4",
+    "normal.csv": "1efe5dac6389612fa401683e935d24362d89dee6da9cf353b0af6a15d3e295ba",
+    "april_exclusions.csv": "cca47953351192489d7da169b91551455055a996747145d09f067e46852e2572",
+    "accuracy.csv": "f6504bb4f5af20dfffee4500811c415244762721d39a4fa738fd1ec4b2aaa74a",
+    "walkthrough.md": "a5e1fba1460f08d441d77f4ca58419d7226ce67628396a9b678c68e05c6dc490"
+  }
+}

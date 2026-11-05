@@ -1,6 +1,6 @@
 # GridCastAI cinematic command center
 
-The new React/TypeScript application runs independently from the preserved Streamlit dashboard. It uses the existing verified Python prediction service and saved evaluation results through a thin local API. No models, feature definitions, training algorithms or source observations are rewritten.
+The React/TypeScript application is the supported local interface. The old Streamlit interface and its startup/dependency files have been retired. It uses the existing verified Python prediction service and saved evaluation results through a thin local API. No models, feature definitions, training algorithms or source observations are rewritten.
 
 ## One-time setup
 
@@ -23,7 +23,7 @@ Tested environment: CPython **3.14.3**, Node **25.1.0**, npm **11.6.2**. Existin
 ./scripts/start_command_center.sh
 ```
 
-Open **http://127.0.0.1:8502**. This starts one Python process serving both the production React build and `/api/v1/*`. It performs no installation, training, experiment replay or battery solve. Existing Streamlit files and its separate launcher are unchanged.
+Open **http://127.0.0.1:8502**. This starts one Python process serving both the production React build and `/api/v1/*`. It performs no installation, training, experiment replay or battery solve. Use this launcher; the retired Streamlit launcher is no longer provided.
 
 ```bash
 ./scripts/start_command_center.sh --check
@@ -60,7 +60,7 @@ Changing draft controls does not replace the displayed result until Run forecast
 
 ## Architecture and API
 
-`src/command_api/app.py` adapts the existing read-only `dashboard.service` layer, which has no Streamlit imports. Resource caches use file signatures and validate hashes on reload. Historical quality annotation is cached separately. Inference is serialized in a worker thread; read/status endpoints remain available. Startup disables XGBoost fitting/native update and battery solver entry points.
+`src/command_api/app.py` adapts the existing read-only `services.grid_service` layer, which has no Streamlit imports. Resource caches use file signatures and validate hashes on reload. Historical quality annotation is cached separately. Inference is serialized in a worker thread; read/status endpoints remain available. Startup disables XGBoost fitting/native update and battery solver entry points.
 
 The frontend uses React, strict TypeScript, Vite, Tailwind CSS, Framer Motion, Apache ECharts, MapLibre GL JS, Lucide, React Router, Zustand, TanStack Query and Axios. Zustand holds shared issue/horizon/filter state; TanStack Query caches typed HTTP responses. Map and chart code are lazy-loaded. Chart instances resize with their containers and dispose on unmount. Reduced motion and hidden-page behavior limit nonessential animation.
 
@@ -87,7 +87,7 @@ npm run --prefix frontend test
 npm run --prefix frontend build
 PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src:tests .venv/bin/python -m unittest \
   test_command_api test_demand_model test_demand_pipeline test_grid_prediction \
-  test_grid_evaluation test_grid_curve test_dashboard_service test_dashboard_app
+  test_grid_evaluation test_grid_curve test_grid_service
 .venv/bin/python src/investigations/verify_grid_curve.py
 ```
 
@@ -102,6 +102,6 @@ node scripts/check_command_center_browser.cjs
 
 The optional driver is isolated from project runtime dependencies. Chrome defaults to the standard macOS executable. Override `GRIDCAST_CHROME` or `GRIDCAST_PLAYWRIGHT` if needed. Each check writes a new `browser-*` folder; outage screenshots are explicitly simulated test fixtures, not claims that the real models are missing. Browser checks cover all routes, map interaction, synchronized charts, downloads, filters, retained forecasts, pending state, input failures, API/model outages, navigation, mobile layout, reduced motion and WebGL fallback.
 
-See **`reports/demos/command_center_v1/verification.md`** for completed checks, sample output, screenshots, exact tested versions and protected-file evidence. Native model, data, training and existing dashboard artifacts remain unchanged; no commit or push is included.
+See **`reports/demos/command_center_v1/verification.md`** for completed checks, sample output, screenshots, exact tested versions and protected-file evidence. Native models, data, training code and historical reports remain unchanged. Older verification receipts record the source paths and checks used at their original creation; the service now lives in `src/services/grid_service.py`.
 
 Font licenses are bundled under `frontend/public/licenses`. Map source and attribution are recorded in `frontend/public/map-attribution.txt`.

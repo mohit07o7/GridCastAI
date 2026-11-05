@@ -1,0 +1,1023 @@
+{
+  "schema_version": 1,
+  "model_id": "grid_curve_v1",
+  "origin": "2025-01-09 15:00:00",
+  "horizons": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+  ],
+  "timestamp_convention": "timezone-naive source clock; no conversion",
+  "origin_observation_assumed_available": true,
+  "run_context": "retrospective_simulation; not evidence of an actually issued forecast",
+  "inference_quality_policy": "curve_inference_quality_v1",
+  "target_quality": "unknown",
+  "status": "degraded",
+  "complete_curve": true,
+  "delivered_target_hours": 24,
+  "manifest_sha256": "4c60129d0ba7092eaeda4482edaedfb48787c4b99f7f39307ee5fcaa2af9ae4a",
+  "points": [
+    {
+      "horizon": 1,
+      "target_timestamp": "2025-01-09 16:00:00",
+      "components": {
+        "demand": {
+          "forecast_mw": 203618.1,
+          "method": "last_observation",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "49c7d467583d99d2544024919276cb860e94b9527cfed6cc0262d36248124041"
+        },
+        "wind": {
+          "forecast_mw": 2767.74,
+          "method": "last_observation",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "350fad68a6a8c33792108202ea59fc0d7fffc9b7b7b733baec0f30852e2d9de1"
+        },
+        "solar": {
+          "forecast_mw": 24644.875876464845,
+          "method": "residual_xgboost",
+          "status": "ok",
+          "reasons": [],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "2328b90503bc86ffa227c903adaf2f1d5aedc3b73b6ceefd424a40c24b422d60"
+        }
+      },
+      "net_demand_mw": 176205.48412353516,
+      "renewable_mw": 27412.615876464843,
+      "target_quality": "unknown"
+    },
+    {
+      "horizon": 2,
+      "target_timestamp": "2025-01-09 17:00:00",
+      "components": {
+        "demand": {
+          "forecast_mw": 201519.48,
+          "method": "previous_day",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "95a24ddeb6e1b86c8cff32a4b5543401caefe9aa712285dbe6ca13f572b3da22"
+        },
+        "wind": {
+          "forecast_mw": 2767.74,
+          "method": "last_observation",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "5807b5fd91db0bedc3ee0633c0ddf60eeae2c79833aec0a3519e4bfbf63cbc26"
+        },
+        "solar": {
+          "forecast_mw": 5520.771508789063,
+          "method": "residual_xgboost",
+          "status": "ok",
+          "reasons": [],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "9e3e66d0a66bac4b8c09ceec370298d7568eb6f7c1c683e4c59a100ef98c43dc"
+        }
+      },
+      "net_demand_mw": 193230.96849121095,
+      "renewable_mw": 8288.511508789063,
+      "target_quality": "unknown"
+    },
+    {
+      "horizon": 3,
+      "target_timestamp": "2025-01-09 18:00:00",
+      "components": {
+        "demand": {
+          "forecast_mw": 203837.37,
+          "method": "previous_day",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "1f6cc6cd1017f4687bae8a8cb07d5cc9da06994b8c98794c165e3e3c02b38014"
+        },
+        "wind": {
+          "forecast_mw": 2767.74,
+          "method": "last_observation",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "0a2d233f91d93b7254761fa2b0128ec996b275833bc59f31f84f82251dbb6380"
+        },
+        "solar": {
+          "forecast_mw": 0.0,
+          "method": "residual_xgboost",
+          "status": "ok",
+          "reasons": [],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "45781bac0d4c4027ad5288ab65e627a1388a959471464c401d4ef1973989915b"
+        }
+      },
+      "net_demand_mw": 201069.63,
+      "renewable_mw": 2767.74,
+      "target_quality": "unknown"
+    },
+    {
+      "horizon": 4,
+      "target_timestamp": "2025-01-09 19:00:00",
+      "components": {
+        "demand": {
+          "forecast_mw": 201791.35,
+          "method": "previous_day",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "b33afc1d4f328c85002d0307a0228065f116068abbc45831b384726169441a5a"
+        },
+        "wind": {
+          "forecast_mw": 2767.74,
+          "method": "last_observation",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "57b0c866fac9ee680fc9eced76682203d9a50759808ab64811ac84a20d82c326"
+        },
+        "solar": {
+          "forecast_mw": 0.0,
+          "method": "residual_xgboost",
+          "status": "ok",
+          "reasons": [],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "0e16433f5fe352928d421a3cbbf9451993c0a243537b7064c56d9412f1e89b27"
+        }
+      },
+      "net_demand_mw": 199023.61000000002,
+      "renewable_mw": 2767.74,
+      "target_quality": "unknown"
+    },
+    {
+      "horizon": 5,
+      "target_timestamp": "2025-01-09 20:00:00",
+      "components": {
+        "demand": {
+          "forecast_mw": 181661.15,
+          "method": "previous_week",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading",
+            "previous_day:frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "afdf0b4bf7a4a3d274ad52ee0ec62d5a022afc9a4016003ed14f9fa6d4062b68"
+        },
+        "wind": {
+          "forecast_mw": 2767.74,
+          "method": "last_observation",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "9247b350178e24ad85ba143e5fa22780265d0d39bc3c0097275f9a0da4d4fcbb"
+        },
+        "solar": {
+          "forecast_mw": 43.27440490722657,
+          "method": "residual_xgboost",
+          "status": "ok",
+          "reasons": [],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "4aa9e98cdce46cc258019ac5c08181ae2d39bca6929ea1c98b03fdefafafbf60"
+        }
+      },
+      "net_demand_mw": 178850.13559509278,
+      "renewable_mw": 2811.0144049072264,
+      "target_quality": "unknown"
+    },
+    {
+      "horizon": 6,
+      "target_timestamp": "2025-01-09 21:00:00",
+      "components": {
+        "demand": {
+          "forecast_mw": 169791.47,
+          "method": "previous_week",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading",
+            "previous_day:frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "182215854929f8a20ad4ece9b1aae88c0d91ee285cfed7a8b24e2d6ed50ff704"
+        },
+        "wind": {
+          "forecast_mw": 2767.74,
+          "method": "last_observation",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading",
+            "previous_day:frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "6ba80448c50fff117e55391be25fb1b5740b9699fd2fffba02037f90793af389"
+        },
+        "solar": {
+          "forecast_mw": 106.55706634521485,
+          "method": "residual_xgboost",
+          "status": "ok",
+          "reasons": [],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "ed694bff3896312585e137cf4b2ab3813b6c98dfe684f05237607f42b24d0a39"
+        }
+      },
+      "net_demand_mw": 166917.1729336548,
+      "renewable_mw": 2874.2970663452147,
+      "target_quality": "unknown"
+    },
+    {
+      "horizon": 7,
+      "target_timestamp": "2025-01-09 22:00:00",
+      "components": {
+        "demand": {
+          "forecast_mw": 160087.61,
+          "method": "previous_week",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading",
+            "previous_day:frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "0cc933d6ed44fd7dc3f14a45e534998edafb2c550799ee7cb23dda84e6a21742"
+        },
+        "wind": {
+          "forecast_mw": 2767.74,
+          "method": "last_observation",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading",
+            "previous_day:frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "a9d5d0b3df2d9ded32977a7e7ecd024bf366569e40f5fcf834f9cc8dbcc0c542"
+        },
+        "solar": {
+          "forecast_mw": 114.8583740234375,
+          "method": "residual_xgboost",
+          "status": "ok",
+          "reasons": [],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "9f3bc664c0678cbb969d550a18fa1a55c6f405e8c7254a804e59165303d597fd"
+        }
+      },
+      "net_demand_mw": 157205.01162597656,
+      "renewable_mw": 2882.5983740234374,
+      "target_quality": "unknown"
+    },
+    {
+      "horizon": 8,
+      "target_timestamp": "2025-01-09 23:00:00",
+      "components": {
+        "demand": {
+          "forecast_mw": 152511.23,
+          "method": "previous_week",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading",
+            "previous_day:frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "246a4a16430c54b79d124c2dc4e9ec81a9e756efce20edd1c62e28321e8ed2a0"
+        },
+        "wind": {
+          "forecast_mw": 2767.74,
+          "method": "last_observation",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading",
+            "previous_day:frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "9d7e3ef59db9a789b67836c652406b46804c685d2ef4859f89c55ec90e220fd7"
+        },
+        "solar": {
+          "forecast_mw": 113.79545440673829,
+          "method": "residual_xgboost",
+          "status": "ok",
+          "reasons": [],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "b0cf1f4ca4353ff3ed3076fd76944c32bae642fe61cae326590bc042d3850fde"
+        }
+      },
+      "net_demand_mw": 149629.6945455933,
+      "renewable_mw": 2881.535454406738,
+      "target_quality": "unknown"
+    },
+    {
+      "horizon": 9,
+      "target_timestamp": "2025-01-10 00:00:00",
+      "components": {
+        "demand": {
+          "forecast_mw": 146876.79,
+          "method": "previous_week",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading",
+            "previous_day:frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "3e44b15d93caff2435abace78a6882a32d8aa48965ab71c1a58f92bd35ec7c10"
+        },
+        "wind": {
+          "forecast_mw": 2767.74,
+          "method": "last_observation",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading",
+            "previous_day:frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "b1890cc11055f656f9006a168feb447b3e01cdf1cd81cd492d760f7e7be8e7c1"
+        },
+        "solar": {
+          "forecast_mw": 107.16101684570313,
+          "method": "residual_xgboost",
+          "status": "ok",
+          "reasons": [],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "fbb2fc474462f43d2d81ccff8accd488a848f4cee7a9d70a0893687809c74847"
+        }
+      },
+      "net_demand_mw": 144001.88898315432,
+      "renewable_mw": 2874.901016845703,
+      "target_quality": "unknown"
+    },
+    {
+      "horizon": 10,
+      "target_timestamp": "2025-01-10 01:00:00",
+      "components": {
+        "demand": {
+          "forecast_mw": 143212.75,
+          "method": "previous_week",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading",
+            "previous_day:frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "c9f06b49147b254a14b0898f0ed1da62e02bdbfa291cfe34a603d91dc9eb61ec"
+        },
+        "wind": {
+          "forecast_mw": 2767.74,
+          "method": "last_observation",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading",
+            "previous_day:frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "b7a7e1c9eab8ba0acb52873fdd851766a4e9fed51dc7eb56df4a58f6927e0773"
+        },
+        "solar": {
+          "forecast_mw": 111.41300048828126,
+          "method": "residual_xgboost",
+          "status": "ok",
+          "reasons": [],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "0945acf7df7cbe75e2245d10873e2ff83114d304f878a611e28883a05deaa535"
+        }
+      },
+      "net_demand_mw": 140333.59699951173,
+      "renewable_mw": 2879.153000488281,
+      "target_quality": "unknown"
+    },
+    {
+      "horizon": 11,
+      "target_timestamp": "2025-01-10 02:00:00",
+      "components": {
+        "demand": {
+          "forecast_mw": 140778.14,
+          "method": "previous_week",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading",
+            "previous_day:frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "a321de68a4c2ed1467ea7704cb41ec755d7d77d2e08b7ac330cc88338d372ade"
+        },
+        "wind": {
+          "forecast_mw": 2767.74,
+          "method": "last_observation",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading",
+            "previous_day:frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "b55bbd3989e6d21305ed70f86d8f63875db56e2ac3cef83ad08ec4de1141dda6"
+        },
+        "solar": {
+          "forecast_mw": 83.64983215332032,
+          "method": "residual_xgboost",
+          "status": "ok",
+          "reasons": [],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "2a4a4db0eb622f3015eafdc700b0fe50a114bb7341fec92b10bd3a0f591515c8"
+        }
+      },
+      "net_demand_mw": 137926.7501678467,
+      "renewable_mw": 2851.38983215332,
+      "target_quality": "unknown"
+    },
+    {
+      "horizon": 12,
+      "target_timestamp": "2025-01-10 03:00:00",
+      "components": {
+        "demand": {
+          "forecast_mw": 140216.36,
+          "method": "previous_week",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading",
+            "previous_day:frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "a66a5808e755ab3ab16fe289655bc982eff33dd05086e3b9ead19c4d0671734b"
+        },
+        "wind": {
+          "forecast_mw": 2767.74,
+          "method": "last_observation",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading",
+            "previous_day:frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "6d45290ddcf85b573263a647a795bf3fee95e2d228c929ff5bc25466b2604c51"
+        },
+        "solar": {
+          "forecast_mw": 107.36411895751954,
+          "method": "residual_xgboost",
+          "status": "ok",
+          "reasons": [],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "f4b919f3b36e36725c3600bffc68029192c230d717e9a19ea3b34330466d55d7"
+        }
+      },
+      "net_demand_mw": 137341.25588104248,
+      "renewable_mw": 2875.1041189575194,
+      "target_quality": "unknown"
+    },
+    {
+      "horizon": 13,
+      "target_timestamp": "2025-01-10 04:00:00",
+      "components": {
+        "demand": {
+          "forecast_mw": 144470.36,
+          "method": "previous_week",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading",
+            "previous_day:frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "2eab50982a34188e3466749e51dfb9deacc139f03a711a3536d4d1f2a4c82cd9"
+        },
+        "wind": {
+          "forecast_mw": 2767.74,
+          "method": "last_observation",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading",
+            "previous_day:frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "87843f47f1a8c7cfcac6c4fc43a109b3b90c8d6ec0ff4d2e0367cef46e33b063"
+        },
+        "solar": {
+          "forecast_mw": 110.41639556884766,
+          "method": "residual_xgboost",
+          "status": "ok",
+          "reasons": [],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "dea3c641e30f0529cf6ed62e98822c31daaf0c00b587955bf61aa2941802f274"
+        }
+      },
+      "net_demand_mw": 141592.20360443115,
+      "renewable_mw": 2878.1563955688475,
+      "target_quality": "unknown"
+    },
+    {
+      "horizon": 14,
+      "target_timestamp": "2025-01-10 05:00:00",
+      "components": {
+        "demand": {
+          "forecast_mw": 156199.99,
+          "method": "previous_week",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading",
+            "previous_day:frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "6ecc950c23b39e6e29e36a4915ff85468da8a3dcb775cb1282454d6cda000092"
+        },
+        "wind": {
+          "forecast_mw": 2767.74,
+          "method": "last_observation",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading",
+            "previous_day:frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "9074ae640f98a916571f04805d3932f729156367cff96537d5f1b5e9ce9c5932"
+        },
+        "solar": {
+          "forecast_mw": 94.10134735107422,
+          "method": "residual_xgboost",
+          "status": "ok",
+          "reasons": [],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "a7f46af886fbdc476416df76399101f2bab7eb94f19de2120653e33479cb9995"
+        }
+      },
+      "net_demand_mw": 153338.14865264893,
+      "renewable_mw": 2861.841347351074,
+      "target_quality": "unknown"
+    },
+    {
+      "horizon": 15,
+      "target_timestamp": "2025-01-10 06:00:00",
+      "components": {
+        "demand": {
+          "forecast_mw": 175747.39,
+          "method": "previous_week",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading",
+            "previous_day:frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "ab1dd7f2ffe8b07ace207ea6df51d71ec966b0392e1522d854c5b2b4871303dd"
+        },
+        "wind": {
+          "forecast_mw": 2767.74,
+          "method": "last_observation",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading",
+            "previous_day:frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "e56cb6c719efdb0d138b9bc97350151cf641dea3c2d9e9689e45809743ac56f4"
+        },
+        "solar": {
+          "forecast_mw": 143.48061599731446,
+          "method": "residual_xgboost",
+          "status": "ok",
+          "reasons": [],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "a4f65060b07c50a610dcc05cf2575036eb981acc154522ee178013b1178fdfa1"
+        }
+      },
+      "net_demand_mw": 172836.16938400271,
+      "renewable_mw": 2911.2206159973143,
+      "target_quality": "unknown"
+    },
+    {
+      "horizon": 16,
+      "target_timestamp": "2025-01-10 07:00:00",
+      "components": {
+        "demand": {
+          "forecast_mw": 206556.73,
+          "method": "previous_day",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "c87ccd2ea7a475a84ed00b4a3cafa86bcdcfc532fb118e686ec7ce527491d386"
+        },
+        "wind": {
+          "forecast_mw": 7457.59,
+          "method": "previous_day",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "3b4d41b3590eca46805d0ed598302bf46704c3e28514c7a7baf358bb496e8dc9"
+        },
+        "solar": {
+          "forecast_mw": 2343.8104344177245,
+          "method": "residual_xgboost",
+          "status": "ok",
+          "reasons": [],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "77f861ae20ac07dd7112f03d0d63fcb5e70a3ef80eea063522460b4049c768cc"
+        }
+      },
+      "net_demand_mw": 196755.3295655823,
+      "renewable_mw": 9801.400434417725,
+      "target_quality": "unknown"
+    },
+    {
+      "horizon": 17,
+      "target_timestamp": "2025-01-10 08:00:00",
+      "components": {
+        "demand": {
+          "forecast_mw": 216640.75,
+          "method": "previous_day",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "dd7becdfbafc81956929b10850371473cbc2ec3fe2e8dcc32e2e1de05d5c988f"
+        },
+        "wind": {
+          "forecast_mw": 7125.69,
+          "method": "previous_day",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "bbc87ccc380d038d2a9de5f8af46838afe94da6f05aea0f2c311b8e6c36bd083"
+        },
+        "solar": {
+          "forecast_mw": 16611.405840454103,
+          "method": "residual_xgboost",
+          "status": "ok",
+          "reasons": [],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "34deb45bcef16fce949567103930a8105d0338ab299cb6ff9df9edcf67cf1d4e"
+        }
+      },
+      "net_demand_mw": 192903.6541595459,
+      "renewable_mw": 23737.0958404541,
+      "target_quality": "unknown"
+    },
+    {
+      "horizon": 18,
+      "target_timestamp": "2025-01-10 09:00:00",
+      "components": {
+        "demand": {
+          "forecast_mw": 225489.34,
+          "method": "previous_day",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "c6286f818306f9eaae3f2f99f7f162eccb63f0f8ceb40b5bce564904447de41a"
+        },
+        "wind": {
+          "forecast_mw": 6386.5,
+          "method": "previous_day",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "a631adf1520f1561ac4c1cd49610a242a4fc98f6e96b44cb53b3d22fcb9ee2db"
+        },
+        "solar": {
+          "forecast_mw": 35537.0025,
+          "method": "residual_xgboost",
+          "status": "ok",
+          "reasons": [],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "31c41602207e9030dd2c7222b6bd367c609c69171bba7523a05942ac5860eb5a"
+        }
+      },
+      "net_demand_mw": 183565.8375,
+      "renewable_mw": 41923.5025,
+      "target_quality": "unknown"
+    },
+    {
+      "horizon": 19,
+      "target_timestamp": "2025-01-10 10:00:00",
+      "components": {
+        "demand": {
+          "forecast_mw": 225098.69,
+          "method": "previous_day",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "0a76162f86f7933054c8ea58cba5c0de825d48e9194d427afdedeb4d478b095f"
+        },
+        "wind": {
+          "forecast_mw": 6637.09,
+          "method": "previous_day",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "7690feec7ed8f005993e4362970f04ed8ef65094bab9177f755b11e2b76bba57"
+        },
+        "solar": {
+          "forecast_mw": 47973.48563720703,
+          "method": "residual_xgboost",
+          "status": "ok",
+          "reasons": [],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "6e0135badef876da8371bfbb630201c457a6bcde4afa89b746bbccddcd374b09"
+        }
+      },
+      "net_demand_mw": 170488.11436279299,
+      "renewable_mw": 54610.57563720703,
+      "target_quality": "unknown"
+    },
+    {
+      "horizon": 20,
+      "target_timestamp": "2025-01-10 11:00:00",
+      "components": {
+        "demand": {
+          "forecast_mw": 220408.18,
+          "method": "previous_day",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "d689a4960cd95145fb009f638dc5ba72088becc1dee4adf46a447b572213a277"
+        },
+        "wind": {
+          "forecast_mw": 5530.32,
+          "method": "previous_day",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "cc717f543b35e28e7c359c2219de5799fe5c5110a7738d9035d0c84e8e227a64"
+        },
+        "solar": {
+          "forecast_mw": 54354.99397460937,
+          "method": "residual_xgboost",
+          "status": "ok",
+          "reasons": [],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "1977ecf43b85b0a53ccec52d3a20726cb006db1f895930540e89a3f26e2b8c14"
+        }
+      },
+      "net_demand_mw": 160522.86602539063,
+      "renewable_mw": 59885.31397460937,
+      "target_quality": "unknown"
+    },
+    {
+      "horizon": 21,
+      "target_timestamp": "2025-01-10 12:00:00",
+      "components": {
+        "demand": {
+          "forecast_mw": 213840.19,
+          "method": "previous_day",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "a77508105dcb72e470f5fca7a446db11bd4803a7f0c105c932efcd4aac398f33"
+        },
+        "wind": {
+          "forecast_mw": 4423.85,
+          "method": "previous_day",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "526429bbf997cc5aba5b0365a3c5f734d32929b23623e52d6824442719eb6d7a"
+        },
+        "solar": {
+          "forecast_mw": 55736.32298583984,
+          "method": "residual_xgboost",
+          "status": "ok",
+          "reasons": [],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "06621ca0d81c3ad89b1158404b2eaf939619c99413dc662e3393943ffa033173"
+        }
+      },
+      "net_demand_mw": 153680.01701416017,
+      "renewable_mw": 60160.17298583984,
+      "target_quality": "unknown"
+    },
+    {
+      "horizon": 22,
+      "target_timestamp": "2025-01-10 13:00:00",
+      "components": {
+        "demand": {
+          "forecast_mw": 204979.23,
+          "method": "previous_day",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "2cb76b5fd9ab0ff6253e55a3de7ed0ce133fbc94d982b82e26674ff17efb4b41"
+        },
+        "wind": {
+          "forecast_mw": 3692.83,
+          "method": "previous_day",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "dc59aae96c54d49ec232455c8d1569755480fdaec37ddb37e3b93daa43c9c79f"
+        },
+        "solar": {
+          "forecast_mw": 53563.01392578125,
+          "method": "residual_xgboost",
+          "status": "ok",
+          "reasons": [],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "b5980ff9b884bd7efc14d4d0563b1da513173f4d2421808001f1604abcbee299"
+        }
+      },
+      "net_demand_mw": 147723.38607421878,
+      "renewable_mw": 57255.84392578125,
+      "target_quality": "unknown"
+    },
+    {
+      "horizon": 23,
+      "target_timestamp": "2025-01-10 14:00:00",
+      "components": {
+        "demand": {
+          "forecast_mw": 203543.3,
+          "method": "previous_day",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "062852abc0e331a4e9266375a963a27724cfe467328b87d9587b29538f2e8edc"
+        },
+        "wind": {
+          "forecast_mw": 3153.21,
+          "method": "previous_day",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "2e13073487c56efa6abf091dbb1da4286e6e1dcde1acb627d0f455a87c64436d"
+        },
+        "solar": {
+          "forecast_mw": 48475.55802734375,
+          "method": "residual_xgboost",
+          "status": "ok",
+          "reasons": [],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "928ad92207eb578798fca985021f7f882b5acc3713f72853f60ab8b223bf1032"
+        }
+      },
+      "net_demand_mw": 151914.53197265626,
+      "renewable_mw": 51628.76802734375,
+      "target_quality": "unknown"
+    },
+    {
+      "horizon": 24,
+      "target_timestamp": "2025-01-10 15:00:00",
+      "components": {
+        "demand": {
+          "forecast_mw": 203618.1,
+          "method": "previous_day",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "de548fd07564cd6c3b794613e3260e1e1b957b2dce3d615fcd53199e98be9435"
+        },
+        "wind": {
+          "forecast_mw": 2767.74,
+          "method": "previous_day",
+          "status": "fallback",
+          "reasons": [
+            "frozen_reading"
+          ],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "8bfd3748b46313df8568a31ae298e31a1c4476ae6d3cbd51f792ad4f7072fb94"
+        },
+        "solar": {
+          "forecast_mw": 38732.62172851562,
+          "method": "residual_xgboost",
+          "status": "ok",
+          "reasons": [],
+          "unavailable_quality_checks": [],
+          "selected_method": "residual_xgboost",
+          "model_sha256": "0c9dcdcb4ec86961562a6482d57971db896fb07e294b2a6aa2cd9683f5d41c67"
+        }
+      },
+      "net_demand_mw": 162117.73827148438,
+      "renewable_mw": 41500.36172851562,
+      "target_quality": "unknown"
+    }
+  ]
+}

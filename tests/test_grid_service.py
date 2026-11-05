@@ -15,14 +15,14 @@ import xgboost as xgb
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'src'))
-from dashboard.service import (load_reports,load_history,load_forecaster,forecast,forecast_table,
+from services.grid_service import (load_reports,load_history,load_forecaster,forecast,forecast_table,
     attach_actuals,metric_record,audit_slice,csv_bytes,json_bytes,signatures,NORMAL_ORIGIN,FALLBACK_ORIGIN,REPORT_DIR)
 
 
 def forbidden(*a,**k):raise AssertionError('Training/battery solving must never run')
 
 
-class DashboardServiceTests(unittest.TestCase):
+class GridServiceTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.reports=load_reports(ROOT);cls.history=load_history(ROOT,cls.reports.summary)

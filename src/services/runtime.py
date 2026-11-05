@@ -1,6 +1,6 @@
 """Runtime guards for the presentation server and headless demo."""
 def disabled(*args,**kwargs):
-    raise RuntimeError('Training and battery optimization are disabled in the dashboard/demo')
+    raise RuntimeError('Training and battery optimization are disabled in the local API/demo')
 
 
 def install_guards():

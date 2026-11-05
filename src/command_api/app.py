@@ -15,7 +15,7 @@ from starlette.responses import JSONResponse, Response, FileResponse
 from starlette.routing import Route, Mount
 from starlette.staticfiles import StaticFiles
 
-from dashboard.service import (ROOT, COMPONENTS, REPORT_DIR, signatures, model_paths, report_paths,
+from services.grid_service import (ROOT, COMPONENTS, REPORT_DIR, signatures, model_paths, report_paths,
     load_reports, load_history, load_forecaster, forecast, forecast_table, metric_record, audit_slice, csv_bytes)
 from common.inference_history import parse_origin
 from common.grid_evaluation import retrospective_target_flags
@@ -219,7 +219,7 @@ class LoggingMiddleware:
 
 def create_app(root=ROOT,guards=True):
     if guards:
-        from dashboard.runtime import install_guards
+        from services.runtime import install_guards
         install_guards()
     root=Path(root);dist=root/'frontend/dist'
     async def spa(request):

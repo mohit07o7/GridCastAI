@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 import sys
+import subprocess
 import unittest
 from unittest.mock import patch
 
@@ -10,7 +11,7 @@ from starlette.testclient import TestClient
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'src'))
 from command_api.app import create_app,ResourceUnavailable
-from dashboard.service import forecast,forecast_table,metric_record
+from services.grid_service import forecast,forecast_table,metric_record
 
 
 class CommandApiTests(unittest.TestCase):
@@ -28,6 +29,33 @@ class CommandApiTests(unittest.TestCase):
     def tearDownClass(cls):
         cls.client.close()
         for owner,name,value in cls.original_entrypoints:setattr(owner,name,value)
+
+    def test_fresh_api_without_retired_interface_imports(self):
+        # Fail on attempted imports even when Streamlit remains installed locally.
+        script = """
+import importlib.abc
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path.cwd() / 'src'))
+class NoRetiredInterface(importlib.abc.MetaPathFinder):
+    def find_spec(self, fullname, path=None, target=None):
+        if fullname.split('.')[0] in {'streamlit', 'dashboard', 'plotly'}:
+            raise AssertionError('Retired UI import: ' + fullname)
+sys.meta_path.insert(0, NoRetiredInterface())
+from command_api.app import create_app
+from starlette.testclient import TestClient
+with TestClient(create_app()) as client:
+    assert client.get('/api/v1/history?limit=1').status_code == 200
+    result = client.post('/api/v1/forecast', json={'origin': '2025-06-24 23:00:00'})
+    assert result.status_code == 200, result.text
+    assert len(result.json()['forecast']['points']) == 24
+from services.runtime import disabled
+import xgboost as xgb
+assert xgb.XGBRegressor.fit is disabled
+"""
+        result = subprocess.run([sys.executable, '-B', '-c', script], cwd=ROOT,
+                                capture_output=True, text=True, timeout=120)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
     def test_forecast_parity_and_future_invariance(self):
         origin='2025-01-09 15:00:00'
